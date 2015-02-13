@@ -1,0 +1,13 @@
+#!/bin/bash
+
+prefix=/opt/vyatta
+exec_prefix=${prefix}
+sysconfdir=${prefix}/etc
+bindir=${exec_prefix}/bin
+sbindir=${exec_prefix}/sbin
+
+# don't start pmacct on boot
+update-rc.d -f pmacct remove >/dev/null
+
+# save a copy of default config files
+cp /etc/pmacct/pmacctd.conf /etc/pmacct/pmacctd.conf.bak

@@ -1,0 +1,6 @@
+8b53150ba6f9c7bfee367a6b99e06400  usr/lib/libboost_filesystem.so.1.42.0
+89f024890e27f3dbbb00e8f31b59a54d  usr/share/doc/libboost-filesystem1.42.0/NEWS.Debian.gz
+5bdedddebc1300a5bdce7c4d649ee0fc  usr/share/doc/libboost-filesystem1.42.0/README.Debian.gz
+4ca7365bfe227b3d35cc8a8f3069c0a6  usr/share/doc/libboost-filesystem1.42.0/changelog.Debian.gz
+e66425771863c34de39265516529d049  usr/share/doc/libboost-filesystem1.42.0/copyright
+0832b84b243de3b371ecd0e033a35870  usr/share/lintian/overrides/libboost-filesystem1.42.0

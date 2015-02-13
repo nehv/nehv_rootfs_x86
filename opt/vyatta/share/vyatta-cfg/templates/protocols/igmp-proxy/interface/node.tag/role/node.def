@@ -1,0 +1,12 @@
+help: Role of this IGMP interface
+
+type: txt
+
+default: "downstream"
+
+syntax:expression: $VAR(@) in "upstream", "downstream", "disabled"; \
+                   "must be 'upstream', 'downstream' or 'disabled'"
+
+val_help: upstream; Upstream interface (only 1 allowed)
+val_help: downstream; Downstream interface(s) (default)
+val_help: disabled; Disabled interface

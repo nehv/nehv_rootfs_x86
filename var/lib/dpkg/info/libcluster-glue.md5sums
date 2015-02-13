@@ -1,0 +1,9 @@
+70cdc1daa3c47fbbec5c91fee6662c13  usr/lib/liblrm.so.2.0.0
+60be64f968c97d2f08e5bf22846dd942  usr/lib/libpils.so.2.0.0
+ea5c55ca906788349bc31069e4a46fd2  usr/lib/libplumb.so.2.1.0
+2081efb63a3be86a47532c24e8800c72  usr/lib/libplumbgpl.so.2.0.0
+e659c397dc0554929dcadb6da379444c  usr/lib/libstonith.so.1.0.0
+df72643b7af940c1927f80b0fd2702f8  usr/share/doc/libcluster-glue/changelog.Debian.gz
+9eb85340521544b2b85e3797a335934a  usr/share/doc/libcluster-glue/changelog.gz
+665fa077acd83442821fe3b41c59c47d  usr/share/doc/libcluster-glue/copyright
+1ccc66039e472a13184f55d6648d5798  usr/share/lintian/overrides/libcluster-glue

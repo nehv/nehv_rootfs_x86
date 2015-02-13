@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/vyatta-util
+/usr/share/doc/vyatta-util/copyright
+/usr/share/doc/vyatta-util/NEWS.gz
+/usr/share/doc/vyatta-util/README
+/usr/share/doc/vyatta-util/changelog.gz
+/opt
+/opt/vyatta
+/opt/vyatta/sbin
+/opt/vyatta/sbin/ipset-check-member
+/opt/vyatta/sbin/vyatta-validate-type

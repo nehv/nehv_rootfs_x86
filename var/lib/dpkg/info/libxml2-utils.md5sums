@@ -1,0 +1,10 @@
+d3a70ee82845997e1ddad342a721c149  usr/bin/xmlcatalog
+05fc05c519d378eaa7622449a55fe2aa  usr/bin/xmllint
+9261d67cf0df4641bb11fd4a8c864ee7  usr/share/doc/libxml2-utils/AUTHORS
+3a87ff8c005b38d3f36bbd27f93cef08  usr/share/doc/libxml2-utils/NEWS.gz
+49dcfdf8c5c40b26554a43254fa81aa3  usr/share/doc/libxml2-utils/README
+ad18e8da56088a5ea40d7b6a969c4b4f  usr/share/doc/libxml2-utils/TODO.gz
+0654ae64ae6adfb74eaeca6d7fa9de2f  usr/share/doc/libxml2-utils/changelog.Debian.gz
+6d136440f06d710bf73811b75615a67b  usr/share/doc/libxml2-utils/copyright
+64fabbd2c3ba0cace37b662c951a85d1  usr/share/man/man1/xmlcatalog.1.gz
+0d99dfa265c7749f62182667ad1449fb  usr/share/man/man1/xmllint.1.gz

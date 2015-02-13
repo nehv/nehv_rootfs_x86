@@ -1,0 +1,25 @@
+# tcp_syncookies 
+# default value - 1 
+# Send out syncookies when the syn backlog queue of a socket overflows. 
+# This is to prevent against the common 'syn flood attack' 
+
+type: txt
+
+help: Policy for using TCP SYN cookies with IPv4
+
+val_help: enable; Enable use of TCP SYN cookies with IPv4
+val_help: disable; Disable use of TCP SYN cookies with IPv4
+
+default: "enable"
+
+syntax:expression: $VAR(@) in "enable", "disable"; "syn-cookies must be enable or disable"
+
+update:
+	if [ x$VAR(@) == xenable ]; then
+	    sudo sh -c "echo 1 > /proc/sys/net/ipv4/tcp_syncookies"
+        else
+	    sudo sh -c "echo 0 > /proc/sys/net/ipv4/tcp_syncookies"
+	fi
+
+delete:
+	sudo sh -c "echo 1 > /proc/sys/net/ipv4/tcp_syncookies"

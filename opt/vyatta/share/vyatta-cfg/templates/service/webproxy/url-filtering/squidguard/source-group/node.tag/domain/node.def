@@ -1,0 +1,7 @@
+multi:
+
+type:txt
+
+help: Domain for source-group
+
+val_help: Domain name for the source-group

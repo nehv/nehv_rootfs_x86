@@ -1,0 +1,22 @@
+This is Debian GNU/Linux's prepackaged version of File::Sync.  This is a set
+of perl modules which provide access to the POSIX fsync and sync calls.
+
+This package was put originally  together by Michael Alan Dorman.
+The original sources should always be available from the Comprehensive Perl
+Archive Network (CPAN). Visit <URL:http://www.perl.com/CPAN/> to find a CPAN
+site near you.
+
+The only change for the Debian package was the addition of the debian/
+files.
+
+The File::Sync copright is as follows:
+
+All files contained in this installation are copyright © 1996,1997,1999
+Carey Evans except for parts from the Perl distribution.  All rights
+reserved.
+
+This module is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+Larry Wall's "Artistic License" for perl can be found in
+/usr/share/common-licenses/Artistic

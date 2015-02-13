@@ -1,0 +1,9 @@
+#!/bin/bash
+
+prefix=/opt/vyatta
+exec_prefix=${prefix}
+sysconfdir=${prefix}/etc
+bindir=${exec_prefix}/bin
+sbindir=${exec_prefix}/sbin
+
+

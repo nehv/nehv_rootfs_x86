@@ -1,0 +1,5 @@
+NetBSD
+ * getch in -lcurses cannot be set nonblocking
+
+netstat input method
+ * vulnerable to escaping attacks

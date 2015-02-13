@@ -1,0 +1,4 @@
+/etc/ppp/ip-pre-up.d/0004rename-l2tp
+/etc/ppp/ip-pre-up.d/0005rename-pptp
+/etc/dhcp3/dhclient-exit-hooks.d/l2tpd
+/etc/dhcp3/dhclient-exit-hooks.d/pptpd

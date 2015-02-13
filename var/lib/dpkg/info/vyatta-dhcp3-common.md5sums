@@ -1,0 +1,16 @@
+728ac68dec8da2e07e272e1fda819b06  usr/bin/omshell
+fd1cb0f6dba9bf9562bdb09ceafbe5bc  usr/share/doc/vyatta-dhcp3-common/README.Debian
+0dbb5d5af4959db9cb38b6d015421249  usr/share/doc/vyatta-dhcp3-common/README.gz
+809ec33bd8db252acb93d456131c4dcb  usr/share/doc/vyatta-dhcp3-common/RELNOTES.gz
+94abf9e1974f64504eded841b6b77358  usr/share/doc/vyatta-dhcp3-common/api+protocol.gz
+f8ab83cca3a3f9a9d7074e27de3202e8  usr/share/doc/vyatta-dhcp3-common/changelog.gz
+4590d5cb4bb15238a47a56e387cc67c2  usr/share/doc/vyatta-dhcp3-common/copyright
+72c4149bb0077f1b598ff91f2dfbc4b9  usr/share/man/ja/man5/dhclient.conf.5.gz
+0134e4f2e1cec05844b8b51cc59f3c74  usr/share/man/ja/man5/dhclient.leases.5.gz
+2d7769fa6866fd2b47628499fe4f24e7  usr/share/man/ja/man5/dhcp-eval.5.gz
+3e9a5d8cc19c53e72c7323e181d4ad80  usr/share/man/ja/man5/dhcp-options.5.gz
+ea768a5eb9f0c51a5378ef86e451be94  usr/share/man/ja/man8/dhclient-script.8.gz
+f85457e5ae16009c9d588bf6713595e6  usr/share/man/ja/man8/dhclient.8.gz
+713580d90e51fe162d68627299feb8b3  usr/share/man/man1/omshell.1.gz
+21ff85c3b9c91b19d2718b5486c7c9b7  usr/share/man/man5/dhcp-eval.5.gz
+ef3b15ddb5890cf6d67e3bca55312d4c  usr/share/man/man5/dhcp-options.5.gz

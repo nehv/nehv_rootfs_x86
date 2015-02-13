@@ -1,0 +1,1 @@
+update-rc.d ec2-fetch-ssh-public-key start 2345

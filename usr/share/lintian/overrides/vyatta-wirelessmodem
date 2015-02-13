@@ -1,0 +1,2 @@
+vyatta-wirelessmodem: file-in-unusual-dir
+vyatta-wirelessmodem: dir-or-file-in-opt

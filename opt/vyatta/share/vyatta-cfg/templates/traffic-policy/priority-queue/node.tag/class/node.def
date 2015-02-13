@@ -1,0 +1,6 @@
+tag:
+type: u32
+help: Class handle
+syntax:expression: $VAR(@) >= 1 && $VAR(@) <= 7; \
+                  "Priority value must be between 1 and 7"
+val_help: u32:1-7; Priority

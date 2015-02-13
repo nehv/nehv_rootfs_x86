@@ -1,0 +1,5 @@
+type: u32
+
+help: SFlow sampling-rate
+
+val_help: Sampling rate (1 in N packets)

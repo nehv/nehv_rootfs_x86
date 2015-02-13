@@ -1,0 +1,9 @@
+help: Connection tracking synchronization (conntrack-sync) service
+
+priority: 995 # after firewall conntrack settings, interface, interface-address, cluster and vrrp
+
+end: if [ ${COMMIT_ACTION} = 'DELETE' ]; then
+        sudo /opt/vyatta/sbin/vyatta-conntrack-sync.pl --action=disable
+     else
+        sudo /opt/vyatta/sbin/vyatta-conntrack-sync.pl --action=enable
+     fi;

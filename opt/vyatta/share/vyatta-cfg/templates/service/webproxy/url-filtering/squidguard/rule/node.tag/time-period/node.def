@@ -1,0 +1,8 @@
+type: txt
+
+help: Time-period for this rule
+
+allowed: cli-shell-api listActiveNodes \
+           service webproxy url-filtering squidguard time-period
+
+val_help: Time period for this rule

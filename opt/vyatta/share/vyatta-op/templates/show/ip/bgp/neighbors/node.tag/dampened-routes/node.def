@@ -1,0 +1,2 @@
+help: Show dampened routes received from BGP neighbor
+run: ${vyatta_bindir}/vtyshow.pl "$@"

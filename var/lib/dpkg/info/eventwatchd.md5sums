@@ -1,0 +1,4 @@
+82f7be32dda725d3d381d343d18820d7  usr/bin/eventwatchd
+435de1fe41b2821f9524b59c3577a782  usr/share/doc/eventwatchd/changelog.Debian.gz
+4a4dd3598707603b3f76a2378a4504aa  usr/share/doc/eventwatchd/changelog.gz
+d41d8cd98f00b204e9800998ecf8427e  usr/share/lintian/overrides/eventwatchd

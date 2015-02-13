@@ -1,0 +1,26 @@
+#!/bin/sh -e
+
+case "$1" in
+    purge)
+        # remove the configuration files in /etc/mgetty
+        for file in mgetty.config dialin.config login.config; do
+	    if [ -f /etc/mgetty/$file ] ; then
+	    	rm -f /etc/mgetty/$file
+	    fi
+	    if [ -f /etc/mgetty/$file.dpkg-old ] ; then
+	    	rm -f /etc/mgetty/$file.dpkg-old
+	    fi
+	    if [ -f /etc/mgetty/$file.dpkg-new ] ; then
+	    	rm -f /etc/mgetty/$file.dpkg-new
+	    fi
+	done
+	rmdir /etc/mgetty || true;
+        rmdir /var/spool/fax/incoming /var/spool/fax || true;
+	;;
+    *)
+	;;
+esac
+
+
+
+exit 0;

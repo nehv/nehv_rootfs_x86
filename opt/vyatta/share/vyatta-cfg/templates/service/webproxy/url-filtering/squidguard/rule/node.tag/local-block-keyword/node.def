@@ -1,0 +1,10 @@
+multi:
+
+type: txt
+
+help: Local keyword to block
+
+val_help: Keyword (or regex) to block
+
+delete: sudo /opt/vyatta/sbin/vyatta-update-webproxy.pl \
+                --delete-local "$VAR(../@)" local-block-keyword "$VAR(@)";

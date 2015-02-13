@@ -1,0 +1,18 @@
+[python-package]
+format = 1
+python-version = current
+[pycentral]
+version = 0.6.11
+include-links = 0
+[files]
+/usr/share/heartbeat/cts/CTStests.py=f
+/usr/share/heartbeat/cts/CM_fs.py=f
+/usr/share/heartbeat/cts/CM_hb.py=f
+/usr/share/heartbeat/cts/CIB.py=f
+/usr/share/heartbeat/cts/CTS.py=f
+/usr/share/heartbeat/cts/CTSaudits.py=f
+/usr/share/heartbeat/cts/OCFIPraTest.py=f
+/usr/share/heartbeat/cts/CM_LinuxHAv2.py=f
+/usr/share/heartbeat/cts/CTSproxy.py=f
+/usr/share/heartbeat/cts/CTSlab.py=f
+/usr/share/heartbeat/cts/extracttests.py=f

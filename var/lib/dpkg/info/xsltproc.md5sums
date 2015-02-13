@@ -1,0 +1,10 @@
+a449e6b31823ac0638e76e5fe7d7310e  usr/bin/xsltproc
+75dfb13e305a0b32dcea929797f6b02e  usr/share/doc/xsltproc/AUTHORS
+9e8bd690c75965486826e59d46950e4a  usr/share/doc/xsltproc/FEATURES.gz
+9fab780508bab52faf7bd814d9c318d7  usr/share/doc/xsltproc/NEWS.gz
+bc65c900f4d1e6b9aea0329b3b804dca  usr/share/doc/xsltproc/README
+1671e62be479162b8d9a012c81bc235e  usr/share/doc/xsltproc/TODO
+9946cd9ae9590014111abe9bf20a85fa  usr/share/doc/xsltproc/changelog.Debian.gz
+e53b58ff71f32c5a820b4b089b2bedc8  usr/share/doc/xsltproc/changelog.gz
+3896dd4041149ce6158d2aa28d963db0  usr/share/doc/xsltproc/copyright
+a026b3e55e682cee01975e031526b699  usr/share/man/man1/xsltproc.1.gz

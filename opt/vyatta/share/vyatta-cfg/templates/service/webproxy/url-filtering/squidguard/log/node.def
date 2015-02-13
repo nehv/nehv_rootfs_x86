@@ -1,0 +1,8 @@
+multi:
+
+type: txt
+
+help: Log block category
+
+allowed: sudo /opt/vyatta/bin/sudo-users/vyatta-show-webproxy.pl --action="show-blacklists"
+         echo all

@@ -1,0 +1,20 @@
+======================================================================
+W A R N I N G - Please do read below if you have legacy code
+======================================================================
+
+Versions 3.21 and above of NetAddr::IP, include hooks for the Storable
+class that are incompatible with the old (automatic) method of storing
+data. To regain backwards compatibility, the module must be use()d as
+
+    use NetAddr::IP ':old_storable';
+
+Which will disable the new hooks and revert back to the old ways.
+
+If you do  not use Storable along NetAddr::IP or  just don't know what
+this all means, most likely you're safe to go along.
+
+Versions before 3.25 recognized by default IP addresses as returned by
+inet_aton. This is no longer the default. To enable this behaviour
+again, the module must be use()d as
+
+    use NetAddr::IP ':aton';

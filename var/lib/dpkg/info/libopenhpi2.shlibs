@@ -1,0 +1,9 @@
+libopenhpi 2 libopenhpi2
+libopenhpiutils 2 libopenhpi2
+libopenhpimarshal 2 libopenhpi2
+libohudpconnx 2 libopenhpi2
+libopenhpi_ssl 2 libopenhpi2
+libwatchdog 2 libopenhpi2
+libsimulator 2 libopenhpi2
+libosahpi 2 libopenhpi2
+libohtcpconnx 2 libopenhpi2

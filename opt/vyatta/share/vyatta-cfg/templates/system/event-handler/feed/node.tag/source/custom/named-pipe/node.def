@@ -1,0 +1,4 @@
+help: Path to a named pipe file
+type: txt
+syntax:expression: exec "[ -p $(echo $VAR(@) | awk -F ' ' '{ print $1 }') ] || exit 1"; "File should be an existing pipe"
+val_help: Name of existing pipe file

@@ -1,0 +1,292 @@
+#!/bin/bash
+set -e
+
+merge_debconf_into_conf()
+{
+  local tmpfile; tmpfile="$1"
+  local setting; setting="$2"
+  local template; template="$3"
+
+  db_get "$template"
+  local value; value="$(echo "$RET" | sed -e 's,[$`"\@],\\&,g')"
+  if grep -q "^${setting}=" "$tmpfile"; then
+    sed -i -re "s@^(${setting}=).*@\1\"${value}\"@" "$tmpfile"
+  else
+    echo >> "$tmpfile"
+    echo "${setting}=\"${value}\"" >> "$tmpfile"
+  fi
+}
+
+# This only works on a Linux system with udev running.  This is probably the
+# vast majority of systems where we need any of this, though, and we fall
+# back reasonably gracefully if we don't have it.
+cached_available_ids=
+available_ids()
+{
+  local id path
+
+  if [ "$cached_available_ids" ]; then
+    echo "$cached_available_ids"
+    return
+  fi
+
+  [ -d /dev/disk/by-id ] || return
+  cached_available_ids="$(
+    for path in /dev/disk/by-id/*; do
+      [ -e "$path" ] || continue
+      printf '%s %s\n' "$path" "$(readlink -f "$path")"
+    done | sort -k2 -s -u | cut -d' ' -f1
+  )"
+  echo "$cached_available_ids"
+}
+
+# Returns non-zero and no output if no mapping can be found.
+device_to_id()
+{
+  local id
+  for id in $(available_ids); do
+    if [ "$(readlink -f "$id")" = "$(readlink -f "$1")" ]; then
+      echo "$id"
+      return 0
+    fi
+  done
+  # Fall back to the plain device name if there's no by-id link for it.
+  if [ -e "$1" ]; then
+    echo "$1"
+    return 0
+  fi
+  return 1
+}
+
+devices_to_ids()
+{
+  local device id ids
+  ids=
+  for device; do
+    id="$(device_to_id "$device" || true)"
+    if [ "$id" ]; then
+      ids="${ids:+$ids, }$id"
+    fi
+  done
+  echo "$ids"
+}
+
+all_disks()
+{
+  local id
+  for id in $(available_ids); do
+    case $id in
+      *-part*) ;;
+      *) echo "$id" ;;
+    esac
+  done
+}
+
+all_partitions()
+{
+  local id ids
+  ids=
+  for id in $(available_ids); do
+    if [ "$id" != "$1" ] && [ "${id%-part*}" = "$1" ]; then
+      ids="${ids:+$ids }$id"
+    fi
+  done
+  echo "$ids"
+}
+
+# In order to determine whether we accidentally ran grub-install without
+# upgrade-from-grub-legacy on versions older than 1.98+20100617-1, we need
+# to be able to scan a disk to determine whether GRUB 2 was installed in its
+# boot sector.  This is specific to i386-pc (but that's the only platform
+# where we need it).
+scan_grub2()
+{
+  if ! dd if="$1" bs=512 count=1 2>/dev/null | grep -aq GRUB; then
+    # No version of GRUB is installed.
+    return 1
+  fi
+
+  # The GRUB boot sector always starts with a JMP instruction.
+  initial_jmp="$(dd if="$1" bs=2 count=1 2>/dev/null | od -Ax -tx1 | \
+                 head -n1 | cut -d' ' -f2,3)"
+  [ "$initial_jmp" ] || return 1
+  initial_jmp_opcode="${initial_jmp%% *}"
+  [ "$initial_jmp_opcode" = eb ] || return 1
+  initial_jmp_operand="${initial_jmp#* }"
+  case $initial_jmp_operand in
+    47|4b|4c|63)
+      # I believe this covers all versions of GRUB 2 up to the package
+      # version where we gained a more explicit mechanism.  GRUB Legacy
+      # always had 48 here.
+      return 0
+    ;;
+  esac
+
+  return 1
+}
+
+# for Linux
+sysfs_size()
+{
+  local num_sectors sector_size size
+  # Try to find out the size without relying on a partitioning tool being
+  # installed. This isn't too hard on Linux 2.6 with sysfs, but we have to
+  # try a couple of variants on detection of the sector size.
+  if [ -e "$1/size" ]; then
+    num_sectors="$(cat "$1/size")"
+    sector_size=512
+    if [ -e "$1/queue/logical_block_size" ]; then
+      sector_size="$(cat "$1/queue/logical_block_size")"
+    elif [ -e "$1/queue/hw_sector_size" ]; then
+      sector_size="$(cat "$1/queue/hw_sector_size")"
+    fi
+    size="$(expr "$num_sectors" \* "$sector_size" / 1000 / 1000)"
+  fi
+  [ "$size" ] || size='???'
+  echo "$size"
+}
+
+# for kFreeBSD
+camcontrol_size()
+{
+  local num_sectors sector_size size
+
+  num_sectors="$(camcontrol readcap "$1" -q -s -N)"
+  sector_size="$(camcontrol readcap "$1" -q -b)"
+  size="$(expr "$num_sectors" \* "$sector_size" / 1000 / 1000)"
+
+  [ "$size" ] || size='???'
+  echo "$size"
+}
+
+# Returns value in $RET, like a debconf command.
+describe_disk()
+{
+  local disk id base size
+  disk="$1"
+  id="$2"
+
+  model=
+  case $(uname -s) in
+    Linux)
+      if which udevadm >/dev/null 2>&1; then
+        size="$(sysfs_size "/sys$(udevadm info -n "$disk" -q path)")"
+      else
+        base="${disk#/dev/}"
+        base="$(printf %s "$base" | sed 's,/,!,g')"
+        size="$(sysfs_size "/sys/block/$base")"
+      fi
+
+      if which udevadm >/dev/null 2>&1; then
+        model="$(udevadm info -n "$disk" -q property | sed -n 's/^ID_MODEL=//p')"
+        if [ -z "$model" ]; then
+          model="$(udevadm info -n "$disk" -q property | sed -n 's/^DM_NAME=//p')"
+          if [ -z "$model" ]; then
+            model="$(udevadm info -n "$disk" -q property | sed -n 's/^MD_NAME=//p')"
+            if [ -z "$model" ] && which dmsetup >/dev/null 2>&1; then
+              model="$(dmsetup info -c --noheadings -o name "$disk" 2>/dev/null || true)"
+            fi
+          fi
+        fi
+      fi
+    ;;
+    GNU/kFreeBSD)
+      disk_basename=$(basename "$disk")
+      size="$(camcontrol_size "$disk_basename")"
+      model="$(camcontrol inquiry "$disk_basename" | sed -ne "s/^pass0: <\([^>]*\)>.*/\1/p")"
+    ;;
+  esac
+
+  [ "$model" ] || model='???'
+
+  db_subst grub-pc/disk_description DEVICE "$disk"
+  db_subst grub-pc/disk_description SIZE "$size"
+  db_subst grub-pc/disk_description MODEL "$model"
+  db_metaget grub-pc/disk_description description
+}
+
+# Returns value in $RET, like a debconf command.
+describe_partition()
+{
+  local disk part id path diskbase partbase size
+  disk="$1"
+  part="$2"
+  id="$3"
+  path="$4"
+
+  if which udevadm >/dev/null 2>&1; then
+    size="$(sysfs_size "/sys$(udevadm info -n "$part" -q path)")"
+  else
+    diskbase="${disk#/dev/}"
+    diskbase="$(printf %s "$diskbase" | sed 's,/,!,g')"
+    partbase="${part#/dev/}"
+    partbase="$(printf %s "$partbase" | sed 's,/,!,g')"
+    size="$(sysfs_size "/sys/block/$diskbase/$partbase")"
+  fi
+
+  db_subst grub-pc/partition_description DEVICE "$part"
+  db_subst grub-pc/partition_description SIZE "$size"
+  db_subst grub-pc/partition_description PATH "$path"
+  db_metaget grub-pc/partition_description description
+}
+
+usable_partitions()
+{
+  local last_partition path partition partition_id
+
+  last_partition=
+  for path in / /boot /boot/grub; do
+    partition="$(grub-probe -t device "$path" || true)"
+    if [ -z "$partition" ] || [ "$partition" = "$last_partition" ]; then
+      continue
+    fi
+    partition_id="$(device_to_id "$partition" || true)"
+    echo "$path:$partition_id"
+    last_partition="$partition"
+  done | sort -t: -k2
+}
+
+get_mountpoint()
+{
+  local relpath boot_mountpoint
+
+  relpath="$(grub-mkrelpath "$1")"
+  boot_mountpoint="${1#$relpath}"
+  echo "${boot_mountpoint:-/}"
+}
+
+case "$1" in
+  configure)
+    # debian has 340 line shell here to handle migration from
+    # grub legacy and all the special cases
+    # but Vyatta only handles upgrade between versions
+
+    # If grub.cfg has been generated, update it.
+    if test -e /boot/grub/grub.cfg ; then
+      # The Vyatta system generates its own grub.cfg file.  So, we check
+      # here to see if the original grub.cfg was saved in the pre-install
+      # phase of installing this package.  If so, we restore it back to
+      # its original location, over-writing the version just generated.
+      if [ -e /boot/grub/grub-install.orig.cfg ]; then
+	  echo "Restoring saved grub config file..."
+	  mv /boot/grub/grub-install.orig.cfg /boot/grub/grub.cfg
+      else
+          update-grub 3>&-
+      fi
+    fi
+	
+  ;;
+  abort-upgrade|abort-remove|abort-deconfigure)
+  ;;
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+esac
+
+# dh_installdeb will replace this with shell code automatically
+# generated by other debhelper scripts.
+
+
+
+exit 0

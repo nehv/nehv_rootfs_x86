@@ -1,0 +1,6 @@
+94bc298026880796a87429b0eb62e809  usr/sbin/dhcrelay3
+fd1cb0f6dba9bf9562bdb09ceafbe5bc  usr/share/doc/vyatta-dhcp3-relay/README.Debian
+f8ab83cca3a3f9a9d7074e27de3202e8  usr/share/doc/vyatta-dhcp3-relay/changelog.gz
+4590d5cb4bb15238a47a56e387cc67c2  usr/share/doc/vyatta-dhcp3-relay/copyright
+ed19e14c387f786dd35353b5180a5e23  usr/share/doc/vyatta-dhcp3-relay/dhcp-on-linux.txt
+2c5174a3674fbbf3b6a973a844f384e9  usr/share/man/man8/dhcrelay3.8.gz

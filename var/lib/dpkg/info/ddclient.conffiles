@@ -1,0 +1,2 @@
+/etc/ppp/ip-up.d/ddclient
+/etc/init.d/ddclient

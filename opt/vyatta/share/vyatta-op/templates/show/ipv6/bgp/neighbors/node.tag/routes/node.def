@@ -1,0 +1,2 @@
+help: Show routes learned from neighbor
+run: vtysh -c "$*"

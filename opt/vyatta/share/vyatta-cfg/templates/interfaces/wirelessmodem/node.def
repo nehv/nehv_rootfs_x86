@@ -1,0 +1,90 @@
+tag:
+priority: 350
+type: txt
+help: Wireless modem interface name
+syntax:expression: pattern $VAR(@) "^wlm[0-9]+$" ; "Must be (wlm0 - wlm999)"
+val_help: wlmX; Wireless modem interface name
+
+delete: touch /tmp/wirelessmodem-$VAR(@).del
+
+end: if [ -f /var/run/ppp-$VAR(@).pid ]; then
+         pid=$(cat /var/run/ppp-$VAR(@).pid | awk '$1 !~ /^[[:alpha:]]/ { print $1 }');
+         sudo kill $pid;
+         while [ -d /proc/$pid ]; do
+           sleep 1;
+         done;
+     fi;
+
+     if [ -f /tmp/wirelessmodem-$VAR(@).del ]; then
+         sudo rm -f /tmp/wirelessmodem-$VAR(@).del /tmp/$VAR(@).log \
+                    /etc/ppp/peers/$VAR(@)
+         exit 0;
+     fi;
+
+     tmpfile="/tmp/wirelessmodem-$VAR(@)"
+     rm -f $tmpfile; 
+
+     if [ -z "$(ip link show $VAR(@) 2>&1 | grep -v "^Device")" ]; then
+       if [ -n "$VAR(./backup)" ]; then
+	 if [ -n "$VAR(./backup/distance/@)" ]; then 
+	   metric="$VAR(./backup/distance/@)"
+	 else
+	   metric=10
+	 fi
+       fi;
+       echo ipparam "\"$VAR(@) $metric\"" >> $tmpfile;
+
+
+       if [ -n "$VAR(./ondemand)" ]; then
+         echo demand >> $tmpfile;
+       fi;
+
+       if [ -z "$VAR(./no-dns)" ]; then
+         echo usepeerdns >> $tmpfile;
+       fi;
+
+       if [ -n "$VAR(./mtu/@)" ]; then
+         echo mtu $VAR(./mtu/@) >> $tmpfile;
+       fi;
+
+       if [ -n "$VAR(./device/@)" ]; then
+         device=$VAR(./device/@);
+       else 
+	 device='ttyUSB0';
+       fi;
+       echo /dev/$device >> $tmpfile;
+
+       linkname=$(echo $VAR(@));
+
+       # setup the peers file
+       echo -e "lcp-echo-failure 0\n115200" >> $tmpfile;
+       echo -e "debug\nnodefaultroute\nipcp-max-failure 4" >> $tmpfile;
+       echo -e "ipcp-accept-local\nipcp-accept-remote\nnoauth\ncrtscts" >> $tmpfile;
+       echo -e "lock\npersist\nlinkname $linkname" >> $tmpfile;
+
+       if [ -n "$VAR(./network/@)" ]; then
+         network=$VAR(./network/@);
+       else
+         network='att';
+       fi;
+
+       if [ -e /opt/vyatta/share/ppp/network/$network ]; then
+          echo connect \'/usr/sbin/chat -v -t6 -f /opt/vyatta/share/ppp/network/$network\' >> $tmpfile;
+       elif [ -e $network ]; then
+          /opt/vyatta/sbin/check_file_in_config_dir "$network" '/config/scripts'
+          echo connect \'/usr/sbin/chat -v -t6 -f $network\' >> $tmpfile;
+       else
+          echo "Could not find '$network' chat script"
+          exit 1
+       fi
+
+       sudo rm -f /tmp/$VAR(@).log /etc/ppp/peers/$VAR(@)
+       sudo mv $tmpfile /etc/ppp/peers/$VAR(@)
+       sudo sh -c "/usr/sbin/pppd call $VAR(@) > /tmp/$VAR(@).log 2>&1 &";
+       sudo chmod 666 /tmp/$VAR(@).log
+     else 
+       echo '  Interface $VAR(@) already exists!'
+       echo '  Please choose another interface name';
+       echo '  for the wirelessmodem.';
+       exit 1;
+     fi;  

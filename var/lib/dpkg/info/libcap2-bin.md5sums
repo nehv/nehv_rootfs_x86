@@ -1,0 +1,13 @@
+d754abc9d40355e7b2d6fd8cc5e260b3  lib/security/pam_cap.so
+2387145ce89900bb37484eab0ebcd35e  sbin/capsh
+504c6b66ade393cbce8283910922a936  sbin/getcap
+6f908763e4e37f99fe92aaa28a4e7dac  sbin/getpcaps
+8ee9bbacfb601a47d85f903f72868bea  sbin/setcap
+b1bc9daef43189d695e29d7e44380dfd  usr/share/doc/libcap2-bin/README.Debian
+dfea213a4bdadb880e55020bb2cb997d  usr/share/doc/libcap2-bin/changelog.Debian.gz
+4818f4547f5efb43620670f6fd7b9115  usr/share/doc/libcap2-bin/changelog.gz
+4236f1a69a67963bbe19f9f80268d298  usr/share/doc/libcap2-bin/copyright
+559eef98fe8f3a77e3bd05bfb188143f  usr/share/man/man8/capsh.8.gz
+d68c47d751f96c1dc3d6a476174e067f  usr/share/man/man8/getcap.8.gz
+2a87dbf1bd9b776a09afc048492a2149  usr/share/man/man8/setcap.8.gz
+597992b1cd66ad28fa4ab9664239a43d  usr/share/pam-configs/capability

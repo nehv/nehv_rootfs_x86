@@ -1,0 +1,35 @@
+Most important things:
+- Compile warnings:
+  - New warning on ia64, -fstack-protector not supported for this target
+  - Old warning on ia64, MOV
+  - Old warning on ia64 in src/threaded.c, etc., appeared with glib 2.16.2
+  - Old warning on ia64 about cast alignment
+- Lintian no-symbols-control-file from lintian
+  - Need to study/use dpkg-gensymbols
+- Lintian possible-documentation-but-no-doc-base-registration
+  - This comes from shipping the upstream .pdf files; study doc-base
+- Lintian package-name-doesnt-match-sonames for the snmp-bc plug-in
+  - This may be a packaging mistake.  I put this library in with the BC
+    plug-in because that's the only code that uses it.  But the library
+    itself is much like the SSL library, in that other plugins could
+    potentially want to use it.  Will need to study this.
+- Check on the rpath error from lintian
+  - I believe this is a relic of the openhpi-switcher stuff, where
+    the main libopenhpi .so files used to be changed out from under
+    programs that will then use them.  This was to allow the openhpi
+    daemon to replace standard library functionality without changing the
+    application that uses openhpi.  But I need to check this to be sure.
+
+Spelling errors reported by Lintian:
+
+Other things (in no particular order):
+- Work with upstream so that autoconf/automake stuff is either not
+  shipped with the tarball or doesn't need to be re-run at all
+- Work with upstream to remove docs/hld from tarball, or get it licensed
+  under a DFSG-free license
+  - Upstream is deprecating this directory in favor of online (wiki)
+    documentation.  It should disappear on it's own in a future version.
+- Work on auto-generating a good openhpi.conf file, based on what I can
+  tell about the machine.  Currently, this has to be done by the user
+  who installs the package.
+- Look at p. 59, section 8.6.2 in policy manual for shlibs examples

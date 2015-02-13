@@ -1,0 +1,82 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+touch /config/dhcpd.leases
+CONFIGFILE=/opt/vyatta/etc/dhcpd.conf
+PIDFILE=/var/run/dhcpd.pid
+
+start() {
+	if [ ! -f "$CONFIGFILE" ]; then
+	  log_failure_msg "Cannot start the DHCP server because configuration file $CONFIGFILE is absent."
+	  exit 1
+	fi
+
+	OUTPUT=`start-stop-daemon --start --make-pidfile --pidfile $PIDFILE -b --exec /usr/sbin/dhcpd3 \
+	-- -f -pf /var/run/dhcpd-unused.pid -cf $CONFIGFILE -lf /config/dhcpd.leases 2>&1`
+	PID=`cat $PIDFILE 2>/dev/null`
+	if [ ! -d "/proc/$PID" ]; then
+	  if [ "$OUTPUT" == "" ]; then
+	    # this can happen under high load due to some sort of a race condition
+	    sleep 1
+	    start
+	  else
+	    log_failure_msg "$OUTPUT"
+	    exit 1
+	  fi
+	fi
+}
+
+stop() {
+	if [ -f "$PIDFILE" ]; then
+	  PID=`cat $PIDFILE` 
+	  if [ -n "$PID" ]; then 
+	    OUTPUT=`start-stop-daemon -q --stop --pidfile $PIDFILE 2>&1`
+
+# Commenting out verification loop for now.  Process goes into zombie state only on
+# system startup.  This causes a loop greater that 20 seconds which forces rtrmgr
+# to commit suicide.	    
+#	    while [ -d "/proc/$PID" ]; do
+#	      sleep 1
+#	    done
+	  fi
+	  rm -f $PIDFILE
+	fi
+	
+}
+
+restart () {
+	if [ -f "$PIDFILE" ]; then 
+	  PID=`cat $PIDFILE`
+	fi
+
+        if [ -n "$PID" ] && [ -d "/proc/$PID" ]; then
+	  OUTPUT=`kill -HUP $PID`
+	else
+ 	  start
+        fi
+}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		stop
+		start
+		# note I am disabling restart because no sig will cause dnsmasq to re-read it's config file.
+		# this is not good since I think it loses it's cache file on complete restart.
+		# maybe we can fix this when we shift away from dnsmasq.  Hence I leave the original code
+		# in this file
+		# restart
+		;;
+	*)
+		log_failure_msg "usage: $0 {start|stop|restart} configfile interface"
+		exit 1
+		;;
+esac
+
+exit 0

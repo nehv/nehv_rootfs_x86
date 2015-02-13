@@ -1,0 +1,13 @@
+multi:
+type: txt
+help: Commit archive location
+
+syntax:expression: exec "/opt/vyatta/sbin/vyatta-config-mgmt.pl \
+                           --action=valid-uri                   \
+                           --uri=\"$VAR(@)\" "; "Invalid URI"
+
+val_help: <uri> ; Uniform Resource Identifier
+comp_help: 
+  "scp://<user>:<passwd>@<host>/<dir>"
+  "ftp://<user>:<passwd>@<host>/<dir>"
+  "tftp://<host>/<dir>"

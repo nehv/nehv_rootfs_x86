@@ -1,0 +1,5 @@
+type: txt
+
+help: Redirect URL for filtered websites
+
+val_help: URL for redirect (example http://www.google.com)

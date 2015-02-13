@@ -1,0 +1,3 @@
+/etc/netplug/netplugd.conf
+/etc/netplug/netplug
+/etc/init.d/netplug

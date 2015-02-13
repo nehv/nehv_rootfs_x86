@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/sbin
+/usr/sbin/conntrack
+/usr/share
+/usr/share/doc
+/usr/share/doc/conntrack
+/usr/share/doc/conntrack/copyright
+/usr/share/doc/conntrack/changelog.Debian.gz
+/usr/share/doc/conntrack/AUTHORS
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/conntrack.8.gz

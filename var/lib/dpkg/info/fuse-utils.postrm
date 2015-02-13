@@ -1,0 +1,25 @@
+#!/bin/bash -e
+
+test $DEBIAN_SCRIPT_DEBUG && set -v -x
+
+case $1 in
+  purge|remove)
+  ;;
+
+  failed-upgrade|upgrade|abort-upgrade)
+  ;;
+
+  *)
+    echo "postrm called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+esac
+
+# Automatically added by dh_installinit
+if [ "$1" = "purge" ] ; then
+	update-rc.d fuse remove >/dev/null
+fi
+# End automatically added section
+
+
+exit 0

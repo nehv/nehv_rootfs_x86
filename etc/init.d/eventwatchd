@@ -1,0 +1,87 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:		eventwatchd
+# Required-Start:	$remote_fs $syslog
+# Required-Stop:	$remote_fs $syslog
+# Default-Start:	2 3 4 5
+# Default-Stop:		
+# Short-Description:	Event monitoring daemon
+### END INIT INFO
+
+set -e
+
+# /etc/init.d/eventwatchd: start and stop the event watching daemon
+
+test -x /usr/bin/eventwatchd || exit 0
+
+umask 022
+
+if test -f /etc/default/eventwatchd; then
+    . /etc/default/eventwatchd
+fi
+
+. /lib/lsb/init-functions
+
+if [ -n "$2" ]; then
+    EWD_OPTS="$EWD_OPTS $2"
+fi
+
+# Are we running from init?
+run_by_init() {
+    ([ "$previous" ] && [ "$runlevel" ]) || [ "$runlevel" = S ]
+}
+
+check_dev_null() {
+    if [ ! -c /dev/null ]; then
+	if [ "$1" = log_end_msg ]; then
+	    log_end_msg 1 || true
+	fi
+	if ! run_by_init; then
+	    log_action_msg "/dev/null is not a character device!"
+	fi
+	exit 1
+    fi
+}
+
+export PATH="${PATH:+$PATH:}/usr/sbin:/sbin:/usr/bin"
+
+case "$1" in
+  start)
+	check_dev_null
+	log_daemon_msg "Starting eventwatchd" "eventwatchd"
+	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/eventwatchd.pid --exec /usr/bin/eventwatchd -- $EWD_OPTS; then
+	    log_end_msg 0
+	else
+	    log_end_msg 1
+	fi
+	;;
+  stop)
+	log_daemon_msg "Stopping eventwatchd" "eventwatchd"
+	if start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/eventwatchd.pid; then
+	    log_end_msg 0
+	else
+	    log_end_msg 1
+	fi
+	;;
+  restart)
+	log_daemon_msg "Restarting eventwatchd" "eventwatchd"
+	start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile /var/run/eventwatchd.pid
+	check_dev_null log_end_msg
+	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/eventwatchd.pid --exec /usr/bin/eventwatchd -- $EWD_OPTS; then
+	    log_end_msg 0
+	else
+	    log_end_msg 1
+	fi
+	;;
+  status)
+	status_of_proc -p /var/run/eventwatchd.pid /usr/bin/eventwatchd eventwatchd && exit 0 || exit $?
+	;;
+
+  *)
+	log_action_msg "Usage: /etc/init.d/eventwatchd {start|stop|restart|status}"
+	exit 1
+esac
+
+exit 0
+

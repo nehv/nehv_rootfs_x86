@@ -1,0 +1,7 @@
+libIPMIlanserv 0 libopenipmi0
+libOpenIPMIcmdlang 0 libopenipmi0
+libOpenIPMI 0 libopenipmi0
+libOpenIPMIui 1 libopenipmi0
+libOpenIPMIposix 0 libopenipmi0
+libOpenIPMIutils 0 libopenipmi0
+libOpenIPMIpthread 0 libopenipmi0

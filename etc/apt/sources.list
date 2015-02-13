@@ -1,0 +1,3 @@
+# /etc/apt/sources.list
+
+deb http://dev.packages.vyos.net/debian/helium squeeze main

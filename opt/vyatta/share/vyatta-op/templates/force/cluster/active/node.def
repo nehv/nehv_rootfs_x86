@@ -1,0 +1,9 @@
+help: Attempt to take over cluster resources and become the active node
+run: local -a grp ;
+     eval "grp=($(cli-shell-api listActiveNodes cluster group))"
+     if [ -n "$grp" ]; then
+       sudo /usr/share/heartbeat/hb_takeover >&/dev/null
+       echo "Requesting to take over cluster resources"
+     else
+       echo "Clustering is not configured"
+     fi

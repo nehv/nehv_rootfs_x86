@@ -1,0 +1,6 @@
+/etc/logcheck/violations.d/mdadm
+/etc/logcheck/ignore.d.server/mdadm
+/etc/cron.d/mdadm
+/etc/cron.daily/mdadm
+/etc/init.d/mdadm
+/etc/init.d/mdadm-raid

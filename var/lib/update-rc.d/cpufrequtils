@@ -1,0 +1,1 @@
+update-rc.d cpufrequtils start 19 2 3 4 5 .

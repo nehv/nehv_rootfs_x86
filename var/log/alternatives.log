@@ -1,0 +1,128 @@
+2014-10-10 03:40:28 update-alternatives: run with --quiet --install /usr/bin/awk awk /usr/bin/mawk 5 --slave /usr/share/man/man1/awk.1.gz awk.1.gz /usr/share/man/man1/mawk.1.gz --slave /usr/bin/nawk nawk /usr/bin/mawk --slave /usr/share/man/man1/nawk.1.gz nawk.1.gz /usr/share/man/man1/mawk.1.gz
+2014-10-10 03:40:28 update-alternatives: link group awk updated to point to /usr/bin/mawk
+2014-10-10 03:40:32 update-alternatives: run with --install /usr/sbin/rmt rmt /usr/sbin/rmt-tar 50 --slave /usr/share/man/man8/rmt.8.gz rmt.8.gz /usr/share/man/man8/rmt-tar.8.gz
+2014-10-10 03:40:32 update-alternatives: link group rmt updated to point to /usr/sbin/rmt-tar
+2014-10-10 03:40:32 update-alternatives: run with --quiet --install /usr/bin/awk awk /usr/bin/mawk 5 --slave /usr/share/man/man1/awk.1.gz awk.1.gz /usr/share/man/man1/mawk.1.gz --slave /usr/bin/nawk nawk /usr/bin/mawk --slave /usr/share/man/man1/nawk.1.gz nawk.1.gz /usr/share/man/man1/mawk.1.gz
+2014-10-10 03:40:32 update-alternatives: run with --install /usr/share/man/man7/builtins.7.gz builtins.7.gz /usr/share/man/man7/bash-builtins.7.gz 10
+2014-10-10 03:40:32 update-alternatives: link group builtins.7.gz updated to point to /usr/share/man/man7/bash-builtins.7.gz
+2014-10-10 03:40:33 update-alternatives: run with --install /usr/bin/pager pager /bin/more 50 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/more.1.gz
+2014-10-10 03:40:33 update-alternatives: link group pager updated to point to /bin/more
+2014-10-10 03:40:33 update-alternatives: run with --install /usr/bin/pager pager /usr/bin/pg 10 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/pg.1.gz
+2014-10-10 03:40:39 update-alternatives: run with --install /usr/bin/aptitude aptitude /usr/bin/aptitude-curses 30
+2014-10-10 03:40:39 update-alternatives: link group aptitude updated to point to /usr/bin/aptitude-curses
+2014-10-10 03:43:22 update-alternatives: run with --quiet --install /usr/bin/awk awk /usr/bin/gawk 10 --slave /usr/share/man/man1/awk.1.gz awk.1.gz /usr/share/man/man1/gawk.1.gz --slave /usr/bin/nawk nawk /usr/bin/gawk --slave /usr/share/man/man1/nawk.1.gz nawk.1.gz /usr/share/man/man1/gawk.1.gz
+2014-10-10 03:43:22 update-alternatives: link group awk updated to point to /usr/bin/gawk
+2014-10-10 03:43:23 update-alternatives: run with --install /usr/bin/view view /usr/bin/see 1 --slave /usr/share/man/man1/view.1.gz view.1.gz /usr/share/man/man1/see.1.gz
+2014-10-10 03:43:23 update-alternatives: link group view updated to point to /usr/bin/see
+2014-10-10 03:43:26 update-alternatives: run with --install /usr/bin/write write /usr/bin/bsd-write 100 --slave /usr/share/man/man1/write.1.gz write.1.gz /usr/share/man/man1/bsd-write.1.gz
+2014-10-10 03:43:26 update-alternatives: link group write updated to point to /usr/bin/bsd-write
+2014-10-10 03:43:26 update-alternatives: run with --install /usr/bin/from from /usr/bin/bsd-from 10 --slave /usr/share/man/man1/from.1.gz from.1.gz /usr/share/man/man1/bsd-from.1.gz
+2014-10-10 03:43:26 update-alternatives: link group from updated to point to /usr/bin/bsd-from
+2014-10-10 03:43:27 update-alternatives: run with --install /usr/bin/w w /usr/bin/w.procps 50 --slave /usr/share/man/man1/w.1.gz w.1.gz /usr/share/man/man1/w.procps.1.gz
+2014-10-10 03:43:27 update-alternatives: link group w updated to point to /usr/bin/w.procps
+2014-10-10 03:43:27 update-alternatives: run with --install /usr/bin/traceroute traceroute /usr/bin/traceroute.db 100 --slave /usr/sbin/traceroute traceroute.sbin /usr/bin/traceroute.db --slave /usr/share/man/man1/traceroute.1.gz traceroute.1.gz /usr/share/man/man1/traceroute.db.1.gz
+2014-10-10 03:43:27 update-alternatives: link group traceroute updated to point to /usr/bin/traceroute.db
+2014-10-10 03:43:27 update-alternatives: run with --install /usr/bin/traceroute6 traceroute6 /usr/bin/traceroute6.db 100 --slave /usr/share/man/man1/traceroute6.1.gz traceroute6.1.gz /usr/share/man/man1/traceroute6.db.1.gz
+2014-10-10 03:43:27 update-alternatives: link group traceroute6 updated to point to /usr/bin/traceroute6.db
+2014-10-10 03:43:27 update-alternatives: run with --install /usr/bin/lft lft /usr/bin/lft.db 100 --slave /usr/share/man/man1/lft.1.gz lft.1.gz /usr/share/man/man1/lft.db.1.gz
+2014-10-10 03:43:27 update-alternatives: link group lft updated to point to /usr/bin/lft.db
+2014-10-10 03:43:27 update-alternatives: run with --install /usr/bin/traceproto traceproto /usr/bin/traceproto.db 100 --slave /usr/share/man/man1/traceproto.1.gz traceproto.1.gz /usr/share/man/man1/traceproto.db.1.gz
+2014-10-10 03:43:27 update-alternatives: link group traceproto updated to point to /usr/bin/traceproto.db
+2014-10-10 03:43:27 update-alternatives: run with --install /usr/sbin/tcptraceroute tcptraceroute /usr/sbin/tcptraceroute.db 100 --slave /usr/share/man/man8/tcptraceroute.8.gz tcptraceroute.8.gz /usr/share/man/man8/tcptraceroute.db.8.gz
+2014-10-10 03:43:27 update-alternatives: link group tcptraceroute updated to point to /usr/sbin/tcptraceroute.db
+2014-10-10 03:43:28 update-alternatives: run with --quiet --install /usr/bin/pager pager /bin/less 77 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/less.1.gz
+2014-10-10 03:43:28 update-alternatives: link group pager updated to point to /bin/less
+2014-10-10 03:43:28 update-alternatives: run with --quiet --install /usr/bin/pager pager /bin/less 77 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/less.1.gz
+2014-10-10 03:43:29 update-alternatives: run with --quiet --install /usr/bin/rsh rsh /usr/bin/ssh 20 --slave /usr/share/man/man1/rsh.1.gz rsh.1.gz /usr/share/man/man1/ssh.1.gz
+2014-10-10 03:43:29 update-alternatives: link group rsh updated to point to /usr/bin/ssh
+2014-10-10 03:43:29 update-alternatives: run with --quiet --install /usr/bin/rlogin rlogin /usr/bin/slogin 20 --slave /usr/share/man/man1/rlogin.1.gz rlogin.1.gz /usr/share/man/man1/slogin.1.gz
+2014-10-10 03:43:29 update-alternatives: link group rlogin updated to point to /usr/bin/slogin
+2014-10-10 03:43:29 update-alternatives: run with --quiet --install /usr/bin/rcp rcp /usr/bin/scp 20 --slave /usr/share/man/man1/rcp.1.gz rcp.1.gz /usr/share/man/man1/scp.1.gz
+2014-10-10 03:43:29 update-alternatives: link group rcp updated to point to /usr/bin/scp
+2014-10-10 03:43:30 update-alternatives: run with --quiet --install /usr/bin/editor editor /bin/ed -100 --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/ed.1.gz
+2014-10-10 03:43:30 update-alternatives: link group editor updated to point to /bin/ed
+2014-10-10 03:43:33 update-alternatives: run with --install /bin/mt mt /bin/mt-gnu 10 --slave /usr/share/man/man1/mt.1.gz mt.1.gz /usr/share/man/man1/mt-gnu.1.gz
+2014-10-10 03:43:33 update-alternatives: link group mt updated to point to /bin/mt-gnu
+2014-10-10 03:43:36 update-alternatives: run with --install /usr/bin/editor editor /bin/nano 40 --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/nano.1.gz
+2014-10-10 03:43:36 update-alternatives: link group editor updated to point to /bin/nano
+2014-10-10 03:43:36 update-alternatives: run with --install /usr/bin/pico pico /bin/nano 10 --slave /usr/share/man/man1/pico.1.gz pico.1.gz /usr/share/man/man1/nano.1.gz
+2014-10-10 03:43:36 update-alternatives: link group pico updated to point to /bin/nano
+2014-10-10 03:43:36 update-alternatives: run with --install /bin/nc nc /bin/nc.traditional 10 --slave /bin/netcat netcat /bin/nc.traditional --slave /usr/share/man/man1/nc.1.gz nc.1.gz /usr/share/man/man1/nc_traditional.1.gz --slave /usr/share/man/man1/netcat.1.gz netcat.1.gz /usr/share/man/man1/nc_traditional.1.gz
+2014-10-10 03:43:36 update-alternatives: link group nc updated to point to /bin/nc.traditional
+2014-10-10 03:43:36 update-alternatives: run with --install /usr/bin/rview rview /usr/bin/vim.tiny 10
+2014-10-10 03:43:36 update-alternatives: link group rview updated to point to /usr/bin/vim.tiny
+2014-10-10 03:43:36 update-alternatives: run with --install /usr/bin/vi vi /usr/bin/vim.tiny 10 --slave /usr/share/man/fr/man1/vi.1.gz vi.fr.1.gz /usr/share/man/fr/man1/vim.1.gz --slave /usr/share/man/it/man1/vi.1.gz vi.it.1.gz /usr/share/man/it/man1/vim.1.gz --slave /usr/share/man/pl/man1/vi.1.gz vi.pl.1.gz /usr/share/man/pl/man1/vim.1.gz --slave /usr/share/man/ru/man1/vi.1.gz vi.ru.1.gz /usr/share/man/ru/man1/vim.1.gz --slave /usr/share/man/man1/vi.1.gz vi.1.gz /usr/share/man/man1/vim.1.gz
+2014-10-10 03:43:36 update-alternatives: link group vi updated to point to /usr/bin/vim.tiny
+2014-10-10 03:43:36 update-alternatives: run with --install /usr/bin/view view /usr/bin/vim.tiny 10 --slave /usr/share/man/fr/man1/view.1.gz view.fr.1.gz /usr/share/man/fr/man1/vim.1.gz --slave /usr/share/man/it/man1/view.1.gz view.it.1.gz /usr/share/man/it/man1/vim.1.gz --slave /usr/share/man/pl/man1/view.1.gz view.pl.1.gz /usr/share/man/pl/man1/vim.1.gz --slave /usr/share/man/ru/man1/view.1.gz view.ru.1.gz /usr/share/man/ru/man1/vim.1.gz --slave /usr/share/man/man1/view.1.gz view.1.gz /usr/share/man/man1/vim.1.gz
+2014-10-10 03:43:36 update-alternatives: link group view updated to point to /usr/bin/vim.tiny
+2014-10-10 03:43:36 update-alternatives: run with --install /usr/bin/ex ex /usr/bin/vim.tiny 10 --slave /usr/share/man/fr/man1/ex.1.gz ex.fr.1.gz /usr/share/man/fr/man1/vim.1.gz --slave /usr/share/man/it/man1/ex.1.gz ex.it.1.gz /usr/share/man/it/man1/vim.1.gz --slave /usr/share/man/pl/man1/ex.1.gz ex.pl.1.gz /usr/share/man/pl/man1/vim.1.gz --slave /usr/share/man/ru/man1/ex.1.gz ex.ru.1.gz /usr/share/man/ru/man1/vim.1.gz --slave /usr/share/man/man1/ex.1.gz ex.1.gz /usr/share/man/man1/vim.1.gz
+2014-10-10 03:43:36 update-alternatives: link group ex updated to point to /usr/bin/vim.tiny
+2014-10-10 03:43:36 update-alternatives: run with --install /usr/bin/editor editor /usr/bin/vim.tiny 10 --slave /usr/share/man/fr/man1/editor.1.gz editor.fr.1.gz /usr/share/man/fr/man1/vim.1.gz --slave /usr/share/man/it/man1/editor.1.gz editor.it.1.gz /usr/share/man/it/man1/vim.1.gz --slave /usr/share/man/pl/man1/editor.1.gz editor.pl.1.gz /usr/share/man/pl/man1/vim.1.gz --slave /usr/share/man/ru/man1/editor.1.gz editor.ru.1.gz /usr/share/man/ru/man1/vim.1.gz --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/vim.1.gz
+2014-10-10 03:43:37 update-alternatives: run with --install /usr/bin/tclsh tclsh /usr/bin/tclsh8.5 840 --slave /usr/share/man/man1/tclsh.1.gz tclsh.1 /usr/share/man/man1/tclsh8.5.1.gz
+2014-10-10 03:43:37 update-alternatives: link group tclsh updated to point to /usr/bin/tclsh8.5
+2014-10-10 03:43:52 update-alternatives: run with --install /usr/bin/rename rename /usr/bin/prename 60 --slave /usr/share/man/man1/rename.1.gz rename.1.gz /usr/share/man/man1/prename.1.gz
+2014-10-10 03:43:52 update-alternatives: link group rename updated to point to /usr/bin/prename
+2014-10-10 03:44:03 update-alternatives: run with --install /bin/bunzip2 bunzip2 /bin/bunzip2.bb 10
+2014-10-10 03:44:03 update-alternatives: link group bunzip2 updated to point to /bin/bunzip2.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /bin/bzcat bzcat /bin/bzcat.bb 10
+2014-10-10 03:44:03 update-alternatives: link group bzcat updated to point to /bin/bzcat.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /sbin/klogd klogd /sbin/klogd.bb 10
+2014-10-10 03:44:03 update-alternatives: link group klogd updated to point to /sbin/klogd.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /sbin/syslogd syslogd /sbin/syslogd.bb 10
+2014-10-10 03:44:03 update-alternatives: link group syslogd updated to point to /sbin/syslogd.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/adjtimex adjtimex /usr/bin/adjtimex.bb 10
+2014-10-10 03:44:03 update-alternatives: link group adjtimex updated to point to /usr/bin/adjtimex.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/chvt chvt /usr/bin/chvt.bb 10
+2014-10-10 03:44:03 update-alternatives: link group chvt updated to point to /usr/bin/chvt.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/dc dc /usr/bin/dc.bb 10
+2014-10-10 03:44:03 update-alternatives: link group dc updated to point to /usr/bin/dc.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/dos2unix dos2unix /usr/bin/dos2unix.bb 10
+2014-10-10 03:44:03 update-alternatives: link group dos2unix updated to point to /usr/bin/dos2unix.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/dumpkmap dumpkmap /usr/bin/dumpkmap.bb 10
+2014-10-10 03:44:03 update-alternatives: link group dumpkmap updated to point to /usr/bin/dumpkmap.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/ftpget ftpget /usr/bin/ftpget.bb 10
+2014-10-10 03:44:03 update-alternatives: link group ftpget updated to point to /usr/bin/ftpget.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/ftpput ftpput /usr/bin/ftpput.bb 10
+2014-10-10 03:44:03 update-alternatives: link group ftpput updated to point to /usr/bin/ftpput.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/ipcalc ipcalc /usr/bin/ipcalc.bb 10
+2014-10-10 03:44:03 update-alternatives: link group ipcalc updated to point to /usr/bin/ipcalc.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/loadfont loadfont /usr/bin/loadfont.bb 10
+2014-10-10 03:44:03 update-alternatives: link group loadfont updated to point to /usr/bin/loadfont.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/loadkmap loadkmap /usr/bin/loadkmap.bb 10
+2014-10-10 03:44:03 update-alternatives: link group loadkmap updated to point to /usr/bin/loadkmap.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/logread logread /usr/bin/logread.bb 10
+2014-10-10 03:44:03 update-alternatives: link group logread updated to point to /usr/bin/logread.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/nslookup nslookup /usr/bin/nslookup.bb 10
+2014-10-10 03:44:03 update-alternatives: link group nslookup updated to point to /usr/bin/nslookup.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/openvt openvt /usr/bin/openvt.bb 10
+2014-10-10 03:44:03 update-alternatives: link group openvt updated to point to /usr/bin/openvt.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/rdate rdate /usr/bin/rdate.bb 10
+2014-10-10 03:44:03 update-alternatives: link group rdate updated to point to /usr/bin/rdate.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/realpath realpath /usr/bin/realpath.bb 10
+2014-10-10 03:44:03 update-alternatives: link group realpath updated to point to /usr/bin/realpath.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/strings strings /usr/bin/strings.bb 10
+2014-10-10 03:44:03 update-alternatives: link group strings updated to point to /usr/bin/strings.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/telnet telnet /usr/bin/telnet.bb 10
+2014-10-10 03:44:03 update-alternatives: link group telnet updated to point to /usr/bin/telnet.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/tftp tftp /usr/bin/tftp.bb 10
+2014-10-10 03:44:03 update-alternatives: link group tftp updated to point to /usr/bin/tftp.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/time time /usr/bin/time.bb 10
+2014-10-10 03:44:03 update-alternatives: link group time updated to point to /usr/bin/time.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/unix2dos unix2dos /usr/bin/unix2dos.bb 10
+2014-10-10 03:44:03 update-alternatives: link group unix2dos updated to point to /usr/bin/unix2dos.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/unzip unzip /usr/bin/unzip.bb 10
+2014-10-10 03:44:03 update-alternatives: link group unzip updated to point to /usr/bin/unzip.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/usleep usleep /usr/bin/usleep.bb 10
+2014-10-10 03:44:03 update-alternatives: link group usleep updated to point to /usr/bin/usleep.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/uudecode uudecode /usr/bin/uudecode.bb 10
+2014-10-10 03:44:03 update-alternatives: link group uudecode updated to point to /usr/bin/uudecode.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/uuencode uuencode /usr/bin/uuencode.bb 10
+2014-10-10 03:44:03 update-alternatives: link group uuencode updated to point to /usr/bin/uuencode.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/bin/wget wget /usr/bin/wget.bb 10
+2014-10-10 03:44:03 update-alternatives: link group wget updated to point to /usr/bin/wget.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/sbin/httpd httpd /usr/sbin/httpd.bb 10
+2014-10-10 03:44:03 update-alternatives: link group httpd updated to point to /usr/sbin/httpd.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/sbin/telnetd telnetd /usr/sbin/telnetd.bb 10
+2014-10-10 03:44:03 update-alternatives: link group telnetd updated to point to /usr/sbin/telnetd.bb
+2014-10-10 03:44:03 update-alternatives: run with --install /usr/sbin/watchdog watchdog /usr/sbin/watchdog.bb 10
+2014-10-10 03:44:03 update-alternatives: link group watchdog updated to point to /usr/sbin/watchdog.bb

@@ -1,0 +1,2 @@
+help: Show route and more specific routes
+run: vtysh -c "$*"

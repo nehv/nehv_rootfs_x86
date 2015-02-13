@@ -1,0 +1,13 @@
+99d0b6b93c6be5df82921958aa574088  lib/security/pam_radius_auth.so
+b02514a54b3981ec8d59a48b8a589c88  usr/share/doc/libpam-radius-auth/html/index.html
+a2419f0db9c98094864d0cde77306d7f  usr/share/doc/libpam-radius-auth/html/index.debian.html
+7eb0eac925e4e8f524646193a548eb8f  usr/share/doc/libpam-radius-auth/TODO
+175b3e85236426fa5550193593c44606  usr/share/doc/libpam-radius-auth/copyright
+e7c5d120e8575b61c5f7160e7f1dfa9a  usr/share/doc/libpam-radius-auth/examples/pam_radius_auth.conf
+e70a826bdfc0e758d7ba08baf500ae2a  usr/share/doc/libpam-radius-auth/examples/pam_example
+8c1fe42b57fffe3ccb6363297034d100  usr/share/doc/libpam-radius-auth/examples/INSTALL.gz
+352bfdbd14a0c515e1c2e340115eb27a  usr/share/doc/libpam-radius-auth/README.gz
+a370affc56d47701fd5de414a2762be1  usr/share/doc/libpam-radius-auth/README.Debian.gz
+d0ddb1659cfd309fb8e59e20ece38248  usr/share/doc/libpam-radius-auth/USAGE.gz
+b3d831e97fac3c4d6a02b7cace3071e6  usr/share/doc/libpam-radius-auth/changelog.Debian.gz
+5ff2b303acda8f2159e2580a198c30fb  usr/share/doc/libpam-radius-auth/changelog.gz

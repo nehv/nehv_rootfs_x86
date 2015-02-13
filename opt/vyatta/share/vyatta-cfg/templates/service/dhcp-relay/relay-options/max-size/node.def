@@ -1,0 +1,5 @@
+type:  u32 
+default:  576
+help: Maximum packet size to send to a DHCPv4/BOOTP server
+syntax:expression: $VAR(@) >= 64 && $VAR(@) <= 1400; "max-size must be a value between 64 and 1400"
+val_help: u32:64-1400; Maximum packet size

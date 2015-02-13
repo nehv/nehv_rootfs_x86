@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Remove vyatta generated crontab,
+# it will be re-created on config load if cron is configure,
+# otherwise it should not exist at all
+
+rm -f /etc/cron.d/vyatta-crontab

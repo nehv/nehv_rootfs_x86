@@ -1,0 +1,2 @@
+help: Monitor a vif
+run: bmon -p $4.*

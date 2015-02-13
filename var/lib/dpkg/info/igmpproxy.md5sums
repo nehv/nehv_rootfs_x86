@@ -1,0 +1,7 @@
+d88b8e100903901175f8c97e7874b1c9  sbin/igmpproxy
+53c95f4e98eb66c6f71356437fe85025  usr/share/doc/igmpproxy/NEWS.gz
+ff0483c00a2b7ed53f13d4ac6f8f159e  usr/share/doc/igmpproxy/README
+ae5730914164700bdc29a80827ad56bb  usr/share/doc/igmpproxy/changelog.Debian.gz
+ae5730914164700bdc29a80827ad56bb  usr/share/doc/igmpproxy/changelog.gz
+e1ce6c61cfcaddeaee28bfb4d5708a17  usr/share/doc/igmpproxy/copyright
+8524a2a8854bf10648fced1351574c2d  usr/share/lintian/overrides/igmpproxy

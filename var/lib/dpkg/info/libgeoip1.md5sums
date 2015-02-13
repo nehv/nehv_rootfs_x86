@@ -1,0 +1,15 @@
+9cb6f258ac307b2b2a8ebf35c6ef15fb  usr/lib/libGeoIP.so.1.4.7
+3ecc6cea5815d016c630e924b3b2c655  usr/lib/libGeoIPUpdate.so.0.0.0
+027febae8e88b922997cf12aeee52ff5  usr/share/doc/libgeoip1/AUTHORS
+284a001c770323fcefd226f35b1f93ee  usr/share/doc/libgeoip1/README.Debian
+ba06c98a1c346f1561abbe1adb032e79  usr/share/doc/libgeoip1/README.Debian-source
+f2a318f30d8c1008b038f94092ef384e  usr/share/doc/libgeoip1/README.gz
+859a0ecb663aff6f43b9d347b37ba21a  usr/share/doc/libgeoip1/TODO
+6df4a3ebc33ad5e76eb5bd85b510a30b  usr/share/doc/libgeoip1/changelog.Debian.gz
+e4a6cb6179b97fcd7ba954006401d688  usr/share/doc/libgeoip1/changelog.gz
+4ea64ebc7f804e9969d33728935b9557  usr/share/doc/libgeoip1/copyright
+2d5ca5c547b8cd862c01b7dc44086654  usr/share/doc/libgeoip1/examples/geoliteasnum.sh
+441e029ad4348c6a31b910cc27af5804  usr/share/doc/libgeoip1/examples/geolitecityupdate.sh
+aa7aee5bf60b73892747a86ed7e6b25d  usr/share/doc/libgeoip1/examples/geolitecountryv4.sh
+a7349160c07a27dc5f8e155cc3e15fa4  usr/share/doc/libgeoip1/examples/geolitecountryv6.sh
+5e4eaef4dea7c5a6461235528004bf32  usr/share/lintian/overrides/libgeoip1

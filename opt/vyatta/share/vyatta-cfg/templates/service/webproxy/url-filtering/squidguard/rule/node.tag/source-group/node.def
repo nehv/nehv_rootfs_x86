@@ -1,0 +1,8 @@
+type: txt
+
+help: Source-group for this rule [REQUIRED]
+
+allowed: cli-shell-api listActiveNodes \
+           service webproxy url-filtering squidguard source-group
+
+val_help: Source group for this rule

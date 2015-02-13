@@ -1,0 +1,21 @@
+tag:
+priority: 200
+type: txt
+help: Firewall port-group
+
+syntax:expression: pattern $VAR(@) "^[[:graph:]]{1,31}$" ; \
+       "Firewall group name must be 31 characters or less"
+
+syntax:expression: pattern $VAR(@) "^[^-]" ; \
+       "Firewall group name cannot start with \"-\""
+
+syntax:expression: pattern $VAR(@) "^[^!]" ; \
+       "Firewall group name cannot start with \"!\""
+
+syntax:expression: pattern $VAR(@) "^[^|;&$<>]*$" ; \
+       "Firewall group name cannot contain shell punctuation"
+
+end: if sudo /opt/vyatta/sbin/vyatta-ipset.pl --action=update-set \
+        --set-name="$VAR(@)" --set-type=port; then
+        ${vyatta_sbindir}/vyatta-firewall-trap.pl --level="firewall group port-group $VAR(@)"
+     fi

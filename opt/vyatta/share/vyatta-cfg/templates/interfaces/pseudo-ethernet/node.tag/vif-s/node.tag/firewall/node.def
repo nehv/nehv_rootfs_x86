@@ -1,0 +1,2 @@
+help: Firewall options
+end: ${vyatta_sbindir}/vyatta-firewall-trap.pl --level="interfaces pseudo-ethernet $VAR(../../../@) vif-s $VAR(../@) firewall"

@@ -1,0 +1,6 @@
+type: txt
+help: Execution interval
+val_help: <minutes>; Execution interval in minutes
+val_help: <minutes>m; Execution interval in minutes
+val_help: <hours>h; Execution interval in hours
+val_help: <days>d; Execution interval in days

@@ -1,0 +1,9 @@
+Document: sipcalc
+Title: Sipcalc Command Line Overview
+Author: Simon Ekstrand
+Abstract: This document describes the various command line
+ options of sipcalc in detail.
+Section: System/Administration
+
+Format: text
+Files: /usr/share/doc/sipcalc/sipcalc.txt.gz

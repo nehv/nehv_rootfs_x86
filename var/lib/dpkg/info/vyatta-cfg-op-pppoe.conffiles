@@ -1,0 +1,2 @@
+/etc/init.d/vyatta-pppoe
+/etc/ppp/ip-pre-up.d/0002rename-pppoe

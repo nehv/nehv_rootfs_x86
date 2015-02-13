@@ -1,0 +1,4 @@
+type: txt
+help: applied policy
+allowed: echo `cli-shell-api listActiveNodes system event-handler policy`
+val_help:txt; Name of applied policy

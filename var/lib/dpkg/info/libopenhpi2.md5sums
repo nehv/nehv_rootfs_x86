@@ -1,0 +1,16 @@
+41f5cf14386b8ad6d3c22205fa4519bb  usr/lib/libohtcpconnx.so.2.14.1
+5ed657af34b17e0d924c573cacb595f7  usr/lib/libohudpconnx.so.2.14.1
+b7d52d2e294d199e8e43f1508b30f55a  usr/lib/libopenhpi.so.2.14.1
+acb1724a2b95502275d16eefa8867d71  usr/lib/libopenhpi_ssl.so.2.14.1
+b817738bf691fccb4f4fa8367c70f3e1  usr/lib/libopenhpimarshal.so.2.14.1
+691fa707355448d9c917d65fb556ed2c  usr/lib/libopenhpiutils.so.2.14.1
+e7b3023a094ec556f9cb2d3fb827cdd5  usr/lib/openhpi/libosahpi.so.2.14.1
+282b53f37886efb0d2cf8b5f7cd53fbd  usr/lib/openhpi/libsimulator.so.2.14.1
+1a955d46f93f801bbbb0ee9d4e1a8b25  usr/lib/openhpi/libwatchdog.so.2.14.1
+5c6bc639cab1dcb62a75145c8fe2f09a  usr/share/doc/libopenhpi2/README
+5a65040a5843353bca0cc1c12900b8e1  usr/share/doc/libopenhpi2/README.Debian
+51b1ae30ee2c51df5b647379f8be0cd9  usr/share/doc/libopenhpi2/README.daemon.gz
+5f89f0b916eddf2b20b2d01a59831ce2  usr/share/doc/libopenhpi2/TODO.Debian
+6a494cf457cf6346c23fbf94f5158a4d  usr/share/doc/libopenhpi2/changelog.Debian.gz
+a25be62ee99558a5809b0b76599e5738  usr/share/doc/libopenhpi2/copyright
+09a05ae70e91c6418197281790526ad2  usr/share/man/man7/openhpi.7.gz

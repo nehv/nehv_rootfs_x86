@@ -1,0 +1,12 @@
+#
+# Warn about, but continue with, deprecated locations.
+#
+# Copyright (c) 2007 David Lee <t.d.lee@durham.ac.uk>
+#
+# GPL version 2 or later.
+#
+
+. /usr/lib/ocf/resource.d//heartbeat/.ocf-returncodes
+
+ha_log "WARN: Use of @hb_libdir@/ocf-returncodes is deprecated."
+ha_log "WARN: Please use /usr/lib/ocf/resource.d//heartbeat/.ocf-returncodes instead."

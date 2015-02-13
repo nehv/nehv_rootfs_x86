@@ -1,0 +1,9 @@
+ce2b2ba9058f4547c4bfebcb51b12c20  usr/lib/libipset.a
+c7e6da142ef1b468865d1506eafcf12e  usr/lib/libipset.la
+755b466fa9bcd94398d20dcebd1fef07  usr/lib/libipset.so.1.0.0
+9d7baca4b0a6c4337b1cf12ef1112bd2  usr/sbin/ipset
+03d219db49561118e1c5f229bde06f4c  usr/share/doc/ipset/README.Debian
+06c26a244316c02b9b9c23769e99ca57  usr/share/doc/ipset/changelog.Debian.gz
+4674b567886e002dc2302197c5c9c7d5  usr/share/doc/ipset/copyright
+1fc035d93e8972c0a80cc451ac5f913e  usr/share/lintian/overrides/ipset
+a99af3221ba73d1e8791db6d8a53f442  usr/share/man/man8/ipset.8.gz

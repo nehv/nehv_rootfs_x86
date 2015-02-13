@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# Author: Rick Balocca
+# Date: 2007
+# Description:
+
+xes="/opt/vyatta/bin/xes"
+install_only="/opt/vyatta/bin/install-only"
+remove_packages="/opt/vyatta/bin/remove-packages"
+
+# if full-upgrade succesful - revert to default policy before reboot
+revert_to_default_policy()
+{
+if [ -f /usr/sbin/policy-rc.d.orig ]
+ then
+  # Restore policy-rc.d file
+  mv /usr/sbin/policy-rc.d.orig /usr/sbin/policy-rc.d
+ else
+  # Remove policy-rc.d file
+  rm -f /usr/sbin/policy-rc.d
+fi
+}
+
+wait_for_reboot()
+{
+	echo Vyatta full-upgrade status - System is going to reboot shortly
+	sleep 10
+	echo Vyatta full-upgrade status - Rebooting system ...	
+	reboot
+	sleep 99999
+}
+
+case "$1" in
+-r)	
+	# then finish the upgrade in unattended mode
+	$xes $install_only && $xes $remove_packages
+	revert_to_default_policy
+	wait_for_reboot
+	;;
+-k)
+	# then finish the upgrade in unattended mode
+	$xes $install_only
+	revert_to_default_policy
+	wait_for_reboot
+	;;
+-i)
+	$install_only && $remove_packages
+	revert_to_default_policy
+	echo You need to reboot the system to complete the upgrade
+	echo -n "Reboot now? (Y/N) [Y]: "
+	read j
+	case "$j" in
+	y|Y|[yY][eE][sS]|"" )
+		wait_for_reboot
+        	;;
+	* )
+		exit
+		;;
+	esac
+	;;
+esac
+
+echo **** Upgrade terminated early
+echo **** run dpkg -l to determine
+echo **** the state of the packages
+echo **** on your system.
+exit 1

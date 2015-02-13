@@ -1,0 +1,208 @@
+Template: tzdata/Areas
+Type: select
+Choices: Africa, America, Antarctica, Australia, Arctic, Asia, Atlantic, Europe, Indian, Pacific, SystemV, US, Etc
+Choices-th.UTF-8: แอฟริกา, อเมริกา, แอนตาร์กติกา, ออสเตรเลีย, อาร์กติก, เอเชีย, แอตแลนติก, ยุโรป, มหาสมุทรอินเดีย, แปซิฟิก, SystemV, TH, อื่น ๆ
+Description: Geographic area:
+ Please select the geographic area in which you live. Subsequent
+ configuration questions will narrow this down by presenting a list of
+ cities, representing the time zones in which they are located.
+
+Template: tzdata/Zones/Africa
+Type: select
+Choices: Abidjan, Accra, Addis_Ababa, Algiers, Asmara, Bamako, Bangui, Banjul, Bissau, Blantyre, Brazzaville, Bujumbura, Cairo, Casablanca, Ceuta, Conakry, Dakar, Dar_es_Salaam, Djibouti, Douala, El_Aaiun, Freetown, Gaborone, Harare, Johannesburg, Juba, Kampala, Khartoum, Kigali, Kinshasa, Lagos, Libreville, Lome, Luanda, Lubumbashi, Lusaka, Malabo, Maputo, Maseru, Mbabane, Mogadishu, Monrovia, Nairobi, Ndjamena, Niamey, Nouakchott, Ouagadougou, Porto-Novo, Sao_Tome, Timbuktu, Tripoli, Tunis, Windhoek
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/America
+Type: select
+Choices: Adak, Anchorage, Anguilla, Antigua, Araguaina, Argentina/Buenos_Aires, Argentina/Catamarca, Argentina/Cordoba, Argentina/Jujuy, Argentina/La_Rioja, Argentina/Mendoza, Argentina/Rio_Gallegos, Argentina/Salta, Argentina/San_Juan, Argentina/San_Luis, Argentina/Tucuman, Argentina/Ushuaia, Aruba, Asuncion, Atikokan, Atka, Bahia, Bahia_Banderas, Barbados, Belem, Belize, Blanc-Sablon, Boa_Vista, Bogota, Boise, Cambridge_Bay, Campo_Grande, Cancun, Caracas, Cayenne, Cayman, Chicago, Chihuahua, Coral_Harbour, Costa_Rica, Creston, Cuiaba, Curacao, Danmarkshavn, Dawson, Dawson_Creek, Denver, Detroit, Dominica, Edmonton, Eirunepe, El_Salvador, Ensenada, Fortaleza, Glace_Bay, Godthab, Goose_Bay, Grand_Turk, Grenada, Guadeloupe, Guatemala, Guayaquil, Guyana, Halifax, Havana, Hermosillo, Indiana/Indianapolis, Indiana/Knox, Indiana/Marengo, Indiana/Petersburg, Indiana/Tell_City, Indiana/Vevay, Indiana/Vincennes, Indiana/Winamac, Inuvik, Iqaluit, Jamaica, Juneau, Kentucky/Louisville, Kentucky/Monticello, Kralendijk, La_Paz, Lima, Los_Angeles, Lower_Princes, Maceio, Managua, Manaus, Marigot, Martinique, Matamoros, Mazatlan, Menominee, Merida, Metlakatla, Mexico_City, Miquelon, Moncton, Monterrey, Montevideo, Montreal, Montserrat, Nassau, New_York, Nipigon, Nome, Noronha, North_Dakota/Beulah, North_Dakota/Center, North_Dakota/New_Salem, Ojinaga, Panama, Pangnirtung, Paramaribo, Phoenix, Port-au-Prince, Port_of_Spain, Porto_Acre, Porto_Velho, Puerto_Rico, Rainy_River, Rankin_Inlet, Recife, Regina, Resolute, Rio_Branco, Santa_Isabel, Santarem, Santiago, Santo_Domingo, Sao_Paulo, Scoresbysund, Shiprock, Sitka, St_Barthelemy, St_Johns, St_Kitts, St_Lucia, St_Thomas, St_Vincent, Swift_Current, Tegucigalpa, Thule, Thunder_Bay, Tijuana, Toronto, Tortola, Vancouver, Virgin, Whitehorse, Winnipeg, Yakutat, Yellowknife
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Antarctica
+Type: select
+Choices: Casey, Davis, DumontDUrville, Macquarie, Mawson, McMurdo, Palmer, Rothera, Syowa, Troll, Vostok
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Australia
+Type: select
+Choices: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord_Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-be.UTF-8: Адэлаіда, Брызбан, Броўкэн-Хіл, Канберра, Кур'е, Дарвін, Эўкла, Хобарт, Ліндаман, Лорд-Хоў, Мэльбурн, Пэрт, Сіднэй, Янкавіна
+Choices-bg.UTF-8: Аделаида, Бризбейн, Броукън Хил, Канбера, Кюри, Дарвин, Еукла, Хобарт, Линдеман, о-в Лорд Хоу, Мелбърн, Пърт, Сидни, Янковина
+Choices-ca.UTF-8: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-cs.UTF-8: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Ostrov lorda Howea, Melbourne, Perth, Sydney, Yancowinna
+Choices-da.UTF-8: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-de.UTF-8: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-en.UTF-8: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-es.UTF-8: Adelaida, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sídney, Yancowinna
+Choices-eu.UTF-8: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord_Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-fi.UTF-8: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-fr.UTF-8: Adelaïde, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Île Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-gl.UTF-8: Adelaide, Brisbane, Broken Hill, Camberra, Currie, Darwin, Eucla, Hobart, Lindeman, Illa de Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-gu.UTF-8: એડેલેઇડ, બ્રિસબેન, બ્રોકન હિલ, કેનબેરા, કુરી, ડાર્વિન, ઇયુક્લા, હોબાર્ટ, લિન્ડેમેન, લોર્ડ હોવે, મેલબોર્ન, પર્થ, સિડની, યાન્કોવિન્ના
+Choices-hr.UTF-8: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord_Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-hu.UTF-8: Adelaide, Brisbane, Törött Domb, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe-sziget, Melbourne, Perth, Sydney, Yancowinna
+Choices-id.UTF-8: Adelaide, Brisbane, Broken_Hill, Canbera, Currie, Darwin, Eucla, Hobart, Lindeman, Pulau_Lord_Howe, Melbourne, Perth, Sydney, Yancowina
+Choices-ja.UTF-8: アデレード, ブリスベーン, ブロークンヒル, キャンベラ, カリー, ダーウィン, ユークラ, ホーバート, リンデマン, ロードハウ島, メルボルン, パース, シドニー, Yancowinna
+Choices-ku.UTF-8: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord_Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-lt.UTF-8: Adelaidė, Brisbenas, Broken_Hilas, Kanbera, Keris, Darvinas, Jukla, Hobartas, Lindemanas, Lordo_Houvo_sala, Melburnas, Pertas, Sidnis, Jankovina
+Choices-ml.UTF-8: അഡലൈഡ്, ബ്രിസ്ബേന്‍, ബ്രോക്കണ്‍_ഹില്‍, കാന്‍ബറ, ക്യൂറി, ഡാര്‍വിന്‍, യൂക്‍ള, ഹോബാര്‍ട്ട്, ലിന്‍ഡെമാന്‍, ലോര്‍ഡ്_ഹോവ്, മെല്ബണ്‍, പെര്‍ത്ത്, സിഡ്നി, യാങ്കോവിന്ന
+Choices-nl.UTF-8: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord_Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-pt.UTF-8: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-pt_BR.UTF-8: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord_Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-ru.UTF-8: Аделаида, Брисбен, Брокен-Хилл, Канберра, Керри, Дарвин, Юкла, Хобарт, Линдеман, Лорд-Хау, Мельбурн, Перт, Сидней, Янковинна
+Choices-sk.UTF-8: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Ostrov lorda Howa, Melbourne, Perth, Sydney, Yancowinna
+Choices-sq.UTF-8: Adelaide, Brisbane, Broken_Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord_Howe, Melbourne, Perth, Sydney, Yancowinna
+Choices-sv.UTF-8: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howeön, Melbourne, Perth, Sydney, Yancowinna
+Choices-tr.UTF-8: Adelaide, Brisbane, Broken Hill, Kanbera, Currie, Darwin, Eukla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sidney, Yankovina
+Choices-vi.UTF-8: Adelaide (Nam), Brisbane (Bắc Đông), Broken Hill (ở sâu trong), Canberra (thủ đô), Currie, Darwin (Bắc), Eucla, Hobart (Đảo hướng Nam Đông), Lindeman (Các đảo nghỉ Bắc Đông), Lord Howe Island (Đảo hướng Đông), Melbourne (Nam Đông), Perth (Tây), Sydney (Đông), Yancowinna
+Choices-wo.UTF-8: Adelaide (Australie du Sud), Brisbane (Queensland - cas général), Broken Hill (Nouvelles-Galles du Sud - Yancowinna), Canberra, Currie, Darwin (territoire du Nord), Eucla, Hobart (Tasmanie), Lindeman (Queensland - îles Holiday), Île Lord Howe, Melbourne (Victoria), Perth (Australie de l'Ouest), Sydney (Nouvelles-Galles du Sud - cas général), Yancowinna
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Arctic
+Type: select
+Choices: Longyearbyen
+Choices-be.UTF-8: Лонг'ерб'ен
+Choices-bg.UTF-8: Лонгиърбйен
+Choices-ca.UTF-8: Longyearbyen
+Choices-cs.UTF-8: Longyearbyen
+Choices-da.UTF-8: Longyearbyen
+Choices-de.UTF-8: Longyearbyen
+Choices-en.UTF-8: Longyearbyen
+Choices-es.UTF-8: Longyearbyen
+Choices-eu.UTF-8: Longyearbyen
+Choices-fi.UTF-8: Longyearbyen
+Choices-fr.UTF-8: Longyearbyen
+Choices-gl.UTF-8: Longyearbyen
+Choices-gu.UTF-8: લોન્ગયરબયેન
+Choices-hr.UTF-8: Longyearbyen
+Choices-hu.UTF-8: Longyearbyen
+Choices-id.UTF-8: Longyearbyen
+Choices-ja.UTF-8: ロングイールビュアン
+Choices-ku.UTF-8: Longyearbyen
+Choices-lt.UTF-8: Longjyras
+Choices-ml.UTF-8: ലോങിയര്‍ബയന്‍
+Choices-nl.UTF-8: Longyearbyen
+Choices-pt.UTF-8: Longyearbyen
+Choices-pt_BR.UTF-8: Longyearbyen
+Choices-ru.UTF-8: Лонгийир
+Choices-sk.UTF-8: Longyearbyen
+Choices-sq.UTF-8: Longyearbyen
+Choices-sv.UTF-8: Longyearbyen
+Choices-th.UTF-8: ลองเยียร์เบียน
+Choices-tr.UTF-8: Longyearbyen
+Choices-vi.UTF-8: Longyearbyen
+Choices-wo.UTF-8: Longyearbyen
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Asia
+Type: select
+Choices: Aden, Almaty, Amman, Anadyr, Aqtau, Aqtobe, Ashgabat, Baghdad, Bahrain, Baku, Bangkok, Beirut, Bishkek, Brunei, Choibalsan, Chongqing, Colombo, Damascus, Dhaka, Dili, Dubai, Dushanbe, Gaza, Harbin, Hebron, Ho_Chi_Minh, Hong_Kong, Hovd, Irkutsk, Istanbul, Jakarta, Jayapura, Jerusalem, Kabul, Kamchatka, Karachi, Kashgar, Kathmandu, Khandyga, Kolkata, Krasnoyarsk, Kuala_Lumpur, Kuching, Kuwait, Macau, Magadan, Makassar, Manila, Muscat, Nicosia, Novokuznetsk, Novosibirsk, Omsk, Oral, Phnom_Penh, Pontianak, Pyongyang, Qatar, Qyzylorda, Rangoon, Riyadh, Sakhalin, Samarkand, Seoul, Shanghai, Singapore, Taipei, Tashkent, Tbilisi, Tehran, Tel_Aviv, Thimphu, Tokyo, Ujung_Pandang, Ulaanbaatar, Urumqi, Ust-Nera, Vientiane, Vladivostok, Yakutsk, Yekaterinburg, Yerevan
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Atlantic
+Type: select
+Choices: Azores, Bermuda, Canary, Cape_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, South_Georgia, St_Helena, Stanley
+Choices-be.UTF-8: Азоры, Бермуды, Канары, Капа-Вэрда, Фароэ, Ян-Маен, Мадэра, Рэйк'явік, Паўднёвая Джорджыя, Востраў Св. Алены, Стэнлі
+Choices-bg.UTF-8: Азорски о-ви, Бермуди, Канарски о-ви, Кабо Верде, Фарьорски о-ви, Ян Майен, Мадейра, Рейкявик, Южна Джорджия, Сейнт Хелена, Стенли
+Choices-ca.UTF-8: Açores, Bermudes, Canàries, Cap Verd, Fèroe, Jan Mayen, Madeira, Reykjavík, Georgia del Sud, St Helena, Stanley
+Choices-cs.UTF-8: Azory, Bermudy, Kanárské ostrovy, Kapverdy, Faerské ostrovy, Jan Mayen, Madeira, Rejkjavík, Jižní Georgie, Svatá Helena, Stanley
+Choices-da.UTF-8: Azores, Bermuda, Canary, Cape Verde, Faroe, Jan Mayen, Madeira, Reykjavik, South Georgia, Sankt Helena, Stanley
+Choices-de.UTF-8: Azoren, Bermuda, Kanaren, Kap Verde, Farör, Jan Mayen, Madeira, Reykjavík, South Georgia, St Helena, Stanley
+Choices-en.UTF-8: Azores, Bermuda, Canary, Cape Verde, Faroe, Jan Mayen, Madeira, Reykjavik, South Georgia, St. Helena, Stanley
+Choices-es.UTF-8: Azores, Bermudas, Canarias, Cabo Verde, Feroe, Jan Mayen, Madeira, Reikiavik, Georgia del Sur, Santa Elena, Stanley
+Choices-eu.UTF-8: Azores, Bermuda, Kanariak, Cape_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, Hego_Georgia, St_Helena, Stanley
+Choices-fi.UTF-8: Azorit, Bermuda, Kanariansaaret, Kap Verde, Färsaaret, Jan Mayen, Madeira, Reykjavík, Etelä-Georgia, St Helena, Stanley
+Choices-fr.UTF-8: Açores, Bermudes, Canaries, Cap-Vert, Faroe, Jan Mayen, Madère, Reykjavik, Géorgie du Sud, Sainte-Hélène, Stanley
+Choices-gl.UTF-8: Illas Azores, Illas Bermudas, Illas Canarias, Cabo Verde, Illas Faroes, Jan Mayen, Madeira, Reykjavik, Xeorxia do Sul, Santa Helena, Stanley
+Choices-gu.UTF-8: અઝોરેસ, બર્મુડા, કેનેરી, કેપ વર્દે, ફેરો, જાન માયેન, મેડેઇરા, રીકજાવિક, દક્ષિણ જર્યોજીઆ, સેન્ટ હેલેના, સ્ટેન્લી
+Choices-hr.UTF-8: Azori, Bermuda, Kanarski_otoci, Zelenortski_otoci, Farski_otoci, Jan_Mayen, Madeira, Reykjavik, South_Georgia, St_Helena, Stanley
+Choices-hu.UTF-8: Azori-szigetek, Bermuda, Canary, Cape_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, Dél_Georgia, St_Helena, Stanley
+Choices-id.UTF-8: Azores, Bermuda, Kanari, Teluk_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, Georgia_Selatan, Saint_Helena, Stanley
+Choices-ja.UTF-8: アゾレス, バーミューダ, カナリヤ, ケープヴェルデ, フェロー諸島, ヤンマイエン, マデイラ, レイキャヴィク, サウスジョージア, セントヘレナ, スタンリー
+Choices-ku.UTF-8: Azores, Bermuda, Canary, Cape_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, South_Georgia, St_Helena, Stanley
+Choices-lt.UTF-8: Azorų_salos, Bermudai, Kanarai, Žaliasis_Kyšulys, Farerų_salos, Jan_Maienas, Maderas, Reikjavikas, Pietų_Džordžija, Šventos_Elenos_sala, Stenlis
+Choices-ml.UTF-8: അസോറെസ്, ബെര്‍മുഡ, കാനറി, കേപ്_വിര്‍ഡേ, ഫറവോ, ജന്‍_മായെന്‍, മഡെയ്‌ര, റെയ്ക്ജാവിക്, തെക്കന്‍_ജോര്‍ജിയ, സെയിന്റ്_ഹെലെന, സ്റ്റാന്‍ലി
+Choices-nl.UTF-8: Azoren, Bermuda, Canaria, Kaapverdië, Faroe, Jan_Mayen, Madeira, Reykjavik, Zuid_Georgia, St_Helena, Stanley
+Choices-pt.UTF-8: Açores, Bermudas, Canárias, Cabo Verde, Faroe, Jan Mayen, Madeira, Reiquejavique, Geórgia do Sul, Santa Helena, Stanley
+Choices-pt_BR.UTF-8: A??ores, Bermuda, Can??rias, Cabo_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, Ge??rgia do Sul, St_Helena, Stanley
+Choices-ru.UTF-8: Азорские острова, Бермуды, Канары, Кабо-Верде, Фарерские острова, Ян-Майен, Мадейра, Рейкьявик, Южная Георгия, Остров Святой Елены, Стенли
+Choices-sk.UTF-8: Azory, Bermudy, Kanárske ostrovy, Kapverdy, Faerské ostrovy, Jan Mayen, Madeira, Reykjavík, Južná Georgia, Svätá Helena, Stanley
+Choices-sq.UTF-8: Azores, Bermuda, Canary, Cape_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, South_Georgia, St_Helena, Stanley
+Choices-sv.UTF-8: Azorerna, Bermuda, Kanarieöarna, Kap Verde, Färöarna, Jan Mayen, Madeira, Reykjavik, Sydgeorgien, Sankta Helena, Stanley
+Choices-tr.UTF-8: Azorlar, Bermuda, Kanarya, Yeşilburun, Faro, Jan Mayen, Madeyra, Reykavik, Güney Gürcistan, Sen Helen, Stanley
+Choices-vi.UTF-8: Azores, Be-mu-đa, Canary, Cape_Verde, Faroe, Jan_Mayen, Madeira, Reykjavik, South_Georgia, St_Helena, Stanley
+Choices-wo.UTF-8: Asoor, Bermuuda, Kanari, Kap_Weer, Faroe, Jan_Mayen, Madeira, Rekyaavik, South_Georgia, St_Helena, Stanley
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Europe
+Type: select
+Choices: Amsterdam, Andorra, Athens, Belfast, Belgrade, Berlin, Bratislava, Brussels, Bucharest, Budapest, Busingen, Chisinau, Copenhagen, Dublin, Gibraltar, Guernsey, Helsinki, Isle_of_Man, Istanbul, Jersey, Kaliningrad, Kiev, Lisbon, Ljubljana, London, Luxembourg, Madrid, Malta, Mariehamn, Minsk, Monaco, Moscow, Nicosia, Oslo, Paris, Podgorica, Prague, Riga, Rome, Samara, San_Marino, Sarajevo, Simferopol, Skopje, Sofia, Stockholm, Tallinn, Tirane, Tiraspol, Uzhgorod, Vaduz, Vatican, Vienna, Vilnius, Volgograd, Warsaw, Zagreb, Zaporozhye, Zurich
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Indian
+Type: select
+Choices: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+Choices-be.UTF-8: Антананарыву, Чагас, Востраў Раства, Какосавыя астравы, Каморы, Кэргелен, Магэ, Мальдывы, Маўрыцы, Маёт, Рэюньён
+Choices-bg.UTF-8: Антананариво, Чагос, о-в Рождество, о-ви Кокос, Коморски о-ви, Кергуелен, Махе, Малдивски о-ви, Мавриций, Майоте, Реюнион
+Choices-ca.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+Choices-cs.UTF-8: Antananarivo, Čagoské ostrovy, Vánoční ostrov, Kokosové ostrovy, Komory, Kergueleny, Mahé, Maldivy, Mauritius, Mayotte, Reunion
+Choices-da.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldiverne, Mauritius, Mayotte, Reunion
+Choices-de.UTF-8: Antananarivo, Chagos, Christmas, Kokos, Comoro, Kerguelen, Mahe, Malidiven, Mauritius, Mayotte, Réunion
+Choices-en.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+Choices-es.UTF-8: Antananarivo, Chagos, Isla de Navidad, Cocos, Comoro, Kerguelen, Mahe, Maldivas, Mauricio, Mayotte, Reunión
+Choices-eu.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldivak, Maurizio, Mayotte, Reunion
+Choices-fi.UTF-8: Antananarivo, Chagos, Joulusaari, Kookossaaret, Comoro, Kerguelen, Mahé, Malediivit, Mauritius, Mayotte, Réunion
+Choices-fr.UTF-8: Tananarive, Chagos, Christmas (île), Cocos (îles), Comores, Kerguelen, Mahé, Maldives, Île Maurice, Mayotte, Réunion
+Choices-gl.UTF-8: Antananarivo, Chagos, Illa de Nadal, Illas Cocos, Illas Comores, Kerguelen, Mahe, Illas Maldivas, Mauricio, Mayotte, Illa de Reunión
+Choices-gu.UTF-8: એન્ટાનાનારીવો, ચાગોસ, ક્રિસમસ, કોકોસ, કોમોરો, કેર્ગુએલેન, માહે, માલદિવ, મોરિશિઅસ, માયોટ્ટે, રીયુનિયન
+Choices-hr.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldivi, Mauricijus, Mayotte, Reunion
+Choices-hu.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldív-szigetek, Mauritius, Mayotte, Reunion
+Choices-id.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+Choices-ja.UTF-8: アンタナナリヴォ, チャゴス, クリスマス, ココス, コモロ, ケルゲレン, マエ, モルジヴ, モーリシャス, マヨット, レユニオン
+Choices-ku.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+Choices-lt.UTF-8: Antananaryvas, Čagoso_archipelagas, Velykų_sala, Kokoso_salos, Komoro_salos, Ketgeleno_sala, Mahė, Maldyvai, Mauricijus, Mayoteas, Reunionas
+Choices-ml.UTF-8: അന്റനാനാറിവോ, ചാഗോസ്, ക്രിസ്തുമസ്, കൊകോസ്, കൊമോറോ, കെര്‍ഗുവേലന്‍, മാഹി, മാലിദ്വീപ്, മൌറീഷ്യസ്, മയോട്ടേ, റീയൂണിയന്‍
+Choices-nl.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldiven, Mauritius, Mayotte, Reunion
+Choices-pt.UTF-8: Antananarivo, Chagos, Ilha Natal, Cocos, Comoro, Kerguelen, Mahe, Maldivas, Maurício, Mayotte, Ilha Reunião
+Choices-pt_BR.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+Choices-ru.UTF-8: Антананариву, Чагос, Остров Рождества, Кокосовые острова, Коморские острова, Кергелен, Маэ, Мальдивы, Маврикий, Майотта, Реюньон
+Choices-sk.UTF-8: Antananarivo, Čagoské ostrovy, Vianočný ostrov, Kokosové ostrovy, Komorské ostrovy, Kergueleny, Mahé, Maldivy, Maurícius, Mayotte, Réunion
+Choices-sq.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+Choices-sv.UTF-8: Antananarivo, Chagosöarna, Christmas Island, Cocosöarna, Komorerna, Kerguelenöarna, Mahé, Maldiverna, Mauritius, Mayotte, Réunion
+Choices-tr.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Komoro, Kerguelen, Mahe, Maldivler, Mauritius, Mayotte, Reunion
+Choices-vi.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+Choices-wo.UTF-8: Antananarivo, Chagos, Christmas, Cocos, Komoor, Kerguelen, Mahe, Maldiif, Mooris, Mayot, Reunion
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Pacific
+Type: select
+Choices: Apia, Auckland, Chatham, Chuuk, Easter, Efate, Enderbury, Fakaofo, Fiji, Funafuti, Galapagos, Gambier, Guadalcanal, Guam, Honolulu, Johnston, Kiritimati, Kosrae, Kwajalein, Majuro, Marquesas, Midway, Nauru, Niue, Norfolk, Noumea, Pago_Pago, Palau, Pitcairn, Pohnpei, Ponape, Port_Moresby, Rarotonga, Saipan, Samoa, Tahiti, Tarawa, Tongatapu, Truk, Wake, Wallis, Yap
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/SystemV
+Type: select
+Choices: AST4, AST4ADT, CST6, CST6CDT, EST5, EST5EDT, HST10, MST7, MST7MDT, PST8, PST8PDT, YST9, YST9YDT
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/US
+Type: select
+Choices: Alaska, Aleutian, Arizona, Central, Eastern, Hawaii, Indiana-Starke, Michigan, Mountain, Pacific, Pacific-New, Samoa
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+
+Template: tzdata/Zones/Etc
+Type: select
+Choices: GMT, GMT+0, GMT+1, GMT+10, GMT+11, GMT+12, GMT+2, GMT+3, GMT+4, GMT+5, GMT+6, GMT+7, GMT+8, GMT+9, GMT-0, GMT-1, GMT-10, GMT-11, GMT-12, GMT-13, GMT-14, GMT-2, GMT-3, GMT-4, GMT-5, GMT-6, GMT-7, GMT-8, GMT-9, GMT0, Greenwich, UCT, UTC, Universal, Zulu
+Description: Time zone:
+ Please select the city or region corresponding to your time zone.
+

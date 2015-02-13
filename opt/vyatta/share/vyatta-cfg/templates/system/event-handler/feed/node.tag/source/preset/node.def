@@ -1,0 +1,34 @@
+type:  txt 
+allowed: echo "syslog"
+help: Preset values
+val_help: syslog; Use syslog to detect events
+update:	case $VAR(@) in
+	   syslog)
+
+       	      if [ ! -e /var/log/syslog.pipe ]; then
+	      	 sudo mkfifo /var/log/syslog.pipe
+	      fi
+       	      if [ -e /etc/rsyslog.d/eventwatch-log.conf ]; then
+	      	 sudo sed -i -e '/syslog.pipe/d' /etc/rsyslog.d/eventwatch-log.conf
+		 cp /etc/rsyslog.d/eventwatch-log.conf /tmp/
+	      fi
+	      echo "*.notice;local7.debug |/var/log/syslog.pipe" >> /tmp/eventwatch-log.conf
+	      sudo cp /tmp/eventwatch-log.conf /etc/rsyslog.d/
+	      sudo /etc/init.d/rsyslog restart 2>&1 > /dev/null
+	      ;;
+	   *)
+	      echo "Error, Undefined preset value"
+	      exit 1;;
+	 esac
+
+delete:	case $VAR(@) in
+	   syslog)
+       	      sudo sed -i -e '/syslog.pipe/d' /etc/rsyslog.d/eventwatch-log.conf
+	      sudo /etc/init.d/rsyslog restart 2>&1 > /dev/null
+	      sudo rm -f /var/log/syslog.pipe
+	      ;;
+	   *)
+	      echo "Error, Undefined preset value"
+	      exit 1;;
+	 esac
+

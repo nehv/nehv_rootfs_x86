@@ -1,0 +1,33 @@
+Format-Specification:
+    http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=196
+Upstream-Maintainer: Ed Avis
+Upstream-Source: http://search.cpan.org/dist/Sort-Versions/
+Upstream-Name: Sort-Versions
+
+Files: *
+Copyright: © 1996-2003, Kenneth J. Albanowski, Ed Avis, and Matt Johnson
+License-Alias: Perl
+License: Artistic | GPL-1+
+X-Comment: Years of copyright taken from `Versions.pm' and `Changes'
+
+Files: debian/*
+Copyright:
+ © 2002-2003, Kenneth J. Pronovici <pronovic@debian.org>
+ © 2005,      Florian Ernst <florian@debian.org>
+ © 2006,      Florian Ragwitz <rafl@debian.org>
+ © 2009,      Ansgar Burchardt <ansgar@43-1.org>
+License: Artistic | GPL-1+
+
+License: Artistic
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the Artistic License, which comes with Perl.
+    On Debian GNU/Linux systems, the complete text of the Artistic License
+    can be found in `/usr/share/common-licenses/Artistic'
+
+License: GPL-1+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 1, or (at your option)
+    any later version.
+    On Debian GNU/Linux systems, the complete text of the GNU General
+    Public License can be found in `/usr/share/common-licenses/GPL'

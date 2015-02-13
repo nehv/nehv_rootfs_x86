@@ -1,0 +1,8 @@
+4b4ccc3c998d7f3e82db7e42718eedf5  sbin/netplugd
+e651f25ce9b5689b499dee6234b1c0a5  usr/share/doc/netplug/NEWS.gz
+1d6e4a583a92ceb30a381482881d3933  usr/share/doc/netplug/README
+28e8fc201f48ee066a80e236c98e23b7  usr/share/doc/netplug/TODO
+e8923b54efd874de8e1da74264876399  usr/share/doc/netplug/changelog.Debian.gz
+28729e7fe6dacb883ad42fec5e2686e9  usr/share/doc/netplug/changelog.gz
+2de8713b648fcddc97a2b39dbf4994f5  usr/share/doc/netplug/copyright
+732a86bfa4018388dd4dd99e89652d4a  usr/share/man/man8/netplugd.8.gz

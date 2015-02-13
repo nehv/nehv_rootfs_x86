@@ -1,0 +1,3 @@
+help: Monitor specified vrrp interface
+allowed: ${vyatta_bindir}/vyatta-show-interfaces.pl --vrrp --action=allowed
+run: bmon -p $4

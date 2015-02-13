@@ -1,0 +1,4 @@
+tag:
+type: ipv4net
+help: BGP aggregate network
+syntax:expression: exec "${vyatta_sbindir}/check_prefix_boundary $VAR(@)"

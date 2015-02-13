@@ -1,0 +1,9 @@
+help: LLDP settings
+
+priority: 985
+
+end: if [ ${COMMIT_ACTION} = 'DELETE' ]; then
+        sudo /opt/vyatta/sbin/vyatta-config-lldp.pl --action=disable 
+     else
+        sudo /opt/vyatta/sbin/vyatta-config-lldp.pl --action=enable 
+     fi;

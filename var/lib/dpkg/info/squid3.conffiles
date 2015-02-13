@@ -1,0 +1,6 @@
+/etc/logrotate.d/squid3
+/etc/init.d/squid3
+/etc/resolvconf/update-libc.d/squid3
+/etc/squid3/msntauth.conf
+/etc/squid3/squid.conf
+/etc/squid3/errorpage.css

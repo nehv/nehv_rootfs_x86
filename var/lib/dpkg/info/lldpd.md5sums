@@ -1,0 +1,11 @@
+94301e5011b20d58ba89ae240d936410  usr/sbin/lldpctl
+428faec530bce790c610eb1cf62e1a7f  usr/sbin/lldpd
+3494def47bd974762f4d2a0c0994712d  usr/share/doc/lldpd/CHANGELOG.gz
+a55b5184351753f0a5c69d8e9f10462e  usr/share/doc/lldpd/README.Debian
+9763e0306ac7059fa05578e0d400cde0  usr/share/doc/lldpd/README.md.gz
+798ccf34fb047afc81b76ac12a1e5e80  usr/share/doc/lldpd/changelog.Debian.gz
+798ccf34fb047afc81b76ac12a1e5e80  usr/share/doc/lldpd/changelog.gz
+682adc2b164a1abb485bf5045402a2ea  usr/share/doc/lldpd/copyright
+29cc739c612409a4251a4aad4e81e76b  usr/share/lintian/overrides/lldpd
+deb0ae7f61a2de4ceafcc5cf9a8ed144  usr/share/man/man8/lldpctl.8.gz
+7bda5e7b69f74d9ac90fbb4a9941f369  usr/share/man/man8/lldpd.8.gz

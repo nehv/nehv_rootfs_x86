@@ -1,0 +1,13 @@
+openssl-blacklist for Debian
+----------------------------
+
+This package contains a set of default OpenSSL keys that were known to
+have been generated during the time when the Debian OpenSSL package had a
+broken Random Number Generator.
+
+The source package contains the full fingerprint of the moduli of the
+vulnerable keys in the blacklists/ directory. The installed package uses a
+partial fingerprint for identifying the keys by stripping off the first 20
+bytes of the checksum.
+
+ -- Jamie Strandboge <jamie@ubuntu.com>  Fri, 12 May 2008 15:44:32 -0400

@@ -1,0 +1,10 @@
+d3cc53c428aac05517df142962f769ee  usr/share/jnettop/jnettop-lookup-nmb
+62aab2aa7b6b1c766f1214d0d5ec2e4d  usr/share/man/man8/jnettop.8.gz
+675ea2bfde8e8eca2b01c3f23023c90f  usr/share/doc/jnettop/dot.jnettop
+fc8efd7da801671e85cc07899faef7bb  usr/share/doc/jnettop/copyright
+f1c0366bb6c80f57f8d6a32d2a4f3825  usr/share/doc/jnettop/NEWS.gz
+be695f0ee46347dc688f6fbcaa817d42  usr/share/doc/jnettop/README.gz
+40423ce3e0fe39b3b88224558b45225b  usr/share/doc/jnettop/changelog.Debian.gz
+e197ab45f8eeb581a0f84c9cd0010159  usr/share/doc/jnettop/changelog.gz
+bd3ec67e70f952925ccc6bacf850d7d4  usr/share/menu/jnettop
+54c21905be9b32d97f793e72bd82cdca  usr/sbin/jnettop

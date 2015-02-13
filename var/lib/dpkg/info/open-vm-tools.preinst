@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installmodules
+if [ "$1" = install ] || [ "$1" = upgrade ]; then
+	if [ -e "/etc/modprobe.d/open-vm-tools" ]; then
+		if [ "`md5sum \"/etc/modprobe.d/open-vm-tools\" | sed -e \"s/ .*//\"`" = \
+		     "`dpkg-query -W -f='${Conffiles}' open-vm-tools | sed -n -e \"\\\\' /etc/modprobe.d/open-vm-tools '{s/ obsolete$//;s/.* //p}\"`" ]
+		then
+			rm -f "/etc/modprobe.d/open-vm-tools"
+		fi
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installudev
+if [ "$1" = install ] || [ "$1" = upgrade ]; then
+	if [ -e "/etc/udev/rules.d/z60_open-vm-tools.rules" ]; then
+		if [ "`md5sum \"/etc/udev/rules.d/z60_open-vm-tools.rules\" | sed -e \"s/ .*//\"`" = \
+		     "`dpkg-query -W -f='${Conffiles}' open-vm-tools | sed -n -e \"\\\\' /etc/udev/rules.d/z60_open-vm-tools.rules '{s/ obsolete$//;s/.* //p}\"`" ]
+		then
+			rm -f "/etc/udev/rules.d/z60_open-vm-tools.rules"
+		fi
+	fi
+fi
+# End automatically added section

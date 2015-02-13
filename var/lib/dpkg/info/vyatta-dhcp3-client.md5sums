@@ -1,0 +1,11 @@
+0f274a6e0ace8c9e64b96b5ea472135f  sbin/dhclient-script
+b960f6895db3374447146d0895126cee  sbin/dhclient3
+fd1cb0f6dba9bf9562bdb09ceafbe5bc  usr/share/doc/vyatta-dhcp3-client/README.Debian
+f8ab83cca3a3f9a9d7074e27de3202e8  usr/share/doc/vyatta-dhcp3-client/changelog.gz
+4590d5cb4bb15238a47a56e387cc67c2  usr/share/doc/vyatta-dhcp3-client/copyright
+ed19e14c387f786dd35353b5180a5e23  usr/share/doc/vyatta-dhcp3-client/dhcp-on-linux.txt
+61151d03eee95ba203887fd1e9a8dfe2  usr/share/lintian/overrides/vyatta-dhcp3-client
+3c63844de40c9d3dcfb1caa3c4102594  usr/share/man/man5/dhclient.conf.5.gz
+878e2aed992fd7a1baefb687e7a63de7  usr/share/man/man5/dhclient.leases.5.gz
+6044a9a0a3544e6b59e5ace1890c89de  usr/share/man/man8/dhclient-script.8.gz
+1962ea49932dfd7fca029ce24e912e49  usr/share/man/man8/dhclient3.8.gz

@@ -1,0 +1,48 @@
+#!/bin/bash -e
+
+prefix=/opt/vyatta
+exec_prefix=${prefix}
+sysconfdir=${prefix}/etc
+sbindir=${exec_prefix}/sbin
+
+for dir in $sysconfdir/config $prefix/config; do
+  if [ -d "$dir" ]; then
+    # already exists
+    chmod 2775 $dir
+  else
+    # create it
+    mkdir -m 2775 -p $dir
+  fi
+  chgrp vyattacfg $dir 2>/dev/null
+done
+
+update-rc.d vyatta-router defaults 90 >/dev/null
+
+if [ "$sysconfdir" != "/etc" ]; then
+  # remove the config files and replace with blank ones
+  for conf in dhcp3/dhclient.conf 
+  do
+    [ -f /etc/$conf ] && mv -f /etc/$conf /etc/$conf.vyatta-save
+    touch /etc/$conf
+  done
+fi
+
+# capability stuff
+for bin in my_cli_bin my_cli_shell_api; do
+  touch -ac $sbindir/$bin
+  setcap cap_sys_admin=pe $sbindir/$bin
+done
+
+# commit hooks
+for hook in PreCommit PostCommit; do
+  d=$(cli-shell-api get${hook}HookDir)
+  if [ -n "$d" ] && [ ! -e "$d" ]; then
+    mkdir -p "$d"
+  fi
+done
+
+# handle renamed file (not automatically deleted since it was "conffile")
+rm -f /etc/bash_completion.d/20vyatta-cfg
+
+# create symlink for post commit hook
+ln -sf /opt/vyatta/sbin/vyatta-log-commit.pl /etc/commit/post-hooks.d/10vyatta-log-commit.pl

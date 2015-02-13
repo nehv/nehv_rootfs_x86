@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/strongswan-ikev1
+/usr/share/doc/strongswan-ikev1/NEWS.Debian.gz
+/usr/share/doc/strongswan-ikev1/copyright
+/usr/share/doc/strongswan-ikev1/changelog.Debian.gz
+/usr/share/doc/strongswan-ikev1/changelog.gz
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/pluto.8.gz
+/usr/lib
+/usr/lib/ipsec
+/usr/lib/ipsec/whack
+/usr/lib/ipsec/pluto
+/usr/lib/ipsec/_pluto_adns

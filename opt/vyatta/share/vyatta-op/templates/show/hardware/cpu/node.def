@@ -1,0 +1,2 @@
+help: Show CPU info
+run:  lscpu

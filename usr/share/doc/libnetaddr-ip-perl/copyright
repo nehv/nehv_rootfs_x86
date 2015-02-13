@@ -1,0 +1,33 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Maintainer: Luis E. Muñoz <luismunoz@cpan.org>,
+    Michael Robinton <michael@bizsystems.com>
+Source: http://search.cpan.org/dist/NetAddr-IP/
+Name: NetAddr-IP
+X-Comment: The +dfsg version is created by removing the non-free RFC from
+ the docs/ directory. debian/repack.sh automates this process.
+
+Files: *
+Copyright:
+ 1999-2007, Luis E. Muñoz <luismunoz@cpan.org>
+ 2003-2010, Michael Robinton <michael@bizsystems.com>
+License: Artistic
+
+Files: debian/*
+Copyright: 
+ 2001-2003, Elie Rosenblum <fnord@debian.org>
+ 2007-2010, various members of the Debian Perl Group, cf. debian/changelog
+License: Artistic or GPL-1+
+
+License: GPL-1+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 1, or (at your option)
+    any later version.
+    On Debian GNU/Linux systems, the complete text of the GNU General
+    Public License can be found in `/usr/share/common-licenses/GPL'
+
+License: Artistic
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the Artistic License, which comes with Perl.
+    On Debian GNU/Linux systems, the complete text of the Artistic License
+    can be found in `/usr/share/common-licenses/Artistic'

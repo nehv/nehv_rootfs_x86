@@ -1,0 +1,3 @@
+ipset: binary-without-manpage
+ipset: non-dev-pkg-with-shlib-symlink
+ipset: package-name-doesnt-match-sonames

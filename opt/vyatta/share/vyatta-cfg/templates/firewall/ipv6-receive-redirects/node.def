@@ -1,0 +1,43 @@
+# accept_redirects - Accept ICMPv6 redirect messages.
+# default value - 0 
+# 
+
+type: txt
+
+help: Policy for handling received ICMPv6 redirect messages
+
+val_help: enable; Enable processing of received ICMPv6 redirect messages
+val_help: disable; Disable processing of received ICMPv6 redirect messages
+
+default: "disable"
+
+syntax:expression: $VAR(@) in "enable", "disable"; "icmpv6-receive-redirects must be enable or disable"
+
+update:
+	if [ -d /proc/sys/net/ipv6 ]; then
+            array=(`ls /proc/sys/net/ipv6/conf/`)
+            array_len=${#array[*]}
+	    i=0
+	    while [ $i -lt $array_len ]; do
+		if [ x$VAR(@) == xenable ]; then
+		    sudo sh -c "echo 1 > \
+			/proc/sys/net/ipv6/conf/${array[$i]%:*}/accept_redirects"
+		else
+		    sudo sh -c "echo 0 > \
+			/proc/sys/net/ipv6/conf/${array[$i]%:*}/accept_redirects"
+		fi
+		let i++
+	    done
+	fi
+
+delete:
+	if [ -d /proc/sys/net/ipv6 ]; then
+	    array=(`ls /proc/sys/net/ipv6/conf/`)
+	    array_len=${#array[*]}
+	    i=0
+            while [ $i -lt $array_len ]; do
+		sudo sh -c "echo 0 > \
+                    /proc/sys/net/ipv6/conf/${array[$i]%:*}/accept_redirects"
+		let i++
+            done
+	fi

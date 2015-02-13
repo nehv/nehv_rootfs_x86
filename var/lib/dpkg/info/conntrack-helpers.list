@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/conntrack-helpers
+/usr/share/doc/conntrack-helpers/copyright
+/usr/share/doc/conntrack-helpers/changelog.Debian.gz
+/usr/share/doc/conntrack-helpers/AUTHORS
+/usr/lib
+/usr/lib/conntrack-tools
+/usr/lib/conntrack-tools/ct_helper_rpc.so
+/usr/lib/conntrack-tools/ct_helper_tns.so
+/usr/lib/conntrack-tools/ct_helper_ftp.la
+/usr/lib/conntrack-tools/ct_helper_ftp.so
+/usr/lib/conntrack-tools/ct_helper_tns.la
+/usr/lib/conntrack-tools/ct_helper_rpc.la

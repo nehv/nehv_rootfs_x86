@@ -1,0 +1,2 @@
+help: Ignore capability negotiation with specified peer-group
+commit:expression: $VAR(../strict-capability/) == ""; "you can't set both strict-capability and override-capability"

@@ -1,0 +1,63 @@
+#!/bin/sh
+
+set -e
+
+case "${1}" in
+	configure)
+		if [ -x /usr/sbin/update-initramfs ]
+		then
+			update-initramfs -u
+		fi
+
+		if [ -x /sbin/udevadm ]
+		then
+			udevadm trigger
+		fi
+		;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+
+		;;
+
+	*)
+		echo "postinst called with unknown argument \`${1}'" >&2
+		exit 1
+		;;
+esac
+
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/open-vm-tools" ]; then
+	update-rc.d open-vm-tools start . 2 3 4 5 . stop . 0 1 6 . >/dev/null
+	invoke-rc.d open-vm-tools start || exit $?
+fi
+# End automatically added section
+# Automatically added by dh_installmodules
+if [ "$1" = configure ]; then
+	if [ -e "/etc/modprobe.d/open-vm-tools" ]; then
+		echo "Preserving user changes to /etc/modprobe.d/open-vm-tools.conf ..."
+		if [ -e "/etc/modprobe.d/open-vm-tools.conf" ]; then
+			mv -f "/etc/modprobe.d/open-vm-tools.conf" "/etc/modprobe.d/open-vm-tools.conf.dpkg-new"
+		fi
+		mv -f "/etc/modprobe.d/open-vm-tools" "/etc/modprobe.d/open-vm-tools.conf"
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installudev
+if [ "$1" = configure ]; then
+	if [ -e "/etc/udev/rules.d/z60_open-vm-tools.rules" ]; then
+		echo "Preserving user changes to /etc/udev/rules.d/60-open-vm-tools.rules ..."
+		if [ -e "/etc/udev/rules.d/60-open-vm-tools.rules" ]; then
+			mv -f "/etc/udev/rules.d/60-open-vm-tools.rules" "/etc/udev/rules.d/60-open-vm-tools.rules.dpkg-new"
+		fi
+		mv -f "/etc/udev/rules.d/z60_open-vm-tools.rules" "/etc/udev/rules.d/60-open-vm-tools.rules"
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_makeshlibs
+if [ "$1" = "configure" ]; then
+	ldconfig
+fi
+# End automatically added section
+
+
+exit 0

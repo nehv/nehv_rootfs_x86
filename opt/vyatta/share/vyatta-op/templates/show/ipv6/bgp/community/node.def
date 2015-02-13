@@ -1,0 +1,2 @@
+help: Show routes matching the communities
+run: vtysh -c "$*"

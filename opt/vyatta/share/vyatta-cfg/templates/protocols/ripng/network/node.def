@@ -1,0 +1,13 @@
+multi:
+type: ipv6net
+help: RIPng network
+
+syntax:expression: exec "${vyatta_sbindir}/check_prefix_boundary $VAR(@)"
+
+create: vtysh -c "configure terminal" \
+          -c "router ripng"                                       \
+          -c "network $VAR(@)"
+
+delete: vtysh -c "configure terminal" \
+          -c "router ripng"                                       \
+          -c "no network $VAR(@)"

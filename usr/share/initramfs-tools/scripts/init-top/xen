@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -f /scripts/functions ]; then
+  . /scripts/functions
+fi
+
+if [ "$(cat /sys/hypervisor/type 2>/dev/null || true)" = xen ] && \
+   [ ! -d /sys/bus/xen ]; then
+  log_begin_msg "Detected Xen hypervisor, loading xenbus_probe_frontend"
+  modprobe -q xenbus_probe_frontend
+  log_end_msg
+fi

@@ -1,0 +1,3 @@
+type: u32
+default:8
+help: Queue size for listening to local conntrack events (in MB)

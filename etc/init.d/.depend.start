@@ -1,0 +1,18 @@
+TARGETS = rsyslog open-vm-tools killprocs vyatta-pppoe sudo netplug vyatta-quagga mdadm atd loadcpufreq acpid vyatta-router cron cpufrequtils rsync bootlogs vyos-intfwatchd ec2-fetch-ssh-public-key single rmnologin stop-bootlogd rc.local
+INTERACTIVE =
+netplug: rsyslog
+vyatta-quagga: rsyslog
+mdadm: rsyslog
+atd: rsyslog
+loadcpufreq: rsyslog
+acpid: rsyslog
+vyatta-router: rsyslog vyatta-quagga
+cron: rsyslog
+cpufrequtils: loadcpufreq
+rsync: rsyslog
+vyos-intfwatchd: vyatta-router
+ec2-fetch-ssh-public-key: vyatta-router
+single: killprocs bootlogs vyatta-pppoe
+rmnologin: sudo netplug rsyslog vyatta-router vyatta-quagga mdadm open-vm-tools atd bootlogs vyatta-pppoe cron vyos-intfwatchd cpufrequtils loadcpufreq rsync acpid ec2-fetch-ssh-public-key
+stop-bootlogd: netplug rsyslog vyatta-router vyatta-quagga mdadm open-vm-tools atd bootlogs vyatta-pppoe cron vyos-intfwatchd cpufrequtils loadcpufreq rsync acpid ec2-fetch-ssh-public-key sudo
+rc.local: rsyslog netplug vyatta-router vyatta-quagga mdadm open-vm-tools atd bootlogs vyatta-pppoe cron vyos-intfwatchd cpufrequtils loadcpufreq rsync acpid ec2-fetch-ssh-public-key sudo

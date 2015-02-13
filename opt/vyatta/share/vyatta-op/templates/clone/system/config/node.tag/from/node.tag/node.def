@@ -1,0 +1,18 @@
+help: Image to update from
+allowed: reply=( $(compgen -d /live/image/boot/ | grep -v grub) )
+    for i in `seq 0 $[${#reply[@]}-1]`; do
+      file=${reply[$i]}
+      reply[$i]=${file/#\/live\/image\/boot\//}
+    done
+    reply+=( "running" )
+    if [[ -d /live/image/config ]];then
+      reply+=( "disk-install" )
+    fi
+    echo "${reply[*]}"
+run: if [ "$VYATTA_USER_LEVEL_DIR" == "/opt/vyatta/etc/shell/level/admin" ];
+     then
+         sudo ${vyatta_sbindir}/vyatta-image-tools.pl --update $4 $6
+     else
+         echo Must be an admin user to run this command.
+     fi
+

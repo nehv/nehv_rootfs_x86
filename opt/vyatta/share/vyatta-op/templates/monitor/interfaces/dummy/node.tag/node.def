@@ -1,0 +1,3 @@
+help: Monitor specified dummy interface
+allowed: ${vyatta_sbindir}/vyatta-interfaces.pl --show dummy
+run: bmon -p $4

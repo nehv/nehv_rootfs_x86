@@ -1,0 +1,5 @@
+#!/bin/sh
+
+dpkg-query -W -f '${Status} ${Package} ${Version}\n' \
+  | sed -n 's/^install ok installed //p' \
+	>/opt/vyatta/etc/deb-versions.txt

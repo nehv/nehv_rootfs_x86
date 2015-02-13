@@ -1,0 +1,14 @@
+/etc/ppp/options
+/etc/ppp/ip-down.d/0000usepeerdns
+/etc/ppp/ip-down.d/vyatta-usepeerdns
+/etc/ppp/peers/ttyS1
+/etc/ppp/peers/provider
+/etc/ppp/peers/ttyS0
+/etc/ppp/ip-up
+/etc/ppp/ip-down
+/etc/ppp/ip-pre-up
+/etc/ppp/ip-up.d/0000usepeerdns
+/etc/ppp/ip-up.d/vyatta-usepeerdns
+/etc/ppp/ipv6-down
+/etc/ppp/ipv6-up
+/etc/init.d/vyatta-ppp

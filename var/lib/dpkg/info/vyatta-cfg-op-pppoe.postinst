@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/vyatta-pppoe" ]; then
+	update-rc.d vyatta-pppoe defaults >/dev/null
+	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d vyatta-pppoe start || exit $?
+	else
+		/etc/init.d/vyatta-pppoe start || exit $?
+	fi
+fi
+# End automatically added section

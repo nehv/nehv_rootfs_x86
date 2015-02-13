@@ -1,0 +1,10 @@
+multi: 
+type: ipv4net
+help: Network-group member
+val_help: ipv4net; IPv4 Subnet to match
+
+syntax:expression: exec "/opt/vyatta/sbin/ipset-check-member network $VAR(@)"
+
+syntax:expression: exec "                                 \
+          /opt/vyatta/sbin/check_prefix_boundary $VAR(@)" \
+

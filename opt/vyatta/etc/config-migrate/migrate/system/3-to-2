@@ -1,0 +1,52 @@
+#! /usr/bin/perl
+
+# restore "service snmp" to "protocols snmp"
+
+use strict;
+use warnings;
+
+use lib "/opt/vyatta/share/perl5/";
+use XorpConfigParser;
+use File::Copy;
+
+# SNMP trap target was leaf node in earlier release
+#
+sub cleanup_traps {
+    my $snmp = shift;
+    my $children = $snmp->{'children'};
+    return unless $children;
+
+    foreach my $trap (@$children) {
+	next unless ($trap->{'name'} =~ /^trap-target /);
+	$trap->{'children'} = undef;
+    }
+}
+
+my $orig_cfg = shift;
+die "missing config file argument\n"
+    unless $orig_cfg;
+
+my $xcp = new XorpConfigParser();
+$xcp->parse($orig_cfg);
+
+my $snmp = $xcp->get_node(['service','snmp']);
+exit 0 unless $snmp;
+
+cleanup_traps ($snmp);
+
+$xcp->move_child($xcp->get_node(['service']),
+		 $xcp->create_node(['protocols']),
+		 'snmp') 
+    or die "Move of service snmp to protocols failed";
+
+my $tmpname = "/tmp/vyatta_migrate_system.$$";
+open (my $tmp, '>', $tmpname)
+    or die "Can't open: $tmpname: $!";
+
+select $tmp;
+$xcp->output(0);
+select STDOUT;
+close $tmp;
+
+move($tmpname, $orig_cfg)
+    or die "Move $tmpname to $orig_cfg failed: $!";

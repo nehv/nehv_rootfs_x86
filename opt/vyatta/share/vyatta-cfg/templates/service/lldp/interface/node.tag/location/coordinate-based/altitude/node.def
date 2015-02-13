@@ -1,0 +1,8 @@
+type: txt
+
+help: Altitude in meters
+
+syntax:expression: pattern $VAR(@) "^[-+0-9\.]+$" ; \
+       "Invalid altitude."
+
+val_help: [+-]<meters> ; Altitude in meters

@@ -1,0 +1,8 @@
+type: txt
+
+help: Latitude [REQUIRED]
+
+syntax:expression: pattern $VAR(@) "^[-+0-9\.]+[nNsS]$" ; \
+       "Invalid latitude."
+
+val_help: <latitude> ; Latitude (example "37.524449N")

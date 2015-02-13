@@ -1,0 +1,8 @@
+type: u32
+
+default: 100
+
+help: Disk cache size in MB
+
+val_help: u32; Disk cache size in MB (default 100)
+val_help: 0; Disable disk caching

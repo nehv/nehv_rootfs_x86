@@ -1,0 +1,7 @@
+help: Show specified wirelessmodem interface startup debug log
+run: if [ -f /tmp/$4.log ]; then
+         cat /tmp/$4.log;
+     else
+         echo "No debug log available for $4";
+     fi; 
+

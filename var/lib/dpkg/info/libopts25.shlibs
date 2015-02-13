@@ -1,0 +1,2 @@
+libopts 25 libopts25 (>= 1:5.10)
+libguileopts 0 libopts25 (>= 1:5.10)

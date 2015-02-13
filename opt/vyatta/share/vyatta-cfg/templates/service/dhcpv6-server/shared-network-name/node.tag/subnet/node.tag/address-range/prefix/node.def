@@ -1,0 +1,8 @@
+
+tag:
+
+type: ipv6net
+
+help: IPv6 prefix defining range of addresses to assign
+
+

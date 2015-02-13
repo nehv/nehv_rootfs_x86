@@ -1,0 +1,12 @@
+d8f5414a01de4b49a4ac73b5a733eabe  usr/lib/libicudata.so.44.1
+8d1dee2b022f6fe0ccc1c3b4a5bf61a6  usr/lib/libicui18n.so.44.1
+d709ea8d6018fc79876f628a0677d4ab  usr/lib/libicuio.so.44.1
+f79e5ef6649fda58dae8409c1d4c66b8  usr/lib/libicule.so.44.1
+e4326b386f258aea1126ba9146c38f35  usr/lib/libiculx.so.44.1
+2c13a86ed2f3d20e91c599466e61df16  usr/lib/libicutest.so.44.1
+cee024da56fa6812dcffb0918eb6929e  usr/lib/libicutu.so.44.1
+0a3c8aea419e813e20d45ca07f4cab3e  usr/lib/libicuuc.so.44.1
+9c69789ded16fb0ebc4e278ce0502678  usr/share/doc/libicu44/NEWS.Debian.gz
+b191d57676b64699b7ea788334ed11cd  usr/share/doc/libicu44/changelog.Debian.gz
+5b740ffe32c601f5505884571630bc75  usr/share/doc/libicu44/copyright
+b5003deafcc35767aacd9e521558b66b  usr/share/lintian/overrides/libicu44

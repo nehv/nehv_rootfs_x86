@@ -1,0 +1,4 @@
+grub-pc: unstripped-binary-or-object *.mod
+grub-pc: statically-linked-binary ./usr/lib/grub/i386-pc/kernel.img
+grub-pc: unstripped-binary-or-object ./usr/lib/grub/i386-pc/kernel.img
+grub-pc: binary-from-other-architecture *efiemu64.o

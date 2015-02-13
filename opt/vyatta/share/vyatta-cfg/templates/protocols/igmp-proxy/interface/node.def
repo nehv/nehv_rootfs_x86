@@ -1,0 +1,10 @@
+tag:
+
+type: txt
+
+help: Interface for IGMP proxy [REQUIRED]
+
+allowed: /opt/vyatta/sbin/vyatta-interfaces.pl --show all
+
+val_help: <intf> ; Interface for IGMP proxy
+

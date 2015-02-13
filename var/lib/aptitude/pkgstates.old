@@ -1,0 +1,3099 @@
+Package: libkeyutils1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libpci3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: dmsetup
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libedit2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libwant-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libkrb5-3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: netcat-traditional
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libpam0g
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libpopt0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: nano
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libstdc++6
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libusb-0.1-4
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: vyatta-util
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: bzip2
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-quagga
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libncurses5
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libc-bin
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: xsltproc
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: console-terminus
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libkrb5support0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: iproute
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg-quagga
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libsnmp15-dbg
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vim-common
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnl-3-200
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: nfct
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: traceroute
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: efibootmgr
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: python-support
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: base-files
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libopenipmi0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: python2.6-minimal
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: igmpproxy
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: iftop
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-vrrp
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: bind9-host
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libblkid1
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libnetfilter-queue1-dbg
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: mime-support
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: procps
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libidn11
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libsensors4
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libwrap0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-cfg-dhcp-relay
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libpam-modules
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libacl1
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libcomerr2
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libsnmp15
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: lsof
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libselinux1
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libicu44
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: whiptail
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-openvpn
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libio-prompt-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: lldpd
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libradiusclient-ng2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: strongswan-starter
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: bash-completion
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libnet-ssleay-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-dhcp3-common
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: grub2
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: liburi-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-netflow
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg-dhcp-server
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: ncurses-base
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: liblocale-gettext-perl
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libxml-namespacesupport-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: open-vm-tools-desktop
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libbz2-1.0
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libdbus-1-3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-op-firewall
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: install-info
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: util-linux
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libopts25
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libnfnetlink0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: iputils-ping
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: grub-efi-amd64
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: squid3-common
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libtree-simple-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: diffutils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libcluster-glue
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ipvsadm
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libdbus-glib-1-2
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libcap2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libpam-runtime
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libconsole
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnetfilter-queue-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: linux-image-3.13.11-1-586-vyos-virt
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libklibc
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: bridge-utils
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: apt-transport-https
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libssl0.9.8-dbg
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: logrotate
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libsocket6-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libwww-curl-perl
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-nat
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libpcap0.8
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: screen
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libhtml-parser-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-cfg-firewall-serial
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-busybox
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-zone
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libdns69
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-wireless
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: at
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: openssl-blacklist
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ed
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libxslt1.1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: linux-image-3.13.11-1-586-vyos
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: kexec-tools
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: ipsec-tools
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: perl-base
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: aptitude
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: grub-efi-ia32
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: radvd
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libterm-readkey-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libpcre3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: strongswan-ikev1
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: strongswan-ikev2
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: iw
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: python-apt
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libsemanage1
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnspr4-0d
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: ipcalc
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libcpufreq0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: mysql-common
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: groff-base
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: whois
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libusb-1.0-0
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-webgui
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libcorosync4
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: linux-vyatta-kbuild
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: bash
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libnetfilter-conntrack3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-ppp
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libgnutls26
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libnetaddr-ip-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libsqlite3-0
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: module-init-tools
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: klibc-utils
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libfcgi0ldbl
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: psmisc
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: linux-libc-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libbsd0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: login
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libtext-charwidth-perl
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libsnmp-python
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libcwidget3
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: python2.6
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libcurl3-gnutls
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: squashfs-tools
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libtasn1-3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libparted0debian1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-wanloadbalance
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libpam-radius-auth
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libmnl-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: python-minimal
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: acpi-support-base
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: e2fsprogs
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: parted
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: grub-pc
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-webproxy
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: user-setup
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libisccc60
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libexpat1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libcap2-bin
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-lldp
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: ddclient
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libfam0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libdevmapper1.02.1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-keepalived
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libkrb53
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libk5crypto3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libfuse2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: squidguard
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: isc-dhcp-client
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libpcsclite1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: apt-utils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: liblzma2
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: tcpdump
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: mtr-tiny
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: initramfs-tools
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: dnsmasq-base
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vim-tiny
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-dhcp3-server
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: iptables-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: insserv
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: vyatta-cfg-quagga-dataplane
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: openssh-client
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: xkb-data
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ruby1.8
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: strongswan
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libstrongswan
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg-qos
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: ethtool
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: dash
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: tasksel-data
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libffi5
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: linux-image-3.13.0-1-586-vyos-virt
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: coreutils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libgcc1
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: lighttpd
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: hostapd
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: bmon
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: acpid
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg-system
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libsort-versions-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: snmpd
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: readline-common
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: udev
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: eventwatchd
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: passwd
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: apt
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: snmp
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: netplug
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: ruby
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: locales
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: ubnt-igmpproxy
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyos-vxlan
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg-vpn
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: liblwres60
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: iptraf
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libgmp3c2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: netcat
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libdumbnet1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libgdbm3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: installation-report
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libsemanage-common
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: netbase
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: iperf
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: conntrack
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libcurl3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libustr-1.0-1
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: open-vm-tools
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libsigc++-2.0-0c2a
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: vyatta-config-mgmt
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libept1
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: python
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ifupdown
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: expect
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: bsdutils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: cpio
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: sudo
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: liburcu1
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libsmi2ldbl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: crda
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: pciutils
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: unionfs-fuse
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-op-dhcp-server
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: console-tools
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: base-passwd
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libxml-libxml-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libssl-dev
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: kbd
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libssh2-1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: tkmib
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnetfilter-cthelper
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg-op-pppoe
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: python-central
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: cron
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: strongswan-dbg
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libxml-sax-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ca-certificates
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libgcrypt11
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: openssh-blacklist
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: sipcalc
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: dpkg
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: rsync
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: findutils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: vlan
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: manpages
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libxml2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libbind9-60
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libxapian22
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libnl-genl-3-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-op-quagga
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: wget
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-op-qos
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libfile-sync-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-config-migrate
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: curl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: conntrackd
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: console-data
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: liblzo2-2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libboost-iostreams1.42.0
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: gawk
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: isc-dhcp-common
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: sensible-utils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libcap-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libopenhpi2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: debianutils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: file
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: ntp
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: squid3
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: net-tools
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: bsdmainutils
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libnetfilter-cttimeout
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-op
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libgpg-error0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: gcc-4.4-base
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: liburcu-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: ppp
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ipset
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg-qos-serial
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: spawn-fcgi
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: sed
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: adduser
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: iputils-arping
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-dhcp3-relay
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-conntrack
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: lsb-base
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: tar
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libvyatta-util-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: debian-archive-keyring
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: lsscsi
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libtimedate-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ucf
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libsnmp-perl
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-op-vpn
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libtext-iconv-perl
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libpkcs11-helper1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: e2fslibs
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: gettext-base
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: zlib1g
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: ssh
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-base
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-bash
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: tasksel
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libfile-slurp-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: keyboard-configuration
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-ipv6-rtradv
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libsnmp-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyos-opennhrp
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: tcl8.5
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: perl-modules
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: atmel-firmware
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libxml-simple-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: uuid-dev
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-cfg-quagga-serial
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: pppoe
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libnetfilter-conntrack-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libtext-wrapi18n-perl
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libgeoip1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libperl5.10
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libudev0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: xz-utils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: console-setup
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnewt0.52
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: console-common
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: wpasupplicant
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: sysvinit-utils
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: vyatta-cluster
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: pmacct
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libsepol1
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: laptop-detect
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libmysqlclient16
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: dnsmasq
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libldap-2.4-2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libdaemon0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libfreetype6
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: open-vm-tools-dkms
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-ravpn
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libisccfg62
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: bcrelay
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: usbutils
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libuuid1
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: heartbeat
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-biosdevname
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libc-ares2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-cfg-firewall
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-watchdog
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: open-vm-modules-3.3.8-1-586-vyos
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnl1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libnl2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libglib2.0-0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: tzdata
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libnetfilter-queue1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: pptpd
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: liblua5.1-0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ssmtp
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: gpgv
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: squidclient
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: dialog
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libssl0.9.8
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: xl2tpd
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libdb4.7
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: grep
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libdb4.8
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libsnmp-base
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libsysfs2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libsasl2-2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libterm-readline-perl-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ntpdate
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: cluster-agents
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: watchdog
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: debconf
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: wireless-regdb
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: man-db
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnl-3-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-eventwatch
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: openssl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libncursesw5
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: rsyslog
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: linux-image-3.3.8-1-586-vyos
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: grub-efi
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: mount
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libhtml-tree-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: cluster-glue
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: open-vm-tools-dbg
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libheartbeat2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyos-nhrp
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libss2
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libxml2-utils
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libprelude2
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: patch
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libboost-filesystem1.42.0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: open-vm-tools-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libio-socket-ssl-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: host
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libgssapi-krb5-2
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: openvpn
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libwww-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: apt-listchanges
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnl-genl-3-200
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: fuse-utils
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: grub-common
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libruby1.8
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: conntrack-helpers
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: linux-image-3.13.0-1-586-vyos
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: info
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: sysv-rc
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: debconf-i18n
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: librtmp0
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libisc62
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-ipv6-rtradv-serial
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libc6
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libnetfilter-conntrack3-dbg
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libattr1
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: gzip
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: vyatta-conntrack-sync
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-wirelessmodem
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libhtml-tagset-perl
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: openssh-server
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: mdadm
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: cpufrequtils
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libvyatta-cfg1
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libslang2
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: initscripts
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: tshark
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libreadline5
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libreadline6
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: iptables
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: eject
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: squid-langpack
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: jnettop
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-dhcp3-client
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libnet1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libnss3-1d
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: lsb-release
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libboost-system1.42.0
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: linux-firmware
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: dmidecode
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: vyatta-cron
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: vyatta-quagga-dbg
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: klogd
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libvyatta-util1
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: openvpn-blacklist
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: ncurses-bin
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: wireshark-common
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: mgetty
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libmnl0
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: hostname
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: less
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: libltdl7
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: libmagic1
+Unseen: no
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+Auto-New-Install: yes
+
+Package: sysvinit
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: libvyatta-cfg-dev
+Unseen: yes
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: live-initramfs
+Unseen: yes
+State: 1
+Dselect-State: 0
+Remove-Reason: 0
+
+Package: gnupg
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: mawk
+Unseen: no
+State: 1
+Dselect-State: 1
+Remove-Reason: 0
+
+Package: python-apt-common
+Unseen: no
+State: 3
+Dselect-State: 0
+Remove-Reason: 0
+

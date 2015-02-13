@@ -1,0 +1,5 @@
+
+type: u32
+
+help: Default time (in seconds) that will be assigned to a lease
+

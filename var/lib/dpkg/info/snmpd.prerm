@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/snmpd" ]; then
+	invoke-rc.d snmpd stop || exit $?
+fi
+# End automatically added section

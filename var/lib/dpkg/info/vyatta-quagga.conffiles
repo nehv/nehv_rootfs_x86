@@ -1,0 +1,2 @@
+/etc/pam.d/quagga
+/etc/init.d/vyatta-quagga

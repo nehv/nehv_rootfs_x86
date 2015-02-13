@@ -1,0 +1,13 @@
+help: show Point-to-Point Protocol over Ethernet (PPPOE) interface information
+
+run:
+	for i in /etc/ppp/peers/pppoe* ; do
+	    ifname=`basename $i`
+	    if [ -e /sys/class/net/$ifname ]; then
+		${vyatta_bindir}/vyatta-show-interfaces pppoe $ifname
+	    elif [ ! -z "`ps -C pppd -f | grep $ifname `" ]; then
+                echo ${ifname}: Coming up
+	    else
+		echo ${ifname}: Link down
+	    fi
+	done

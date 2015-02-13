@@ -1,0 +1,8 @@
+
+tag:
+
+type:  ipv6net
+
+help: IPv6 DHCP subnet for this shared network [REQUIRED]
+
+

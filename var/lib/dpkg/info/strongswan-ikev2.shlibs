@@ -1,0 +1,17 @@
+libcharon 0 strongswan-ikev2
+libstrongswan-eap radius strongswan-ikev2
+libstrongswan attr strongswan-ikev2
+libstrongswan agent strongswan-ikev2
+libstrongswan-socket raw strongswan-ikev2
+libstrongswan-eap mschapv2 strongswan-ikev2
+libstrongswan curl strongswan-ikev2
+libstrongswan-eap ttls strongswan-ikev2
+libstrongswan-eap tls strongswan-ikev2
+libstrongswan-eap identity strongswan-ikev2
+libstrongswan ldap strongswan-ikev2
+libstrongswan-attr sql strongswan-ikev2
+libstrongswan-eap md5 strongswan-ikev2
+libstrongswan-kernel netlink strongswan-ikev2
+libstrongswan-eap aka strongswan-ikev2
+libstrongswan-eap tnc strongswan-ikev2
+libstrongswan-eap gtc strongswan-ikev2

@@ -1,0 +1,6 @@
+
+type: u32
+
+help: Minimum time (in seconds) that will be assigned to a lease
+
+

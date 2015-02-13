@@ -1,0 +1,60 @@
+#!/bin/sh -e
+
+case "$1" in
+    configure)
+        # place the templates in /etc if they're not there ...
+        for file in mgetty.config dialin.config login.config; do
+	    if [ ! -f /etc/mgetty/$file ] ; then
+	        cp -a /usr/share/mgetty/templates/etc/$file /etc/mgetty/$file;
+	    fi;
+	done
+
+	if [ -n "$2" ] && dpkg --compare-versions "$2" lt "1.1.27-4.1"
+	    then
+		( for pidfile in /var/run/mg-pid* /var/run/mgetty*
+		    do
+		      PID=`cat $pidfile`
+		      kill $PID
+		    done ) || true
+	fi
+
+	# Remove old style of crontab insertion if present
+	if grep -qs '^#-- mgetty begin$' /etc/crontab
+	    then
+	    TMP=/etc/crontab.tmp
+	    awk 'BEGIN {found=0}
+    /^#-- mgetty begin$/ {found = 1}
+    /^#-- mgetty end$/ {found = -1}
+    {if (!found) print}
+    {if (found == -1) found=0}
+    END {if (found) exit 1}' /etc/crontab >$TMP &&
+	    if [ -s $TMP ]
+		then
+		mv -f $TMP /etc/crontab
+	    fi
+	fi
+
+	if [ -f /etc/cron.daily/mgetty ]; then
+		rm -f /etc/cron.daily/mgetty
+	fi
+
+# Tidy up after cron.daily bug
+	if expr "$OLD_VER" : "1.[01].[0-8]-" >/dev/null
+	    then
+	    echo -n "removing debris from /var/log/mgetty ..."
+	    find /var/log/mgetty -type f -name '*.[0-9].*[0-9]*' -print0 | \
+		perl -n0e unlink
+	    echo done.
+	fi
+	;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+    *)
+	;;
+esac
+
+chmod 0600 /etc/mgetty/login.config
+
+
+
+exit 0;

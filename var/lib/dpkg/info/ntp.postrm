@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+installinit_error() {
+	exit $?
+}
+
+# Automatically added by dh_installinit
+if [ "$1" = "purge" ] ; then
+	update-rc.d ntp remove >/dev/null
+fi
+# End automatically added section
+
+
+if [ "$1" = "purge" ]; then
+	deluser --system --quiet ntp || true
+	rm -f /etc/ntp.conf.dhcp
+	rm -rf /var/lib/ntp/
+	rm -rf /var/log/ntpstats/
+fi

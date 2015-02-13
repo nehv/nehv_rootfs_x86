@@ -1,0 +1,7 @@
+ad90148ff9062b48f9084f8ef2c6d726  usr/lib/ipsec-tools/libipsec.so.0.0.1
+9a6863863f6c4a7c648424efa9870ea2  usr/sbin/setkey
+2ee0f5c42857e61ee68f88d4d7192b3c  usr/share/doc/ipsec-tools/README.Debian
+8b05fc0b5715de6a3c0bea054e075c6b  usr/share/doc/ipsec-tools/changelog.Debian.gz
+a81b89ad0c78970f50e53cdead270b4c  usr/share/doc/ipsec-tools/changelog.gz
+3c2e6fb2f5f91afc398441bf8cb63f51  usr/share/doc/ipsec-tools/copyright
+f20adeedfc9e5f6c3eecf4e5dcd449dd  usr/share/man/man8/setkey.8.gz

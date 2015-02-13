@@ -1,0 +1,10 @@
+type: txt
+
+help: SFlow agent IPv4 address
+
+default: "auto"
+
+allowed: echo "auto <>"
+
+val_help: auto ; SFlow agent-address automatically (default)
+val_help: ipv4 ; SFlow IPv4 agent address

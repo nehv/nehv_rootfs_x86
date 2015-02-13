@@ -1,0 +1,68 @@
+priority: 917
+help: Webproxy service settings
+
+
+create: sudo /opt/vyatta/sbin/vyatta-update-webproxy.pl --setup || exit 1
+
+end:
+     # validate https filter first bug 6793
+     cli-shell-api exists service webproxy url-filtering \
+                   squidguard vyattaguard https-filter
+     validateVGHttps=$?
+     if [[ $validateVGHttps == 0 ]]; then
+         sudo /opt/vyatta/bin/sudo-users/vyatta-vg.pl --validate_https || exit 1
+     fi
+     if cli-shell-api exists service webproxy url-filtering \
+                      squidguard vyattaguard; then
+       if ! cli-shell-api exists service webproxy url-filtering \
+                          squidguard auto-update update-hour; then
+          echo "auto-update for url-filtering must be configured when vyattaguard is enabled"
+          exit 1
+       fi
+     fi
+
+     # start/stop vyattaguard. vg needs to start before squid and https
+     vg_orig_mode=$(cli-shell-api returnActiveValue service webproxy \
+                    url-filtering squidguard vyattaguard mode)
+
+     vg_mode=$(cli-shell-api returnValue service webproxy \
+               url-filtering squidguard vyattaguard mode)
+
+     if [ "$vg_orig_mode" != "$vg_mode" ]; then
+       if [ -z "$vg_mode" ]; then
+         sudo /opt/vyatta/bin/sudo-users/vyatta-vg.pl --stop-vgd || exit 1
+       else
+         sudo /opt/vyatta/bin/sudo-users/vyatta-vg.pl --check-cat || exit 1
+         sudo /opt/vyatta/bin/sudo-users/vyatta-vg.pl --start-vgd || exit 1
+       fi
+     fi
+
+
+     # start/stop squid which in turn kicks off squidguard
+     if ! cli-shell-api exists service webproxy; then
+         sudo /opt/vyatta/sbin/vyatta-update-webproxy.pl --stop || exit 1
+     else
+         sudo /opt/vyatta/sbin/vyatta-update-webproxy.pl --update || exit 1
+     fi
+
+
+     # start/stop vyattaguard https. Has to be after squid restarted squidguard
+     cli-shell-api existsActive service webproxy url-filtering \
+                   squidguard vyattaguard https-filter
+     vg_orig_https=`echo $?`
+
+     cli-shell-api exists service webproxy url-filtering \
+                   squidguard vyattaguard https-filter
+     vg_https=`echo $?`
+
+     if [ "$vg_orig_https" != "$vg_https" ]; then
+       if [ "$vg_https" == "0" ]; then
+         sudo /opt/vyatta/bin/sudo-users/vyatta-vg.pl --start-vgd_https || exit 1
+       else
+         sudo /opt/vyatta/bin/sudo-users/vyatta-vg.pl --stop-vgd_https || exit 1
+       fi
+     else
+       if [ "$vg_orig_https" == "0" -a "$vg_https" == "0" ]; then
+         sudo /opt/vyatta/bin/sudo-users/vyatta-vg.pl --update-vgd_https || exit 1
+       fi
+     fi

@@ -1,0 +1,8 @@
+tag:
+type: txt
+help: Scheduled task
+val_help: Task name
+priority: 999
+end:
+    sudo /opt/vyatta/sbin/vyatta-update-crontab.pl --update || exit 1
+

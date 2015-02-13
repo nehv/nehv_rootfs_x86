@@ -1,0 +1,20 @@
+tag:
+
+type: txt
+
+help: Time-period days
+
+allowed: echo "Sun Mon Tue Wed Thu Fri Sat weekdays weekend all"
+
+syntax:expression: $VAR(@) in "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "weekdays", "weekend", "all" ; "Days must be one of 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'weekdays', 'weekend', 'all'."
+
+val_help: Sun ; Sunday
+val_help: Mon ; Monday
+val_help: Tue ; Tuesday
+val_help: Wed ; Wednesday
+val_help: Thu ; Thursday
+val_help: Fri ; Friday
+val_help: Sat ; Saturday
+val_help: weekdays ; Monday through Friday
+val_help: weekends ; Saturday and Sunday
+val_help: all ; All days of the week

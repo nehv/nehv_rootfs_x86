@@ -1,0 +1,2 @@
+help: Clear counters for specified rule
+run:  /opt/vyatta/bin/vyatta-clear-firewall "/sbin/iptables" "filter" "$4" "$6"

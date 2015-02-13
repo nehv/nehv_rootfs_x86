@@ -1,0 +1,6 @@
+
+type: ipv6
+
+help: Client IPv6 address for this static mapping
+
+

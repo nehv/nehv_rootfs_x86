@@ -1,0 +1,40 @@
+#! /bin/sh
+
+set -e
+
+# Automatically added by dh_installinit
+if [ "$1" = "purge" ] ; then
+	update-rc.d snmpd remove >/dev/null
+fi
+# End automatically added section
+# Automatically added by dh_installdebconf
+if [ "$1" = purge ] && [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+
+
+if [ $1 = purge ]; then  
+    rm -f /var/lib/snmp/snmpd.conf*
+    rm -f /var/lib/snmp/snmptrapd.conf*
+    rm -f /var/run/agentx
+    rm -f /var/run/snmpd.pid
+    rm -f /var/run/snmptrapd.pid
+    if getent passwd snmp >/dev/null; then
+	if [ -x /usr/sbin/deluser ]; then
+	    deluser --quiet --system snmp
+	else
+	    echo "Can't remove user snmp. Please remove this user by hand."
+	fi
+    fi
+    if getent group snmp >/dev/null; then
+	if [ -x /usr/sbin/delgroup ]; then
+	    delgroup --quiet --system snmp
+	else
+	    echo "Can't remove group snmp. Please remove this group by hand."
+	fi
+    fi
+fi 
+
+exit 0

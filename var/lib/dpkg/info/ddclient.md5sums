@@ -1,0 +1,16 @@
+47cb2a23fbf7a7ff2da53e23c1e65265  usr/sbin/ddclient
+0f30391bad5da6a9106c97cb1a4b28fe  usr/share/doc/ddclient/README.cisco
+98d879235aefdd536dfb0953521f0561  usr/share/doc/ddclient/README.gz
+490636cdf73fb7c84915c27b7fce039c  usr/share/doc/ddclient/README.ssl
+9a3def876302947228e16d99b7de2282  usr/share/doc/ddclient/changelog.Debian.gz
+3e78040bc30c5571212f65278deaf7bb  usr/share/doc/ddclient/copyright
+6a74678dff592ce7f1089e0ddf57bd39  usr/share/doc/ddclient/examples/sample-etc_cron.d_ddclient
+8ec5959737d15780b8ea630c1c46ebe0  usr/share/doc/ddclient/examples/sample-etc_ddclient.conf.gz
+89b9e7da1031a4886677285ee2759273  usr/share/doc/ddclient/examples/sample-etc_dhclient-exit-hooks
+a37458d076d40f35e29b35a0211cadaf  usr/share/doc/ddclient/examples/sample-etc_dhcpc_dhcpcd-eth0.exe
+5e3313cb26f597ad254bf73da191da90  usr/share/doc/ddclient/examples/sample-etc_ppp_ip-up.local
+8f0e4af31ae013db16479e70ca586c77  usr/share/doc/ddclient/examples/sample-etc_rc.d_init.d_ddclient
+2dfd40408cecbf4f51e8bd8c4c247a14  usr/share/doc/ddclient/examples/sample-etc_rc.d_init.d_ddclient.lsb
+3621a25aba50785b69b8034f4cdf7b64  usr/share/doc/ddclient/examples/sample-etc_rc.d_init.d_ddclient.redhat
+4a5feb35d07cdd5030bb6064abe34976  usr/share/doc/ddclient/examples/sample-etc_rc.d_init.d_ddclient.ubuntu
+61df9a06946a3029eddcb1124a1eca45  usr/share/man/man8/ddclient.8.gz

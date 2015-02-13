@@ -1,0 +1,56 @@
+Origin: dev.packages.vyos.net
+Label: VyOS helium repository
+Suite: unstable
+Codename: helium
+Date: Thu, 09 Oct 2014 21:26:32 UTC
+Architectures: amd64 i386 armel
+Components: main
+Description: VyOS helium release
+MD5Sum:
+ f0309bc77eca157a787ec1ca10f943a1 129527 main/binary-amd64/Packages
+ 9342c83b6c5487ea013a6f3c0464484e 35572 main/binary-amd64/Packages.gz
+ c4c6a86dee9a0b6f78440416d4fcd91a 147 main/binary-amd64/Release
+ 0a242332c48c34e9e02fd2dd610e5f19 131330 main/binary-i386/Packages
+ c8ebbfb093034322d831d3ee62eb9187 35992 main/binary-i386/Packages.gz
+ 5a5856996f1e67054b5fd770d4197fac 146 main/binary-i386/Release
+ 26993b8c5a5c726dba94e15e58a40527 118398 main/binary-armel/Packages
+ 3223efcaa5f965d9e8cc3268cd903322 32832 main/binary-armel/Packages.gz
+ 799101abc82704f44b9ce417bcbe5e92 147 main/binary-armel/Release
+ 34d240fadd27e77b0717f763e3be724e 6048426 main/Contents-amd64
+ 53c7aa1d8dd24e46f587680fe007a6ae 318481 main/Contents-amd64.gz
+ 401a9267645cbaed43b155ec1e572e5d 10270933 main/Contents-i386
+ 1cf75f7ddde3062f405396d33bbedbcc 529255 main/Contents-i386.gz
+ 04c57c69970ae1b289e517b32d70992a 4100969 main/Contents-armel
+ f773e6c20e9c1d84f5bdb307abe217f3 210775 main/Contents-armel.gz
+SHA1:
+ 1f22bd97db2008bdd818e50f8efd0e8a5abaa17c 129527 main/binary-amd64/Packages
+ a5e21f22f45e7b617fcce09a038c2f62e0f66180 35572 main/binary-amd64/Packages.gz
+ a6952dddc1e9c9f8f9a6880b1c28c97561480b20 147 main/binary-amd64/Release
+ 265e7732e2b188fafa764fb5c589f91c4821d3ce 131330 main/binary-i386/Packages
+ 975b77ecc776fd248050279669cda2c4efc8690a 35992 main/binary-i386/Packages.gz
+ 7d3847fdd7e140ba56b4f6259a1a8f35461c0021 146 main/binary-i386/Release
+ aa779684fb2cf7a39b5a72b52d62e2e168902085 118398 main/binary-armel/Packages
+ a2ecced6489a981b077a30845ed1bf53cf425190 32832 main/binary-armel/Packages.gz
+ 0cd033ae21dcf4af7be817ac7deaa488df60fd4f 147 main/binary-armel/Release
+ 1eb716de138463c558783a9a91dd934c7665810e 6048426 main/Contents-amd64
+ ea7b93d57593702453a18092550f0f86618655c7 318481 main/Contents-amd64.gz
+ f595132fa8976d0392d3c3ad2388a3a78f4a988c 10270933 main/Contents-i386
+ 6560a9697dd6e4b60a41657fc68c82db09c01100 529255 main/Contents-i386.gz
+ 9422d4c275776c29f106f398c381b81104fd15b9 4100969 main/Contents-armel
+ ea7884d2c7527497715bcfdff865651340118a0e 210775 main/Contents-armel.gz
+SHA256:
+ ced7c174e984a15aa4f92528c834c43f5e2fed5b46c7ac2a8c638f1dbf66cf91 129527 main/binary-amd64/Packages
+ 888d0f6a70421bb56380aa29aad186f2a33dd0849074dc812e844e03df6cb6b4 35572 main/binary-amd64/Packages.gz
+ c0f26c862c4fbcf77d897dc499204607efb7db1f223c14defa8c89b9ff5a300d 147 main/binary-amd64/Release
+ a0c1136df7499df1df8765e25699e8b3175a8c92980d0e51f8b6e7d33befd632 131330 main/binary-i386/Packages
+ eb6817b2ee1ab39db233004c15172437718bda5f6ce120a5686cbc6497e53405 35992 main/binary-i386/Packages.gz
+ fc3fd6010e6d2d5ec727c328cefaa086a3a676fb6a1d9c27f967653e65c3439b 146 main/binary-i386/Release
+ ae6a88bd586ebe867f8c85e4f333d725f595d6cf1295a7c893bd873caa3538bb 118398 main/binary-armel/Packages
+ 113c0ee92efd10b1592ee5271250f5eab80b5123306833ba281afd608fa2da3b 32832 main/binary-armel/Packages.gz
+ 9a1e33f1d0843532d26f50a0f326fdb7fe9127e4e8029bb04aeb5d4adcf2c857 147 main/binary-armel/Release
+ e5e127368077fc79d20af18d2b13ca0587fdda971be7dab254aa1dac77c194d2 6048426 main/Contents-amd64
+ 675cb8b8ba7706dfcc83f09a8938afdef20851a0921be9037b35bcc71b73867a 318481 main/Contents-amd64.gz
+ 60fe671f84d9df33f10faf6089c357eb39d277500b4dab392f5659eaf261f5b5 10270933 main/Contents-i386
+ 5a7ec938a540fee1928e4bdc8bcd58175a22d807254bfb3bc9c0416fb30a5df2 529255 main/Contents-i386.gz
+ 99bfe11100e0c13a74a9ddc719b35ad7475db5e3331e7dd0e2c27170dbb0be79 4100969 main/Contents-armel
+ 1305c16d028f88831e85b83503027019ddc07f8eb804adf71b315005d6a466fb 210775 main/Contents-armel.gz

@@ -1,0 +1,7 @@
+a7e46b57f086780cc1c5aa20c44a2d66  sbin/biosdevname
+0f1a9f896144093bcc739f0eed938ccf  usr/share/doc/vyatta-biosdevname/README
+106811491232a87c2dc90dddaa274f85  usr/share/doc/vyatta-biosdevname/changelog.Debian.gz
+acc959ae79727238fe0000e1a1e2cc22  usr/share/doc/vyatta-biosdevname/changelog.gz
+ae2e685512023ae811a8787ba3042a2a  usr/share/doc/vyatta-biosdevname/copyright
+f1bacb724bfd4bc49a9949ceda10d181  usr/share/lintian/overrides/vyatta-biosdevname
+7cbe46a0b3b40972dc6cbb18a2f643b3  usr/share/man/man1/biosdevname.1.gz

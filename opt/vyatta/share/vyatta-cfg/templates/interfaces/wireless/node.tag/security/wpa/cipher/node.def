@@ -1,0 +1,7 @@
+multi:
+type: txt
+help: Cipher suite for WPA
+syntax:expression:$VAR(@) in "CCMP","TKIP"
+val_help:CCMP; AES in Counter mode with CBC-MAC [RFC 3610, IEEE 802.11i/D7.0]
+val_help:TKIP; Temporal Key Integrity Protocol [IEEE 802.11i/D7.0]
+

@@ -1,0 +1,5 @@
+multi:
+type: txt
+help: IP address(es) or service name(s) in this resource group [REQUIRED]
+val_help: <service name>; Name of system service to be clustered
+val_help: <IP addr>/<prefix len>/<interface>; IP address (with subnet mask length and interface) to be clustered

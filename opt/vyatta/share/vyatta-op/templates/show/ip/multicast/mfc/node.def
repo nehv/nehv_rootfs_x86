@@ -1,0 +1,8 @@
+help: show multicast fowarding cache
+
+run: if cli-shell-api existsActive protocols igmp-proxy; then
+       sudo /opt/vyatta/bin/sudo-users/show-igmpproxy.pl \
+         --action=show-mr-mfc
+     else
+       echo IGMP proxy not configured
+     fi

@@ -1,0 +1,7 @@
+45ca700f693f5478fcd5bed4bdd6129c  usr/include/libnetfilter_cthelper/libnetfilter_cthelper.h
+74bf9e330aa29c20e174a10845450845  usr/lib/libnetfilter_cthelper.la
+2f2277a08e917be7ad53ed432d57c3c1  usr/lib/libnetfilter_cthelper.so.0.0.0
+ae4635d373480f72341d9b48136eedaa  usr/lib/pkgconfig/libnetfilter_cthelper.pc
+064ea4e7fc312fc236d4e256981d410e  usr/share/doc/libnetfilter-cthelper/README
+178ecb78426208089d7ca846814c67c3  usr/share/doc/libnetfilter-cthelper/changelog.Debian.gz
+06780426f4d88a9a28b2c83a12ee3d4b  usr/share/doc/libnetfilter-cthelper/copyright

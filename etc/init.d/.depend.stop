@@ -1,0 +1,12 @@
+TARGETS = vyatta-keepalived live-initramfs open-vm-tools netplug vyatta-quagga mdadm atd vyatta-router urandom fuse sendsigs rsyslog umountnfs.sh hwclock.sh networking ifupdown umountfs umountroot mdadm-raid halt reboot
+sendsigs: vyatta-quagga vyatta-keepalived open-vm-tools atd fuse
+rsyslog: netplug vyatta-router vyatta-quagga vyatta-keepalived mdadm live-initramfs atd sendsigs
+umountnfs.sh: sendsigs vyatta-quagga vyatta-keepalived open-vm-tools atd rsyslog fuse
+hwclock.sh: vyatta-router atd rsyslog
+networking: netplug vyatta-quagga vyatta-keepalived umountnfs.sh
+ifupdown: netplug vyatta-quagga vyatta-keepalived networking umountnfs.sh
+umountfs: hwclock.sh netplug urandom vyatta-router vyatta-quagga vyatta-keepalived mdadm live-initramfs open-vm-tools networking ifupdown atd fuse umountnfs.sh
+umountroot: umountfs
+mdadm-raid: mdadm umountfs
+halt: umountroot
+reboot: umountroot

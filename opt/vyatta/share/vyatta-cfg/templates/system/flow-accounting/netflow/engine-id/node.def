@@ -1,0 +1,8 @@
+type: u32
+
+help: NetFlow engine-id
+
+syntax:expression: $VAR(@) >= 0 && $VAR(@) <= 255; \
+       "NetFlow engine-id must be between 0-255."
+
+val_help: u32:0-255 ; NetFlow engine-id (version 5 and 9 only)

@@ -1,0 +1,1 @@
+/opt/vyatta/sbin/vyatta-interfaces.pl

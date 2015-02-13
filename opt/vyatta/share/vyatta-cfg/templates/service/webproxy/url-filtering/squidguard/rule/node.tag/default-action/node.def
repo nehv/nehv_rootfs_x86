@@ -1,0 +1,11 @@
+type: txt
+
+help: Default action
+
+default: "allow"
+
+syntax:expression: $VAR(@) in "allow", "block" ; \
+                   "must be 'allow' or 'block'"
+
+val_help: allow ; Default filter action to allow (default)
+val_help: block ; Default filter action to block 

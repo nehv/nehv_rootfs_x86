@@ -1,0 +1,10 @@
+
+priority: 900
+
+help: DHCPv6 Relay Agent parameters
+
+end:
+	sudo /opt/vyatta/sbin/dhcv6relay-starter.pl --config_action \
+	    "$COMMIT_ACTION"
+
+

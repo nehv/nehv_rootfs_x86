@@ -1,0 +1,10 @@
+f7a3affaa5946d5bc936aaf3a7402367  usr/sbin/dhcpd3
+41b64a3ffb30af7579b0d419a70260f2  usr/share/doc/vyatta-dhcp3-server/NEWS.Debian.gz
+fd1cb0f6dba9bf9562bdb09ceafbe5bc  usr/share/doc/vyatta-dhcp3-server/README.Debian
+f8ab83cca3a3f9a9d7074e27de3202e8  usr/share/doc/vyatta-dhcp3-server/changelog.gz
+4590d5cb4bb15238a47a56e387cc67c2  usr/share/doc/vyatta-dhcp3-server/copyright
+ed19e14c387f786dd35353b5180a5e23  usr/share/doc/vyatta-dhcp3-server/dhcp-on-linux.txt
+10979e7b71134bd7f04d2a60bd58f070  usr/share/doc/vyatta-dhcp3-server/examples/dhcpd.conf
+79b4ca0276fb6505e880c3a738242220  usr/share/man/man5/dhcpd.conf.5.gz
+83dc99d482bae53d717b583a5120af73  usr/share/man/man5/dhcpd.leases.5.gz
+1a870f8049fc892613331852013edcf6  usr/share/man/man8/dhcpd3.8.gz

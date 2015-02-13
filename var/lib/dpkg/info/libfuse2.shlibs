@@ -1,0 +1,2 @@
+libulockmgr 1 libfuse2 (>= 2.8.1)
+libfuse 2 libfuse2 (>= 2.8.1)

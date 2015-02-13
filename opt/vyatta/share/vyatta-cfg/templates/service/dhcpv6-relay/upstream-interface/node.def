@@ -1,0 +1,13 @@
+
+tag:
+
+type: txt
+
+allowed: 
+	 local -a array
+         array=( /sys/class/net/* )
+         echo -n ${array[@]##*/}
+
+help: Interface for DHCPv6 Relay Agent forward requests out
+
+

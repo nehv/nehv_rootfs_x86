@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=bmon
+Comment=Bandwidth monitor
+Comment[en]=Bandbreiten-Monitor
+Exec=bmon
+Terminal=true
+Type=Application
+Categories=Application;Network;

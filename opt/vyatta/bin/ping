@@ -1,0 +1,260 @@
+#! /usr/bin/perl
+# Wrapper around the base Linux ping command to provide
+#  nicer API (ie no flag arguments)
+#
+# **** License ****
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# This code was originally developed by Vyatta, Inc.
+# Portions created by Vyatta are Copyright (C) 2012 Vyatta, Inc.
+# All Rights Reserved.
+#
+#
+# Syntax
+#   ping HOST
+#           [ audible ]
+#           [ adaptive ]
+#           [ allow-broadcast]
+#           [ count REQUESTS ]
+#           [ mark N ]
+#           [ flow LABEL ]
+#           [ flood ]
+#           [ interval ]
+#           [ pattern PATTERN ]
+#           [ timestamp ]
+#           [ tos VALUE ]
+#           [ quiet ]
+#           [ bypass-routing ]
+#           [ size SIZE ]
+#           [ ttl TTL ]
+#           [ verbose ]
+
+use strict;
+use warnings;
+use NetAddr::IP;
+use feature ":5.10";
+
+sub get_options {
+   my ($opt, $args) = @_;
+   my $orig_arg = $$args[-1];
+
+   # expand the variables
+   if (scalar(@$args) > 2){
+     $args = expand_args($opt, $args);
+   }
+
+   my $prev = $$args[-2];
+   my $arg = $$args[-1];
+
+   # do something similar to compgen
+   my $options = '';
+   if ($arg ne ''){
+     my @matches = grep { /^$arg/ } keys(%{$opt});
+     if (scalar(@matches) == 0){
+       if ( (exists($opt->{$prev}) && $opt->{$prev}->{type} ne "noarg") ) {
+         get_args($opt, $prev);
+       } 
+     }
+     $options = join " ", @matches;
+     print $options;
+     exit 0; 
+   }
+
+   if ( (exists($opt->{$prev}) && $opt->{$prev}->{type} ne "noarg") ) {
+     get_args($opt, $prev);
+   } 
+   
+   # only show options that we haven't used yet
+   foreach my $key (keys(%{$opt})){
+     next if (grep $_ eq $key, @{$args}) ;
+     $options .= "$key ";
+   }
+   if ($options eq '' ){
+     print '<Enter>';
+   } else {
+     print $options;
+   }
+   exit 0;
+} 
+
+sub get_args {
+  my ($opt, $arg) = @_;
+  print $opt->{$arg}->{type}; 
+  exit 0; 
+}
+
+sub expand_args {
+  my ($opt, $args) = @_;
+  my @expand_args = ();
+  my $index = 0;
+  my $prev = undef;
+  foreach my $arg (@$args){
+    $index++;
+    if ($index == 1 || $index == 2) {
+      push @expand_args, $arg;
+      next;
+    }
+    if ( $arg eq '' ){ 
+      push @expand_args, $arg;
+      next;
+    }
+    if ( (exists($opt->{$arg}) && $opt->{$arg}->{type} ne "noarg") ) {
+      push @expand_args, $arg;
+      $prev = $arg;
+      next;
+    } 
+    my ($err, @vals) = expand_arg($opt, $arg, $prev);
+    if (defined($err)) {
+      my $val = pop @$args;
+      pop @$args if ($val eq '');
+      if ( $err eq "ambiguous" ){
+        print STDERR "\n\n  Ambiguous command: @{$args} [$arg]\n\n";
+        print STDERR "  Possible completions:\n";
+        print STDERR "  $_\n" foreach @vals;
+        print '<nocomps>';
+      } else {
+        print STDERR "\n\n  Invalid command: @{$args} [$arg]\n";
+        print '<nocomps>';
+      }
+      exit 1;
+    }
+    # print type text for arguments 
+    $arg = $vals[0];
+    push @expand_args, $arg;
+    $prev = $arg;
+  }
+  return \@expand_args;
+}
+
+sub expand_arg {
+   my ($opt, $arg, $prev) = @_;
+   my @opts = grep { /^$arg/ } keys(%{$opt});
+   my @prevs = grep { /^$prev/} keys(%{$opt}) if defined($prev);
+   if (scalar(@opts) == 1 ){
+     return (undef, $opts[0]);
+   } elsif ($arg eq '') {
+     return (undef, $arg);
+   } elsif (defined($prev) && defined($opt->{$prev}) && $opt->{$prev}->{type} ne 'noarg'){
+     return (undef, $arg); 
+   } elsif (scalar(@opts) == 0 ) {
+     return ('invalid', undef);
+   } else {
+     return ('ambiguous', @opts);
+   }
+}
+
+# Table for translating options to arguments
+my %options = (
+    'audible'	      => { 'p_arg'=>'a',  
+                           'type'=>'noarg', 
+                           'help'=>'Make a noise on ping' },
+    'adaptive'	      => { 'p_arg'=>'A',  
+                           'type'=>'noarg', 
+                           'help'=>'Adativly set interpacket interval' },
+    'allow-broadcast' => { 'p_arg'=>'b',  
+                           'type'=>'noarg', 
+                           'help'=>'Ping broadcast address' },
+    'bypass-route'    => { 'p_arg'=>'r',  
+                           'type'=>'noarg', 
+                           'help'=>'Bypass normal routing tables' },
+    'count'           => { 'p_arg'=>'c:', 
+                           'type'=>'<requests>', 
+                           'help'=>'Number of requests to send' },
+    'deadline'        => { 'p_arg'=>'w:', 
+                           'type'=>'<seconds>', 
+                           'help'=>'Number of seconds before ping exits' },
+    'flood'	      => { 'p_arg'=>'f',  
+                           'type'=>'noarg', 
+                            'help'=>'Send 100 requests per second' } ,
+    'interface'       => { 'p_arg'=>'I:', 
+                           'type'=>'<interface> <X.X.X.X> <h:h:h:h:h:h:h:h>', 
+                           'help'=>'Interface to use as source for ping' }, 
+    'interval'        => { 'p_arg'=>'i:', 
+                           'type'=>'<seconds>',
+                           'help'=>'Number of seconds to wait between requests' },
+    'mark'	      => { 'p_arg'=>'m:', 
+                           'type'=>'<fwmark>', 
+                           'help'=>'Mark request for special processing' },
+    'numeric'         => { 'p_arg'=>'n', 
+                           'type'=>'noarg', 
+                           'help'=>'Do not resolve DNS names' },
+    'no-loopback'     => { 'p_arg'=>'L', 
+                           'type'=>'noarg', 
+                           'help'=>'Supress loopback of multicast pings' },
+    'pattern'         => { 'p_arg'=>'p:', 
+                           'type'=>'<pattern>', 
+                           'help'=>'Pattern to fill out the packet' },
+    'timestamp'       => { 'p_arg'=>'D', 
+                           'type'=>'noarg', 
+                           'help'=>'Print timestamp of output' },
+    'tos'	      => { 'p_arg'=>'Q:', 
+                           'type'=>'<tos>', 
+                           'help'=>'Mark packets with specified TOS' },
+    'quiet'	      => { 'p_arg'=>'q', 
+                           'type'=>'noarg', 
+                           'help'=>'Only print summary lines' },
+    'record-route'    => { 'p_arg'=>'R',  
+                           'type'=>'noarg', 
+                           'help'=>'Record route the packet takes' },
+    'size'	      => { 'p_arg'=>'s:',
+                           'type'=>'<bytes>', 
+                           'help'=>'Number of bytes to send' },
+    'ttl'	      => { 'p_arg'=>'t:', 
+                           'type'=>'<ttl>', 
+                           'help'=>'Maximum packet lifetime' },
+    'verbose'	      => { 'p_arg'=>'v',  
+                           'type'=>'noarg', 
+                           'help'=>'Verbose output' }
+);
+
+
+
+# First argument is host
+my $host = shift @ARGV;
+die "ping: Missing host\n"
+    unless defined($host);
+if ($host eq "--get-options"){
+  my @comp_args = @ARGV;
+  get_options(\%options, \@comp_args);
+}
+my $ip = new NetAddr::IP $host;
+die "ping: Unknown host: $host\n"
+    unless defined($ip);
+
+my $cmd;
+given ($ip->version) {
+    when (4) {	$cmd = '/bin/ping'; }
+    when (6) {	$cmd = '/bin/ping6' }
+    default {
+	die "Unknown address: $host\n";
+    }
+}
+
+my @cmdargs = ( 'ping' );
+my $args = [ 'ping', $host, @ARGV ];
+$args = expand_args(\%options, $args);
+shift @$args; shift @$args;
+while (my $arg = shift @$args) {
+    my $pingarg = $options{$arg}->{p_arg};
+    die "ping: unknown option $arg\n"
+	unless $pingarg;
+    
+    my $flag = "-" . substr($pingarg, 0, 1);
+    push @cmdargs, $flag;
+
+    if (rindex($pingarg, ':') != -1) {
+        my $optarg = shift @$args;
+	die "ping: missing argument for $arg option\n"
+	    unless defined($optarg);
+	push @cmdargs, $optarg;
+    }
+}
+exec { $cmd } @cmdargs, $host;
+

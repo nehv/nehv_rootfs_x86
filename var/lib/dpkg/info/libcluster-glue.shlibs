@@ -1,0 +1,5 @@
+libplumb 2 libcluster-glue
+libstonith 1 libcluster-glue
+liblrm 2 libcluster-glue
+libplumbgpl 2 libcluster-glue
+libpils 2 libcluster-glue

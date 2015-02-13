@@ -1,0 +1,9 @@
+type:  txt 
+default:  "forward"
+help: Policy to handle incoming DHCPv4 packets which already contain relay agent options
+syntax:expression: $VAR(@) in "append", "replace", "forward", "discard";
+                   "Valid options for relay-agents-packets are \"append\", \"replace\", \"forward\", or \"discard\""
+val_help: append; append own relay options to packet
+val_help: replace; replace existing agent option field
+val_help: forward; forward packet unchanged
+val_help: discard; discard packet (default action if giaddr not set in packet)

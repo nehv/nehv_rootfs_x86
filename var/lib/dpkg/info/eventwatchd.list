@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/eventwatchd
+/usr/share/doc/eventwatchd/changelog.gz
+/usr/share/doc/eventwatchd/changelog.Debian.gz
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/eventwatchd
+/usr/bin
+/usr/bin/eventwatchd
+/etc
+/etc/eventwatchd
+/etc/eventwatchd/eventwatchd.conf.sample
+/etc/init.d
+/etc/init.d/eventwatchd

@@ -1,0 +1,48 @@
+# accept_source_route - Text
+#         Accept source routing (routing extension header).
+# 
+#    enable: Accept only routing header type 2.
+#    disable: Do not accept routing header.
+# 
+#    Default: disable
+
+
+type: txt
+
+help: Policy for handling IPv6 packets with routing extension header
+
+val_help: enable; Enable processing of IPv6 packets with routing header type 2
+val_help: disable; Disable processing of IPv6 packets with routing header
+
+default: "disable"
+
+syntax:expression: $VAR(@) in "enable", "disable"; "ipv6-src-route must be enable or disable"
+
+update:
+	if [ -d /proc/sys/net/ipv6 ]; then
+	    array=(`ls /proc/sys/net/ipv6/conf/`)
+            array_len=${#array[*]}
+	    i=0
+	    while [ $i -lt $array_len ]; do
+		if [ x$VAR(@) == xenable ]; then
+		    sudo sh -c "echo 0 > \
+			/proc/sys/net/ipv6/conf/${array[$i]%:*}/accept_source_route"
+		else
+		    sudo sh -c "echo -1 > \
+			/proc/sys/net/ipv6/conf/${array[$i]%:*}/accept_source_route"
+		fi
+		let i++
+	    done
+	fi
+
+delete:
+	if [ -d /proc/sys/net/ipv6 ]; then
+            array=(`ls /proc/sys/net/ipv6/conf/`)
+            array_len=${#array[*]}
+            i=0
+            while [ $i -lt $array_len ]; do
+               sudo sh -c "echo -1 > \
+                 /proc/sys/net/ipv6/conf/${array[$i]%:*}/accept_source_route"
+               let i++
+            done
+	fi

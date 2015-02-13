@@ -1,0 +1,16 @@
+This file notes what should be done (and what warnings we currently accept)
+for the Debian package.
+
+The current tree of example files should be re-visited and re-packaged.
+The goal is to throw all working-and-not-deprecated files at a script place,
+and mark all other as not working. However, the way to do this is to first
+create a scripting system, and then (as the next step) re-visit the scripts.
+So we ignore linda/lintian warnings and errors about the example scripts at
+the moment.
+
+We also need an rewrite of the upstream make system. This is on the way.
+So, if something is more or less an aesthetical problem, we ignore it if
+if needs changes in debian/rules. We'll do that direct after the
+implementation of the new makefiles.
+
+Andreas Barth, 2003-09-28

@@ -1,0 +1,182 @@
+#!/bin/bash
+# **** License ****
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# This code was originally developed by Vyatta, Inc.
+# Portions created by Vyatta are Copyright (C) 2007 Vyatta, Inc.
+# All Rights Reserved.
+#
+# Author:	Tom Grennan <tgrennan@vyatta.com>
+# Description:	firewall init 
+#		this is an indirect init sub-script executed by ofr.init
+#
+# **** End License ****
+
+prefix=/opt/vyatta
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+sbindir=${exec_prefix}/sbin
+
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin:$bindir:$sbindir
+
+. /lib/lsb/init-functions
+
+ACTION=$1
+
+declare -a modules=(
+    nf_conntrack
+    nf_conntrack_ftp
+    nf_conntrack_tftp
+    nf_nat
+    nf_nat_ftp
+    nf_nat_tftp
+    nf_nat_proto_gre
+    nf_nat_sip
+    nf_nat_h323
+    nf_nat_pptp)
+
+## setup firewall & nat conntrack modules
+start () {
+    
+    for mod in ${modules[@]} ; do 
+	modprobe --syslog $mod
+    done
+    # raw table ignore connection tracking chain
+    iptables -t raw -N VYATTA_CT_IGNORE
+    iptables -t raw -A VYATTA_CT_IGNORE -j RETURN
+ 
+    # conection tracking timeout chain
+    iptables -t raw -N VYATTA_CT_TIMEOUT 
+    iptables -t raw -A VYATTA_CT_TIMEOUT -j RETURN
+   
+    # user space helpers chain, enables helpers using iptables --helper. 
+    # FTP, sip and h323 to use this chain later on.
+    iptables -t raw -N VYATTA_CT_HELPER
+    /usr/sbin/nfct helper add rpc inet tcp 
+    /usr/sbin/nfct helper add rpc inet udp 
+    /usr/sbin/nfct helper add tns inet tcp 
+    iptables -t raw -I VYATTA_CT_HELPER -p tcp --dport 111 -j CT --helper rpc
+    iptables -t raw -I VYATTA_CT_HELPER -p udp --dport 111 -j CT --helper rpc
+    iptables -t raw -I VYATTA_CT_HELPER -p tcp --dport 1521 -j CT --helper tns 
+    iptables -t raw -I VYATTA_CT_HELPER -p tcp --dport 1525 -j CT --helper tns 
+    iptables -t raw -A VYATTA_CT_HELPER -j RETURN
+
+    # set up notrack chains/rules for IPv4
+    # by default, nothing is tracked.
+    iptables -t raw -N VYATTA_CT_PREROUTING_HOOK
+    iptables -t raw -A VYATTA_CT_PREROUTING_HOOK -j RETURN
+    iptables -t raw -A PREROUTING -j VYATTA_CT_PREROUTING_HOOK
+    iptables -t raw -A PREROUTING -j NOTRACK
+    iptables -t raw -N VYATTA_CT_OUTPUT_HOOK
+    iptables -t raw -A VYATTA_CT_OUTPUT_HOOK -j RETURN
+    iptables -t raw -A OUTPUT -j VYATTA_CT_OUTPUT_HOOK
+    iptables -t raw -A OUTPUT -j NOTRACK
+
+    # set up pre-firewall hooks for IPv4
+    iptables -N VYATTA_PRE_FW_IN_HOOK
+    iptables -N VYATTA_PRE_FW_FWD_HOOK
+    iptables -N VYATTA_PRE_FW_OUT_HOOK
+    iptables -A VYATTA_PRE_FW_IN_HOOK -j RETURN
+    iptables -A VYATTA_PRE_FW_FWD_HOOK -j RETURN
+    iptables -A VYATTA_PRE_FW_OUT_HOOK -j RETURN
+    iptables -I INPUT -j VYATTA_PRE_FW_IN_HOOK
+    iptables -I FORWARD -j VYATTA_PRE_FW_FWD_HOOK
+    iptables -I OUTPUT -j VYATTA_PRE_FW_OUT_HOOK
+
+    # set up post-firewall hooks for IPv4
+    iptables -N VYATTA_POST_FW_IN_HOOK
+    iptables -N VYATTA_POST_FW_FWD_HOOK
+    iptables -N VYATTA_POST_FW_OUT_HOOK
+    iptables -A VYATTA_POST_FW_IN_HOOK -j ACCEPT
+    iptables -A VYATTA_POST_FW_FWD_HOOK -j ACCEPT
+    iptables -A VYATTA_POST_FW_OUT_HOOK -j ACCEPT
+    iptables -A INPUT -j VYATTA_POST_FW_IN_HOOK
+    iptables -A FORWARD -j VYATTA_POST_FW_FWD_HOOK
+    iptables -A OUTPUT -j VYATTA_POST_FW_OUT_HOOK
+
+    # set up IPV6 notrack and pre, post fw rules
+    if [ -d /proc/sys/net/ipv6 ] ; then
+	# set up notrack chains/rules for IPv6
+        ip6tables -t raw -N VYATTA_CT_PREROUTING_HOOK
+        ip6tables -t raw -A VYATTA_CT_PREROUTING_HOOK -j RETURN
+        ip6tables -t raw -A PREROUTING -j VYATTA_CT_PREROUTING_HOOK
+        ip6tables -t raw -A PREROUTING -j NOTRACK
+        ip6tables -t raw -N VYATTA_CT_OUTPUT_HOOK
+        ip6tables -t raw -A VYATTA_CT_OUTPUT_HOOK -j RETURN
+        ip6tables -t raw -A OUTPUT -j VYATTA_CT_OUTPUT_HOOK
+        ip6tables -t raw -A OUTPUT -j NOTRACK
+
+        # set up pre-firewall hooks for IPv6
+        ip6tables -N VYATTA_PRE_FW_IN_HOOK
+        ip6tables -N VYATTA_PRE_FW_FWD_HOOK
+        ip6tables -N VYATTA_PRE_FW_OUT_HOOK
+        ip6tables -A VYATTA_PRE_FW_IN_HOOK -j RETURN
+        ip6tables -A VYATTA_PRE_FW_FWD_HOOK -j RETURN
+        ip6tables -A VYATTA_PRE_FW_OUT_HOOK -j RETURN
+        ip6tables -I INPUT -j VYATTA_PRE_FW_IN_HOOK
+        ip6tables -I FORWARD -j VYATTA_PRE_FW_FWD_HOOK
+        ip6tables -I OUTPUT -j VYATTA_PRE_FW_OUT_HOOK
+
+	# set up post-firewall hooks for IPv6
+	ip6tables -N VYATTA_POST_FW_IN_HOOK
+	ip6tables -N VYATTA_POST_FW_FWD_HOOK
+	ip6tables -N VYATTA_POST_FW_OUT_HOOK
+	ip6tables -A VYATTA_POST_FW_IN_HOOK -j ACCEPT
+	ip6tables -A VYATTA_POST_FW_FWD_HOOK -j ACCEPT
+	ip6tables -A VYATTA_POST_FW_OUT_HOOK -j ACCEPT
+	ip6tables -A INPUT -j VYATTA_POST_FW_IN_HOOK
+	ip6tables -A FORWARD -j VYATTA_POST_FW_FWD_HOOK
+	ip6tables -A OUTPUT -j VYATTA_POST_FW_OUT_HOOK
+    else
+	logger -t "Vyatta firewall init" -p warning "Kernel IPv6 support disabled.  Not initializing IPv6 firewall"
+    fi
+    
+    # set up pre-DNAT hook
+    iptables -t nat -N VYATTA_PRE_DNAT_HOOK
+    iptables -t nat -A VYATTA_PRE_DNAT_HOOK -j RETURN
+    iptables -t nat -A PREROUTING -j VYATTA_PRE_DNAT_HOOK
+
+    # set up pre-SNAT hook
+    iptables -t nat -N VYATTA_PRE_SNAT_HOOK
+    iptables -t nat -A VYATTA_PRE_SNAT_HOOK -j RETURN
+    iptables -t nat -A POSTROUTING -j VYATTA_PRE_SNAT_HOOK
+
+    iptables -t raw -I PREROUTING -j VYATTA_CT_TIMEOUT
+    iptables -t raw -I OUTPUT -j VYATTA_CT_TIMEOUT
+
+    iptables -t raw -I PREROUTING -j VYATTA_CT_IGNORE
+    iptables -t raw -I OUTPUT -j VYATTA_CT_IGNORE
+    # Loosen the acceptability rules for TCP sequence and ACK numbers in
+    # conntrack.  This allows TCP connections through NAT to survive certain
+    # cases of packet loss where conntrack can not accurately track the
+    # connection state
+    sysctl -q -w net.netfilter.nf_conntrack_tcp_be_liberal=1
+    
+    # set conntrack table size
+    sysctl -q -w net.nf_conntrack_max=262144
+
+    # set conntrack expect table size
+    sysctl -q -w net.netfilter.nf_conntrack_expect_max=2048
+}
+
+case "$ACTION" in
+    start) start ;;
+    stop|restart|force-reload) true ;; # nothing to stop/restart
+    *)	log_failure_msg "action unknown: $ACTION" ;
+	false ;;
+esac
+
+exit $?
+
+# Local Variables:
+# mode: shell-script
+# sh-indentation: 4
+# End:
+

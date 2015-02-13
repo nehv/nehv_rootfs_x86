@@ -1,0 +1,6 @@
+auto
+/usr/sbin/watchdog
+
+/usr/sbin/watchdog.bb
+10
+

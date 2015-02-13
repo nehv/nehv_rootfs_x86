@@ -1,0 +1,4 @@
+/etc/opennhrp/opennhrp.conf
+/etc/opennhrp/racoon-ph1dead.sh
+/etc/opennhrp/racoon-ph1down.sh
+/etc/opennhrp/opennhrp-script

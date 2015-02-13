@@ -1,0 +1,7 @@
+/usr/lib/gio/modules libglib2.0-0
+/usr/man man-db
+/usr/share/man man-db
+/usr/local/man man-db
+/usr/local/share/man man-db
+/usr/X11R6/man man-db
+/opt/man man-db

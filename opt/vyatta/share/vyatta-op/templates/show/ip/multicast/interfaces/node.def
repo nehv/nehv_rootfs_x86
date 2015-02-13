@@ -1,0 +1,8 @@
+help: show multicast interfaces
+
+run: if cli-shell-api existsActive protocols igmp-proxy; then
+       sudo /opt/vyatta/bin/sudo-users/show-igmpproxy.pl \
+         --action=show-mr-intf
+     else
+       echo IGMP proxy not configured
+     fi

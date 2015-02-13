@@ -1,0 +1,3 @@
+type: txt
+help: Ingress traffic policy for interface
+allowed: /opt/vyatta/sbin/vyatta-qos.pl --list-policy in

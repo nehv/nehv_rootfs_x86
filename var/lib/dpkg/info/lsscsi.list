@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/bin
+/usr/bin/lsscsi
+/usr/share
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/lsscsi.8.gz
+/usr/share/doc
+/usr/share/doc/lsscsi
+/usr/share/doc/lsscsi/AUTHORS
+/usr/share/doc/lsscsi/CREDITS
+/usr/share/doc/lsscsi/README
+/usr/share/doc/lsscsi/lsscsi.html
+/usr/share/doc/lsscsi/copyright
+/usr/share/doc/lsscsi/changelog.Debian.gz
+/usr/share/doc/lsscsi/changelog.gz

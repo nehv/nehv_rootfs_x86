@@ -1,0 +1,12 @@
+/.
+/opt
+/opt/vyatta
+/opt/vyatta/etc
+/opt/vyatta/etc/config
+/opt/vyatta/etc/iso-submodules.txt
+/opt/vyatta/etc/deb-versions.txt
+/opt/vyatta/etc/config.boot.default
+/opt/vyatta/etc/version
+/opt/vyatta/etc/iso-build.txt
+/opt/vyatta/etc/version-virt
+/opt/vyatta/etc/build.txt

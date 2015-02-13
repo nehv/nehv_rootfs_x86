@@ -1,0 +1,11 @@
+/etc/modprobe.d/open-vm-tools.conf
+/etc/vmware-tools/statechange.subr
+/etc/vmware-tools/resume-vm-default
+/etc/vmware-tools/scripts/vmware/network
+/etc/vmware-tools/vm-support
+/etc/vmware-tools/tools.conf
+/etc/vmware-tools/suspend-vm-default
+/etc/vmware-tools/poweroff-vm-default
+/etc/vmware-tools/poweron-vm-default
+/etc/pam.d/vmtoolsd
+/etc/init.d/open-vm-tools

@@ -1,0 +1,18 @@
+type: bool
+default: false
+help: Enable spanning tree protocol
+val_help: true; Enable Spanning Tree Protocol
+val_help: false; Disable Spanning Tree Protocol (default)
+
+update: if [ "$VAR(@)" == "true" ]; then
+	  if [ -z "$VAR(../../forwarding-delay)" ]; then
+		/usr/sbin/brctl setfd $VAR(../@) 15
+          else
+		/usr/sbin/brctl setfd $VAR(../@) $VAR(../../forwarding-delay)
+          fi
+	  /usr/sbin/brctl stp $VAR(../@) on
+        else
+          /usr/sbin/brctl stp $VAR(../@) off
+          /usr/sbin/brctl setfd $VAR(../@) 0
+        fi
+delete:/usr/sbin/brctl stp $VAR(../@) off

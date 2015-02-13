@@ -1,0 +1,8 @@
+
+type: txt
+
+help: NIS domain name for client to use
+
+syntax:expression: pattern $VAR(@) "^[-_a-zA-Z0-9.]+$" ; "invalid NIS domain name syntax \"$VAR(@)\""
+
+

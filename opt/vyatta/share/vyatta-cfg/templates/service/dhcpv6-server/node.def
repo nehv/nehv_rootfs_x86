@@ -1,0 +1,21 @@
+
+priority: 900
+
+help: DHCP for IPv6 (DHCPv6) server
+
+end:
+	sudo /opt/vyatta/sbin/dhcpdv6-config.pl
+
+	if [ "$COMMIT_ACTION" = "SET" ]; then
+ 	    sudo /opt/vyatta/sbin/dhcpdv6.init start
+	elif [ "$COMMIT_ACTION" = "DELETE" ]; then
+	    sudo /opt/vyatta/sbin/dhcpdv6.init stop
+	elif [ "$COMMIT_ACTION" = "ACTIVE" ]; then
+	    sudo /opt/vyatta/sbin/dhcpdv6.init restart
+	else
+	    echo "Error: COMMIT_ACTION environment variable is not set!"
+            exit 0
+	fi
+        echo "Done."
+
+

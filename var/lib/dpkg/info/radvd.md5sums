@@ -1,0 +1,12 @@
+5a72ddae28693fb3dc772bb95457437c  usr/sbin/radvd
+113680a7d5a02969cb4ea4c638c60ac6  usr/sbin/radvdump
+ce437c861c91171024cab000ae4e6e15  usr/share/doc/radvd/README
+29d092267e1b8d60e0bf8bb17f2702f6  usr/share/doc/radvd/README.Debian
+35230e5bc082e92f8d650e847c871891  usr/share/doc/radvd/TODO
+005ff27b6dd4f9738507338ff95885bd  usr/share/doc/radvd/changelog.gz
+6a2234c66c62895a3153bed5c539769c  usr/share/doc/radvd/copyright
+f07c39a8fbb9ea1e45579cccc18ab44b  usr/share/doc/radvd/examples/radvd.conf.example
+5f4804cb34ce3363366815b2315a4f56  usr/share/doc/radvd/examples/simple-radvd.conf
+68a62a4c9a3818169be3816823e5a52b  usr/share/man/man5/radvd.conf.5.gz
+dcbe3df7b137e0d1c8caea791fa5d69e  usr/share/man/man8/radvd.8.gz
+341cc5bf0a61823e241f30223c458d5f  usr/share/man/man8/radvdump.8.gz

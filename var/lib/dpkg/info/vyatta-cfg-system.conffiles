@@ -1,0 +1,8 @@
+/etc/modprobe.d/no-copybreak.conf
+/etc/netplug/linkdown.d/dhclient
+/etc/netplug/linkup.d/dhclient
+/etc/rsyslog.d/vyatta-log.conf
+/etc/init.d/vyos-intfwatchd
+/etc/init.d/vyatta-config-reboot-params
+/etc/init.d/ec2-fetch-ssh-public-key
+/etc/cron.hourly/vyatta-logrotate-hourly

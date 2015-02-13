@@ -1,0 +1,226 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          vyatta-router
+# Required-Start:    $syslog $time $local_fs vyatta-unicast
+# Required-Stop:     $syslog $time $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: VyOS Router
+# Description:       Debian init script for the VyOS Router
+### END INIT INFO
+# **** License ****
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# A copy of the GNU General Public License is available as
+# `/usr/share/common-licenses/GPL' in the Debian GNU/Linux distribution
+# or on the World Wide Web at `http://www.gnu.org/copyleft/gpl.html'.
+# You can also obtain it by writing to the Free Software Foundation,
+# Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+# MA 02110-1301, USA.
+#
+# Author:	Tom Grennan <tgrennan@vyatta.com>
+# **** End License ****
+
+. /lib/lsb/init-functions
+
+: ${vyatta_env:=/etc/default/vyatta}
+source $vyatta_env
+
+declare progname=${0##*/}
+declare action=$1; shift
+
+declare -x BOOTFILE=$vyatta_sysconfdir/config/config.boot
+
+# If vyos-config= boot option is present, use that file instead
+VYOS_CONFIG=$(cat /proc/cmdline | grep -Eo '\bvyos-config=(\S+)\b' /proc/cmdline | awk -F'=' '{print $2}')
+
+if [ ! -z "$VYOS_CONFIG" ]; then
+    if [ -r "$VYOS_CONFIG" ]; then
+        echo "Config selected manually: $VYOS_CONFIG"
+        declare -x BOOTFILE="$VYOS_CONFIG"
+    else
+        echo "WARNING: Could not read selected config file, using default!"
+    fi
+fi
+
+declare -a subinit
+declare -a all_subinits=(
+    rl-system
+    firewall )
+
+if [ $# -gt 0 ] ; then
+    for s in $@ ; do
+	[ -x ${vyatta_sbindir}/${s}.init ] && subinit[${#subinit}]=$s
+    done
+else
+    for s in ${all_subinits[@]} ; do
+	[ -x ${vyatta_sbindir}/${s}.init ] && subinit[${#subinit}]=$s
+    done
+fi
+
+GROUP=vyattacfg
+
+# check if bootup of this portion is disabled
+disabled () {
+    grep -q -w no-vyos-$1 /proc/cmdline
+}
+
+# if necessary, provide initial config
+init_bootfile () {
+   if [ ! -r $BOOTFILE ] ; then
+	if [ -f $vyatta_sysconfdir/config.boot.default ]; then
+	  cp $vyatta_sysconfdir/config.boot.default $BOOTFILE
+        else
+          $vyatta_sbindir/vyatta_current_conf_ver.pl > $BOOTFILE
+        fi
+
+	chgrp ${GROUP} $BOOTFILE
+	chmod 660 $BOOTFILE
+    fi
+}
+
+# if necessary, migrate initial config
+migrate_bootfile ()
+{
+    if [ -x $vyatta_sbindir/vyatta_config_migrate.pl ]; then
+        log_progress_msg migrate
+        sg ${GROUP} -c "$vyatta_sbindir/vyatta_config_migrate.pl $BOOTFILE"
+    fi
+}
+
+# load the initial config
+load_bootfile ()
+{
+    log_progress_msg configure
+    (
+      if [ -f /etc/default/vyatta-load-boot ]; then
+        # build-specific environment for boot-time config loading
+        source /etc/default/vyatta-load-boot
+      fi
+      sg ${GROUP} -c "$vyatta_sbindir/vyatta-boot-config-loader $BOOTFILE"
+    )
+}
+
+# 
+# On image booted machines, we need to mount /boot from the image-specific
+# boot directory so that kernel package installation will put the
+# files in the right place.  We also have to mount /boot/grub from the
+# system-wide grub directory so that tools that edit the grub.cfg
+# file will find it in the expected location.
+#
+bind_mount_boot()
+{
+    if [ -e /live/image/boot ]; then
+	image_name=`cat /proc/cmdline | sed -e s+^.*vyatta-union=/boot/++ | sed -e 's/ .*$//'`
+	if [ -n "$image_name" ]; then
+	    mount --bind /live/image/boot/$image_name /boot
+	    if [ $? -ne 0 ]; then
+		echo "Couldn't bind mount /boot"
+	    fi
+	    if [ ! -d /boot/grub ]; then
+		mkdir /boot/grub
+	    fi
+	    mount --bind /live/image/boot/grub /boot/grub
+	    if [ $? -ne 0 ]; then
+		echo "Couldn't bind mount /boot/grub"
+	    fi
+	fi
+    fi
+}
+
+#
+# On live booted machines (i.e. systems booted from LiveCD and systems
+# booted from images), the /opt/vyatta/etc/config directory is bind
+# mounted to /config.  We want all machines to have the config directory
+# mounted under /config because it is a more convenient location.  So we
+# bind mount /opt/vyatta/etc/config to /config here if it has not already
+# been done.
+#
+mount_slash_config ()
+{
+    mounted=`mount | grep /opt/vyatta/etc/config`
+
+    if [ -z "$mounted" ]; then
+	if [ ! -d /config ]; then
+	    mkdir /config
+	fi
+	mount --bind /opt/vyatta/etc/config /config
+    fi
+    chgrp -R ${GROUP} /config
+}
+
+start ()
+{
+    log_action_begin_msg "Mounting VyOS Config"
+    # ensure the vyatta_configdir supports a large number of inodes since
+    # the config hierarchy is often inode-bound (instead of size).
+    # impose a minimum and then scale up dynamically with the actual size
+    # of the system memory.
+    local tmem=$(sed -n 's/^MemTotal: \+\([0-9]\+\) kB$/\1/p' /proc/meminfo)
+    local tpages
+    local tmpfs_opts="nosuid,nodev,mode=775,nr_inodes=0" #automatically allocate inodes
+    mount -o $tmpfs_opts -t tmpfs none ${vyatta_configdir} \
+      && chgrp ${GROUP} ${vyatta_configdir}
+    log_action_end_msg $?
+
+    disabled bootfile || init_bootfile
+
+    mount_slash_config
+
+    log_daemon_msg "Starting VyOS router"
+    disabled migrate || migrate_bootfile
+    for s in ${subinit[@]} ; do
+	if ! disabled $s; then 
+	    log_progress_msg $s
+	    if ! ${vyatta_sbindir}/${s}.init start
+	    then log_failure_msg
+		 exit 1
+	    fi
+	fi
+    done
+
+    disabled configure || load_bootfile
+    log_end_msg $?
+
+    telinit q
+    bind_mount_boot
+    chmod g-w,o-w /
+}
+
+stop()
+{
+    local -i status=0
+    log_daemon_msg "Stopping VyOS router"
+    for ((i=${#sub_inits[@]} - 1; i >= 0; i--)) ; do
+	s=${subinit[$i]}
+	log_progress_msg $s
+	${vyatta_sbindir}/${s}.init stop
+	let status\|=$?
+    done
+    log_end_msg $status
+    log_action_begin_msg "Un-mounting VyOS Config"
+    umount ${vyatta_configdir}
+    log_action_end_msg $?
+}
+
+case "$action" in
+    start) start ;;
+    stop)  stop ;;
+    restart|force-reload) stop && start ;;
+    *)	log_failure_msg "usage: $progname [ start|stop|restart ] [ subinit ... ]" ;
+	false ;;
+esac
+
+exit $?
+
+# Local Variables:
+# mode: shell-script
+# sh-indentation: 4
+# End:

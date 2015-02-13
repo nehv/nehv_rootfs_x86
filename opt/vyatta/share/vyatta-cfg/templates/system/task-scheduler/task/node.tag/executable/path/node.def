@@ -1,0 +1,9 @@
+type: txt
+syntax:expression: exec
+    "if [ ! -x $VAR(@) ]; then \
+        echo \"File $VAR(@) does not exist or is not executable\"; \
+        exit 1; \
+    fi; "
+syntax:expression: exec "/opt/vyatta/sbin/check_file_in_config_dir $VAR(@) '/config/scripts'"
+help: Path to executable
+

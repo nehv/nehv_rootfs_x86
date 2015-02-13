@@ -1,0 +1,4 @@
+priority: 650
+help: Routing Information Protocol (RIP) parameters
+create: vtysh -c "configure terminal" -c "router rip"
+delete: vtysh -c "configure terminal" -c "no router rip"

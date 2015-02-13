@@ -1,0 +1,8 @@
+94f559cbf240220e1716d46c5d7f0737  usr/lib/ipsec/_pluto_adns
+7f03c5c8a127d3291882c412fba31828  usr/lib/ipsec/pluto
+f269c19d71eebf52b8d486720a61b142  usr/lib/ipsec/whack
+251abdd254368bf6d4bf2be931da01cb  usr/share/doc/strongswan-ikev1/NEWS.Debian.gz
+320a05d5ae48a9d02961a61b9487fe27  usr/share/doc/strongswan-ikev1/changelog.Debian.gz
+9f5899edb0ce4710d5cb47af2a569f13  usr/share/doc/strongswan-ikev1/changelog.gz
+18235e8c645617e6cb4bf66662406ac1  usr/share/doc/strongswan-ikev1/copyright
+e93c83c164559ff8fb0a046ec0083342  usr/share/man/man8/pluto.8.gz

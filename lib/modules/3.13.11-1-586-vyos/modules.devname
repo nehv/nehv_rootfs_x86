@@ -1,0 +1,10 @@
+# Device nodes to trigger on-demand module loading.
+cuse cuse c10:203
+fuse fuse c10:229
+autofs4 autofs c10:235
+microcode cpu/microcode c10:184
+dm_mod mapper/control c10:236
+uinput uinput c10:223
+tun net/tun c10:200
+ppp_generic ppp c108:0
+loop loop-control c10:237

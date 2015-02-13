@@ -1,0 +1,7 @@
+7283bb5ccd52db3776a611ad6b8c7a40  usr/bin/tshark
+0effaa50a63b39fe7503424d391149bc  usr/share/doc/tshark/README.Debian
+264f1dcbc7dc2a1a5137ab5ba4e23e64  usr/share/doc/tshark/changelog.Debian.gz
+c6b12418a34bd038642c4e58031eb23d  usr/share/doc/tshark/changelog.gz
+0629d1baa4c13f9e6c7f037c0d7ca713  usr/share/doc/tshark/copyright
+0acf50f1724d74db3509715c6763b075  usr/share/lintian/overrides/tshark
+5cd1e93d0bb4adb71ad829b430e5d7d0  usr/share/man/man1/tshark.1.gz

@@ -1,0 +1,8 @@
+
+type: u32
+
+syntax:expression: ($VAR(@) >= 1) && ($VAR(@) <= 255) ; "Must be between 1 and 255"
+
+help: Maximum hop count for which requests will be processed
+
+

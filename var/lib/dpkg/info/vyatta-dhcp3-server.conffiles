@@ -1,0 +1,2 @@
+/etc/dhcp3/dhcpd.conf
+/etc/init.d/vyatta-dhcp3-server

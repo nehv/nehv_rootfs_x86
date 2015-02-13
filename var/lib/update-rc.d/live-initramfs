@@ -1,0 +1,1 @@
+update-rc.d live-initramfs stop 89 0 6 .

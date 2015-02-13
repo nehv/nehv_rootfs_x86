@@ -1,0 +1,3 @@
+help: Restart task scheduler service
+
+run: sudo /opt/vyatta/bin/sudo-users/vyatta-restart-crond.sh

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<event-handler>
+  <!--
+    *  Policies define what commands or scripts should be
+    *  executed when a regex is caught.
+    *
+    *  Policies consist of events enclosed in <event> </event>
+    *  tags.
+    *
+    *  Events consist of one or more Perl compatible regex
+    *  patterns enclosed in <pattern> </pattern> tags
+    *  and one executable path (with or without arguments)
+    *  enclosed in <run> </run> tag.
+    *  You should use absolute paths, like 
+    *  "/sbin/shutdown -r now"
+    -->
+  <policies>
+    <policy name="general">
+      <event name="test">
+        <pattern>test</pattern>
+        <pattern>test2</pattern>
+        <run>logger "event 1 caught"</run>
+      </event>
+      <event name="fgsgfs">
+        <pattern>fgsfds</pattern>
+        <run>logger "event 2 caught"</run>
+      </event>
+    </policy>
+  </policies>
+
+  <!--
+    * Feeds are text streams you want to monitor.
+    * They can be UNIX FIFO pipes (they must exist
+    * before you run eventwatchd) or
+    * executables that produce some output.
+    *
+    * You can apply a policy with policy="polName"
+    * argument or temporarily disable a feed
+    * without removing it from config by
+    * disable="disable".
+    -->
+  <feeds>
+    <feed name="syslog" type="fifo" source="/var/log/log.pipe" policy="general" />
+    <feed name="netlink" type="command" source="/sbin/ip monitor"  policy="general" disable="disable" />
+  </feeds>
+</event-handler>
+

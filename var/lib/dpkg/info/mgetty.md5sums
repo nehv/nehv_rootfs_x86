@@ -1,0 +1,14 @@
+266db1d09ed44ec60819645634a11a73  usr/share/man/man4/mgettydefs.4.gz
+a112325544a275573174111aec85e4ab  usr/share/man/man8/mgetty.8.gz
+fe43026de6b5f9c7f327a48dbb2221f1  usr/share/man/man8/callback.8.gz
+e7209d9f92fc685d06dcf85905d6dc10  usr/share/doc/mgetty/changelog.gz
+191766562b95f611b6c71088e8bae3f4  usr/share/doc/mgetty/changelog.Debian.gz
+061e6634826c10fb1526ed05eb2dcedd  usr/share/doc/mgetty/copyright
+4e0aadda2e9cff3d69d830ccb5e08691  usr/share/doc/mgetty/TODO.Debian
+6d6f49a0cacb44271b7d891e7bd30c69  usr/share/doc/mgetty/README.Debian
+6f5073da469c20dd4d0370885ee9348f  usr/share/mgetty/templates/etc/dialin.config
+95328dc8b08b091f27219a71fc6b612b  usr/share/mgetty/templates/etc/mgetty.config
+cad2089be26793f2b92e5864c32c1316  usr/share/mgetty/templates/etc/login.config
+5366647afe9ebb5132802b5eb2a51528  usr/share/info/mgetty.info.gz
+880dff8f0c23db213c0d3062715a5d77  usr/sbin/callback
+173924da821346108788777b2f01213e  sbin/mgetty

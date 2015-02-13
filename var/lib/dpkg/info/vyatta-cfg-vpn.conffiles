@@ -1,0 +1,4 @@
+/etc/ppp/ip-down.d/vpn-ppp-down
+/etc/ppp/ip-up.d/vpn-ppp-up
+/etc/logrotate.d/vyatta-ipsec-logs
+/etc/dhcp3/dhclient-exit-hooks.d/ipsecd

@@ -1,0 +1,9 @@
+type: txt
+help: WPA mode
+allowed: echo "wpa wpa2 both"
+default: "both"
+syntax:expression: $VAR(@) in "wpa", "wpa2", "both" ; \
+		   "Unknown WPA mode: $VAR(@)"
+val_help:wpa; WPA (IEEE 802.11i/D3.0)
+val_help:wpa2; WPA2 (full IEEE 802.11i/RSN)
+val_help:both; Allow both WPA and WPA2

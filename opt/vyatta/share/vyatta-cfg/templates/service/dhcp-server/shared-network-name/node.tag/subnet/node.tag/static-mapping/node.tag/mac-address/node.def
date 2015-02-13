@@ -1,0 +1,2 @@
+type: macaddr
+help: Static mapping for specified MAC address [REQUIRED]

@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/vyatta-keepalived" ]; then
+	update-rc.d vyatta-keepalived defaults >/dev/null
+	invoke-rc.d vyatta-keepalived start || exit $?
+fi
+# End automatically added section

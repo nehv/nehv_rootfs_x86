@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libnetfilter-queue1
+/usr/share/doc/libnetfilter-queue1/copyright
+/usr/share/doc/libnetfilter-queue1/changelog.Debian.gz
+/usr/lib
+/usr/lib/libnetfilter_queue.so.1.2.0
+/usr/lib/libnetfilter_queue.so.1

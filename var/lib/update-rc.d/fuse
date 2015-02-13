@@ -1,0 +1,1 @@
+update-rc.d fuse start 34 S . stop 41 0 6 .

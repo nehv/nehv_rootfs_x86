@@ -1,0 +1,72 @@
+You can find documentation through
+
+1. info mgetty
+
+2. reading/printing the manual in this directory
+
+The only thing you usually need to do is customize the configuration
+files in /etc/mgetty and /etc/inittab.
+
+Inittab entries
+---------------
+You can find examples of inittab entries in:
+/usr/share/doc/mgetty/examples/inittab.DEBIAN (provided mgetty-docs is
+installed).
+
+Faxing (if mgetty-fax installed)
+--------------------------------
+In order for faxrunqd to be run by /etc/init.d/mgetty-fax, you will need
+to specify the port(s) to be used, in /etc/mgetty/faxrunqd.config
+
+Customize /etc/mgetty/faxheader to have your phone number on all faxes.
+
+The receiving script is stored as /etc/mgetty/new_fax. It receives four
+parameters or more: the hangup code, the remote id, the number of pages,
+the file names.
+
+If you are going to be using sendfax directly, then you'll probably
+want to tell it which ports to use in /etc/mgetty/sendfax.config
+
+--------------------------
+Some modems have a bug wherein they refuse to receive FAXes at any speed
+other than 19200 bps.  Many modern modems do not have this problem, so the
+default behavior of mgetty now is *not* to switch the speed to 19200 bps.
+
+IF you are having troubles with receiving FAXes, add the following line to
+your /etc/mgetty/mgetty.config:
+
+switchbd 19200
+
+This will put you back to the default behavior of mgetty prior to the
+release of version 1.1.0-2.
+
+PAP-Dialup
+----------
+mgetty's /etc/mgetty config files are preconfigured to allow easy access
+for dialup without a dialin script using PAP authentication.
+If you install the pppd package then dialup from Win95 or other compatible
+dialers is a snap. See win95.ppp in this directory.
+
+FIDO EMSI Handling
+------------------
+mgetty comes with FIDO support enabled. A sequence of characters is send
+before the login prompt to detect and EMSI session and later erased with
+backspace. If this causes problems then switch EMSI off in mgetty.config. 
+This can be done by placing a line "fido-send-emsi n" in /etc/mgetty.config.
+
+mgetty-voice Documentation and Examples
+---------------------------------------
+Can be found under /usr/share/doc/mgetty/voice once mgetty-docs has
+been installed.
+
+Windoze Client
+--------------
+There is a W9x/WNT client, which allows you to send faxes from windows
+to a server running mgetty, to be faxed:
+
+  http://www.itex.co.za/mgetty
+
+
+Philip Hands <phil@hands.com>
+Christoph Lameter <clameter@debian.org>
+John Goerzen <jgoerzen@complete.org>

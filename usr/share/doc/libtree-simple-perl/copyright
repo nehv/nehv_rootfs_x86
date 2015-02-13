@@ -1,0 +1,27 @@
+This package was debianized by Stephen Quinney <sjq@debian.org> on
+Fri, 02 Jul 2004 11:59:25 +0100 and is maintained by the Debian Perl Group.
+
+It was downloaded from http://search.cpan.org/CPAN/authors/id/S/ST/STEVAN/
+The generic upstream URL is http://search.cpan.org/dist/Tree-Simple/
+
+Author: Stevan Little <stevan@iinteractive.com>
+
+Copyright:
+
+   Copyright 2004 - 2006 by Infinity Interactive, Inc.
+   http://www.iinteractive.com
+
+   This library is free software; you can redistribute it and/or modify
+   it under the same terms as Perl itself, these are:
+
+   a) the GNU General Public License as published by the Free Software
+      Foundation; either version 1, or (at your option) any later
+      version, or
+
+   b) the "Artistic License" which comes with Perl.
+
+   On Debian GNU/Linux systems, the complete text of the GNU General
+   Public License can be found in `/usr/share/common-licenses/GPL' and
+   the Artistic Licence in `/usr/share/common-licenses/Artistic'.
+
+

@@ -1,0 +1,6 @@
+auto
+/usr/bin/logread
+
+/usr/bin/logread.bb
+10
+

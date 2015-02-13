@@ -1,0 +1,351 @@
+Aptitude 0.6.3: log report
+Fri, Oct 10 2014 03:40:43 +0000
+
+IMPORTANT: this log only lists intended actions; actions which fail due to
+dpkg problems may not be completed.
+
+Will install 0 packages, and remove 0 packages.
+===============================================================================
+===============================================================================
+
+Log complete.
+Aptitude 0.6.3: log report
+Fri, Oct 10 2014 03:40:44 +0000
+
+IMPORTANT: this log only lists intended actions; actions which fail due to
+dpkg problems may not be completed.
+
+Will install 0 packages, and remove 0 packages.
+===============================================================================
+===============================================================================
+
+Log complete.
+Aptitude 0.6.3: log report
+Fri, Oct 10 2014 03:42:53 +0000
+
+IMPORTANT: this log only lists intended actions; actions which fail due to
+dpkg problems may not be completed.
+
+Will install 317 packages, and remove 0 packages.
+492 MB of disk space will be used
+===============================================================================
+[INSTALL, DEPENDENCIES] adduser
+[INSTALL, DEPENDENCIES] apt-transport-https
+[INSTALL, DEPENDENCIES] at
+[INSTALL, DEPENDENCIES] bash-completion
+[INSTALL, DEPENDENCIES] bcrelay
+[INSTALL, DEPENDENCIES] bind9-host
+[INSTALL, DEPENDENCIES] bmon
+[INSTALL, DEPENDENCIES] bridge-utils
+[INSTALL, DEPENDENCIES] bsdmainutils
+[INSTALL, DEPENDENCIES] ca-certificates
+[INSTALL, DEPENDENCIES] cluster-agents
+[INSTALL, DEPENDENCIES] cluster-glue
+[INSTALL, DEPENDENCIES] console-data
+[INSTALL, DEPENDENCIES] console-terminus
+[INSTALL, DEPENDENCIES] cpio
+[INSTALL, DEPENDENCIES] cpufrequtils
+[INSTALL, DEPENDENCIES] crda
+[INSTALL, DEPENDENCIES] cron
+[INSTALL, DEPENDENCIES] curl
+[INSTALL, DEPENDENCIES] ddclient
+[INSTALL, DEPENDENCIES] dialog
+[INSTALL, DEPENDENCIES] dmidecode
+[INSTALL, DEPENDENCIES] dmsetup
+[INSTALL, DEPENDENCIES] dnsmasq
+[INSTALL, DEPENDENCIES] dnsmasq-base
+[INSTALL, DEPENDENCIES] ed
+[INSTALL, DEPENDENCIES] ethtool
+[INSTALL, DEPENDENCIES] expect
+[INSTALL, DEPENDENCIES] fuse-utils
+[INSTALL, DEPENDENCIES] gawk
+[INSTALL, DEPENDENCIES] gettext-base
+[INSTALL, DEPENDENCIES] groff-base
+[INSTALL, DEPENDENCIES] heartbeat
+[INSTALL, DEPENDENCIES] host
+[INSTALL, DEPENDENCIES] hostapd
+[INSTALL, DEPENDENCIES] iftop
+[INSTALL, DEPENDENCIES] ifupdown
+[INSTALL, DEPENDENCIES] installation-report
+[INSTALL, DEPENDENCIES] ipsec-tools
+[INSTALL, DEPENDENCIES] iputils-arping
+[INSTALL, DEPENDENCIES] iputils-ping
+[INSTALL, DEPENDENCIES] ipvsadm
+[INSTALL, DEPENDENCIES] iw
+[INSTALL, DEPENDENCIES] keyboard-configuration
+[INSTALL, DEPENDENCIES] klibc-utils
+[INSTALL, DEPENDENCIES] laptop-detect
+[INSTALL, DEPENDENCIES] libbind9-60
+[INSTALL, DEPENDENCIES] libboost-filesystem1.42.0
+[INSTALL, DEPENDENCIES] libboost-system1.42.0
+[INSTALL, DEPENDENCIES] libbsd0
+[INSTALL, DEPENDENCIES] libc-ares2
+[INSTALL, DEPENDENCIES] libcluster-glue
+[INSTALL, DEPENDENCIES] libcpufreq0
+[INSTALL, DEPENDENCIES] libcurl3
+[INSTALL, DEPENDENCIES] libcurl3-gnutls
+[INSTALL, DEPENDENCIES] libdaemon0
+[INSTALL, DEPENDENCIES] libdb4.7
+[INSTALL, DEPENDENCIES] libdbus-1-3
+[INSTALL, DEPENDENCIES] libdevmapper1.02.1
+[INSTALL, DEPENDENCIES] libdns69
+[INSTALL, DEPENDENCIES] libdumbnet1
+[INSTALL, DEPENDENCIES] libedit2
+[INSTALL, DEPENDENCIES] libexpat1
+[INSTALL, DEPENDENCIES] libfam0
+[INSTALL, DEPENDENCIES] libfile-slurp-perl
+[INSTALL, DEPENDENCIES] libfile-sync-perl
+[INSTALL, DEPENDENCIES] libfreetype6
+[INSTALL, DEPENDENCIES] libfuse2
+[INSTALL, DEPENDENCIES] libgcrypt11
+[INSTALL, DEPENDENCIES] libgdbm3
+[INSTALL, DEPENDENCIES] libgeoip1
+[INSTALL, DEPENDENCIES] libglib2.0-0
+[INSTALL, DEPENDENCIES] libgmp3c2
+[INSTALL, DEPENDENCIES] libgnutls26
+[INSTALL, DEPENDENCIES] libgpg-error0
+[INSTALL, DEPENDENCIES] libgssapi-krb5-2
+[INSTALL, DEPENDENCIES] libheartbeat2
+[INSTALL, DEPENDENCIES] libhtml-parser-perl
+[INSTALL, DEPENDENCIES] libhtml-tagset-perl
+[INSTALL, DEPENDENCIES] libhtml-tree-perl
+[INSTALL, DEPENDENCIES] libicu44
+[INSTALL, DEPENDENCIES] libidn11
+[INSTALL, DEPENDENCIES] libio-prompt-perl
+[INSTALL, DEPENDENCIES] libio-socket-ssl-perl
+[INSTALL, DEPENDENCIES] libisc62
+[INSTALL, DEPENDENCIES] libisccc60
+[INSTALL, DEPENDENCIES] libisccfg62
+[INSTALL, DEPENDENCIES] libk5crypto3
+[INSTALL, DEPENDENCIES] libkeyutils1
+[INSTALL, DEPENDENCIES] libklibc
+[INSTALL, DEPENDENCIES] libkrb5-3
+[INSTALL, DEPENDENCIES] libkrb5support0
+[INSTALL, DEPENDENCIES] libldap-2.4-2
+[INSTALL, DEPENDENCIES] libltdl7
+[INSTALL, DEPENDENCIES] liblua5.1-0
+[INSTALL, DEPENDENCIES] liblwres60
+[INSTALL, DEPENDENCIES] liblzo2-2
+[INSTALL, DEPENDENCIES] libmagic1
+[INSTALL, DEPENDENCIES] libnet-ssleay-perl
+[INSTALL, DEPENDENCIES] libnet1
+[INSTALL, DEPENDENCIES] libnetaddr-ip-perl
+[INSTALL, DEPENDENCIES] libnfnetlink0
+[INSTALL, DEPENDENCIES] libnl-3-200
+[INSTALL, DEPENDENCIES] libnl-genl-3-200
+[INSTALL, DEPENDENCIES] libnl1
+[INSTALL, DEPENDENCIES] libnl2
+[INSTALL, DEPENDENCIES] libopenhpi2
+[INSTALL, DEPENDENCIES] libopenipmi0
+[INSTALL, DEPENDENCIES] libopts25
+[INSTALL, DEPENDENCIES] libpam-radius-auth
+[INSTALL, DEPENDENCIES] libparted0debian1
+[INSTALL, DEPENDENCIES] libpcap0.8
+[INSTALL, DEPENDENCIES] libpci3
+[INSTALL, DEPENDENCIES] libpcre3
+[INSTALL, DEPENDENCIES] libpcsclite1
+[INSTALL, DEPENDENCIES] libperl5.10
+[INSTALL, DEPENDENCIES] libpkcs11-helper1
+[INSTALL, DEPENDENCIES] libpopt0
+[INSTALL, DEPENDENCIES] libradiusclient-ng2
+[INSTALL, DEPENDENCIES] libsasl2-2
+[INSTALL, DEPENDENCIES] libsensors4
+[INSTALL, DEPENDENCIES] libsmi2ldbl
+[INSTALL, DEPENDENCIES] libsocket6-perl
+[INSTALL, DEPENDENCIES] libsort-versions-perl
+[INSTALL, DEPENDENCIES] libssh2-1
+[INSTALL, DEPENDENCIES] libssl0.9.8
+[INSTALL, DEPENDENCIES] libsysfs2
+[INSTALL, DEPENDENCIES] libtasn1-3
+[INSTALL, DEPENDENCIES] libterm-readkey-perl
+[INSTALL, DEPENDENCIES] libterm-readline-perl-perl
+[INSTALL, DEPENDENCIES] libtimedate-perl
+[INSTALL, DEPENDENCIES] libtree-simple-perl
+[INSTALL, DEPENDENCIES] libudev0
+[INSTALL, DEPENDENCIES] liburi-perl
+[INSTALL, DEPENDENCIES] libwant-perl
+[INSTALL, DEPENDENCIES] libwrap0
+[INSTALL, DEPENDENCIES] libwww-perl
+[INSTALL, DEPENDENCIES] libxml-libxml-perl
+[INSTALL, DEPENDENCIES] libxml-namespacesupport-perl
+[INSTALL, DEPENDENCIES] libxml-sax-perl
+[INSTALL, DEPENDENCIES] libxml-simple-perl
+[INSTALL, DEPENDENCIES] libxml2
+[INSTALL, DEPENDENCIES] libxml2-utils
+[INSTALL, DEPENDENCIES] libxslt1.1
+[INSTALL, DEPENDENCIES] lighttpd
+[INSTALL, DEPENDENCIES] logrotate
+[INSTALL, DEPENDENCIES] lsof
+[INSTALL, DEPENDENCIES] lsscsi
+[INSTALL, DEPENDENCIES] mdadm
+[INSTALL, DEPENDENCIES] mgetty
+[INSTALL, DEPENDENCIES] mime-support
+[INSTALL, DEPENDENCIES] module-init-tools
+[INSTALL, DEPENDENCIES] net-tools
+[INSTALL, DEPENDENCIES] netbase
+[INSTALL, DEPENDENCIES] openssh-blacklist
+[INSTALL, DEPENDENCIES] openssh-client
+[INSTALL, DEPENDENCIES] openssh-server
+[INSTALL, DEPENDENCIES] openssl
+[INSTALL, DEPENDENCIES] openssl-blacklist
+[INSTALL, DEPENDENCIES] openvpn
+[INSTALL, DEPENDENCIES] openvpn-blacklist
+[INSTALL, DEPENDENCIES] parted
+[INSTALL, DEPENDENCIES] pciutils
+[INSTALL, DEPENDENCIES] perl
+[INSTALL, DEPENDENCIES] perl-modules
+[INSTALL, DEPENDENCIES] ppp
+[INSTALL, DEPENDENCIES] pppoe
+[INSTALL, DEPENDENCIES] pptpd
+[INSTALL, DEPENDENCIES] procps
+[INSTALL, DEPENDENCIES] psmisc
+[INSTALL, DEPENDENCIES] python
+[INSTALL, DEPENDENCIES] python-central
+[INSTALL, DEPENDENCIES] python-minimal
+[INSTALL, DEPENDENCIES] python-support
+[INSTALL, DEPENDENCIES] python2.6
+[INSTALL, DEPENDENCIES] python2.6-minimal
+[INSTALL, DEPENDENCIES] radvd
+[INSTALL, DEPENDENCIES] rsyslog
+[INSTALL, DEPENDENCIES] squid-langpack
+[INSTALL, DEPENDENCIES] squid3
+[INSTALL, DEPENDENCIES] squid3-common
+[INSTALL, DEPENDENCIES] squidclient
+[INSTALL, DEPENDENCIES] ssh
+[INSTALL, DEPENDENCIES] tasksel
+[INSTALL, DEPENDENCIES] tasksel-data
+[INSTALL, DEPENDENCIES] tcl8.5
+[INSTALL, DEPENDENCIES] tcpdump
+[INSTALL, DEPENDENCIES] traceroute
+[INSTALL, DEPENDENCIES] tshark
+[INSTALL, DEPENDENCIES] ucf
+[INSTALL, DEPENDENCIES] udev
+[INSTALL, DEPENDENCIES] unionfs-fuse
+[INSTALL, DEPENDENCIES] usbutils
+[INSTALL, DEPENDENCIES] vlan
+[INSTALL, DEPENDENCIES] whois
+[INSTALL, DEPENDENCIES] wireless-regdb
+[INSTALL, DEPENDENCIES] wireshark-common
+[INSTALL, DEPENDENCIES] wpasupplicant
+[INSTALL, DEPENDENCIES] xkb-data
+[INSTALL, DEPENDENCIES] xl2tpd
+[INSTALL, DEPENDENCIES] xsltproc
+[INSTALL] acpi-support-base
+[INSTALL] acpid
+[INSTALL] atmel-firmware
+[INSTALL] conntrack
+[INSTALL] conntrack-helpers
+[INSTALL] conntrackd
+[INSTALL] console-common
+[INSTALL] console-setup
+[INSTALL] eject
+[INSTALL] eventwatchd
+[INSTALL] file
+[INSTALL] grub-common
+[INSTALL] grub-pc
+[INSTALL] igmpproxy
+[INSTALL] initramfs-tools
+[INSTALL] iperf
+[INSTALL] iproute
+[INSTALL] ipset
+[INSTALL] iptables
+[INSTALL] iptraf
+[INSTALL] jnettop
+[INSTALL] kbd
+[INSTALL] less
+[INSTALL] libcap2
+[INSTALL] libcap2-bin
+[INSTALL] libmnl0
+[INSTALL] libnetfilter-conntrack3
+[INSTALL] libnetfilter-cthelper
+[INSTALL] libnetfilter-cttimeout
+[INSTALL] libnetfilter-queue1
+[INSTALL] libsnmp-base
+[INSTALL] libsnmp-perl
+[INSTALL] libsnmp15
+[INSTALL] libstrongswan
+[INSTALL] libvyatta-cfg1
+[INSTALL] libvyatta-util1
+[INSTALL] linux-firmware
+[INSTALL] linux-image-3.13.11-1-586-vyos
+[INSTALL] live-initramfs
+[INSTALL] lldpd
+[INSTALL] lsb-release
+[INSTALL] man-db
+[INSTALL] mtr-tiny
+[INSTALL] nano
+[INSTALL] netcat-traditional
+[INSTALL] netplug
+[INSTALL] nfct
+[INSTALL] ntp
+[INSTALL] ntpdate
+[INSTALL] open-vm-tools
+[INSTALL] pmacct
+[INSTALL] rsync
+[INSTALL] screen
+[INSTALL] sipcalc
+[INSTALL] snmp
+[INSTALL] snmpd
+[INSTALL] squidguard
+[INSTALL] ssmtp
+[INSTALL] strongswan
+[INSTALL] strongswan-ikev1
+[INSTALL] strongswan-ikev2
+[INSTALL] strongswan-starter
+[INSTALL] sudo
+[INSTALL] ubnt-igmpproxy
+[INSTALL] user-setup
+[INSTALL] vim-common
+[INSTALL] vim-tiny
+[INSTALL] vyatta-base
+[INSTALL] vyatta-bash
+[INSTALL] vyatta-biosdevname
+[INSTALL] vyatta-busybox
+[INSTALL] vyatta-cfg
+[INSTALL] vyatta-cfg-dhcp-relay
+[INSTALL] vyatta-cfg-dhcp-server
+[INSTALL] vyatta-cfg-firewall
+[INSTALL] vyatta-cfg-op-pppoe
+[INSTALL] vyatta-cfg-qos
+[INSTALL] vyatta-cfg-quagga
+[INSTALL] vyatta-cfg-system
+[INSTALL] vyatta-cfg-vpn
+[INSTALL] vyatta-cluster
+[INSTALL] vyatta-config-mgmt
+[INSTALL] vyatta-config-migrate
+[INSTALL] vyatta-conntrack
+[INSTALL] vyatta-conntrack-sync
+[INSTALL] vyatta-cron
+[INSTALL] vyatta-dhcp3-client
+[INSTALL] vyatta-dhcp3-common
+[INSTALL] vyatta-dhcp3-relay
+[INSTALL] vyatta-dhcp3-server
+[INSTALL] vyatta-eventwatch
+[INSTALL] vyatta-ipv6-rtradv
+[INSTALL] vyatta-keepalived
+[INSTALL] vyatta-lldp
+[INSTALL] vyatta-nat
+[INSTALL] vyatta-netflow
+[INSTALL] vyatta-op
+[INSTALL] vyatta-op-dhcp-server
+[INSTALL] vyatta-op-firewall
+[INSTALL] vyatta-op-qos
+[INSTALL] vyatta-op-quagga
+[INSTALL] vyatta-op-vpn
+[INSTALL] vyatta-openvpn
+[INSTALL] vyatta-ppp
+[INSTALL] vyatta-quagga
+[INSTALL] vyatta-ravpn
+[INSTALL] vyatta-util
+[INSTALL] vyatta-vrrp
+[INSTALL] vyatta-wanloadbalance
+[INSTALL] vyatta-webgui
+[INSTALL] vyatta-webproxy
+[INSTALL] vyatta-wireless
+[INSTALL] vyatta-wirelessmodem
+[INSTALL] vyatta-zone
+[INSTALL] vyos-nhrp
+[INSTALL] vyos-opennhrp
+===============================================================================
+
+Log complete.

@@ -1,0 +1,3 @@
+/etc/network/if-up.d/ip
+/etc/network/if-pre-up.d/vlan
+/etc/network/if-post-down.d/vlan

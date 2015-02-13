@@ -1,0 +1,32 @@
+This is the Debian GNU/Linux prepackaged version of mgetty+sendfax
+Mgetty was written by Gert Doering <gert@greenie.muc.de>
+or <gert@space.net>
+
+You can find the source here:
+
+  ftp://alpha.greenie.net/pub/mgetty/source/
+
+This package was originally put together by:
+    Nils Rennebarth <nils@nus.pan-net.de>
+and was subsequently been maintained by:
+    Christoph Lameter, John Goerzen, and briefly Paul Haggart
+at which point Philip Hands <phil@hands.com> took over (Mid 1997).
+
+Since version 1.1.22, mgetty (and vgetty) is distributed under the GNU
+GPL. On Debian GNU/Linux systems, the text of the GPL can be found in
+the directory /usr/share/common-licenses/.
+
+In the frontends directories (/usr/share/doc/mgetty/frontends/...):
+  viewfax-2.5:
+    Copyright (C) 1990, 1995  Frank D. Cringle <fdc@cliwe.ping.de>
+    Distributed under the GNU GPL (see above)
+
+  faxview-0.2:
+    Copyright (C) 1994--1996 Ralph Schleicher <rs@purple.in-ulm.de>
+    Distributed under the GNU GPL (see above)
+
+  the "rs" utilities for Emacs:
+    Copyright (C) 1995 Ralph Schleicher
+    Distributed under the GNU GPL (see above)
+
+  Many others whose distribution terms are explained in their source code...

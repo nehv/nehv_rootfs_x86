@@ -1,0 +1,9 @@
+help: Internet Group Management Protocol (IGMP) proxy parameters
+
+priority: 740
+
+end: if [ ${COMMIT_ACTION} = 'DELETE' ]; then
+        sudo /opt/vyatta/sbin/config-igmpproxy.pl --action=disable 
+     else
+        sudo /opt/vyatta/sbin/config-igmpproxy.pl --action=enable 
+     fi;

@@ -1,0 +1,10 @@
+83f25aebe2db89de7ae7970e7a61842f  etc/bmon.conf
+ff7c6ec5784da1e135473fe05a3591ec  usr/bin/bmon
+8fa328b0c2d03b71a1526d64991f3943  usr/share/man/man1/bmon.1.gz
+db066b7fbd2156e4fab21c06e32ff468  usr/share/applications/bmon.desktop
+eeec343146c19dd3b893d244d2c1c421  usr/share/doc/bmon/changelog.gz
+74b32be7a96b471e5e26179f900d07f0  usr/share/doc/bmon/BUGS
+7ea7154ef109e76e38463ccdc4f78060  usr/share/doc/bmon/TODO
+b691b87c88d87342d55d294fa7526415  usr/share/doc/bmon/copyright
+cbacc120d91b0597eb13241dcd91830b  usr/share/doc/bmon/changelog.Debian.gz
+517955cd9c1fa5025d7b9715aa8dfd80  usr/lib/menu/bmon

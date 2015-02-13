@@ -1,0 +1,20 @@
+#!/bin/sh -e
+
+if ! ([ "$1" = "configure" ] || [ "$1" = "reconfigure" ]); then
+  exit 0
+fi
+
+adduser --system --disabled-password --disabled-login --home /var/run/lldpd \
+       	--no-create-home --quiet --force-badname --group _lldpd
+
+for i in /usr/sbin/lldpctl; do
+  if ! dpkg-statoverride --list $i > /dev/null 2>&1; then
+    dpkg-statoverride --update --add _lldpd adm 4750 $i
+  fi
+done
+
+chown root:root /usr/sbin/lldpctl
+
+
+
+exit 0

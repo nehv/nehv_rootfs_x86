@@ -1,0 +1,211 @@
+#!/bin/sh
+
+# Author: Rick Balocca
+# Date: 2007
+# Description:
+
+# picked up from install-system script
+get_response () {
+  ldefault=$(echo "$1" | tr [:upper:] [:lower:])
+  loptions=$(echo "$2" | tr [:upper:] [:lower:])
+
+  # get the response from the user
+  read myresponse
+  myresponse=$(echo "$myresponse" | tr [:upper:] [:lower:])
+
+  # Check to see if the user accepts the default
+  if [ -z "$myresponse" ]; then
+    echo -n $ldefault
+  # if we are passing in options to check, make sure response is a valid option
+  elif [ -n "$loptions" ]; then
+    for token in $loptions
+      do
+        if [ "$token" == "$myresponse" ]; then
+          echo -n "$myresponse"
+          return 0
+        fi
+      done
+    return 1
+  else
+    echo -n "$myresponse"
+  fi
+
+  return 0
+}
+
+# memory check
+mem_check () {
+set +e
+total_mem=`cat /proc/meminfo | grep MemTotal | awk {'print $2'}`
+required_mem=500000  # check something a little less than 512 MB
+if [ $total_mem -lt $required_mem ]; then
+  echo -e "$stars"
+  total_mem_MB=`expr "$total_mem" / 1024`
+  echo -ne "Vyatta recommends minimum 512 Megabytes of memory but system has $total_mem_MB installed"
+  response=''
+  while [ -z "$response" ]
+    do
+      echo -ne "\nThis may have unintended consequences during full-upgrade. Continue? (Y/N) [N]: "
+      response=$(get_response "N" "Y N")
+      if [ "$response" == "n" ]; then
+        exit 1
+      fi
+  done
+fi
+set -e
+}
+
+# print repo information
+print_repo_info () {
+ set +e
+ echo -ne "full-upgrade detected the following repositories to get packages from - \n"
+ echo -ne "\nRepositories configured in CLI :"
+
+ # present repos in active config. if !cli-shell-api [i.e. vyatta-cfg is
+ # pre-mendocino] then use "directory-based" config access. Fixes BZ 6709
+ which cli-shell-api &>/dev/null
+ cli_shell_api=`echo $?`
+ if [ $cli_shell_api == 0 ]; then
+   eval "repos=($(cli-shell-api listActiveNodes system package repository))"
+ else
+   repos_dir='/opt/vyatta/config/active/system/package/repository/'
+   eval "repos=($(ls $repos_dir 2>/dev/null))"
+ fi
+
+ for r in "${repos[@]}"; do
+   echo -e "\n$r"
+   if [ $cli_shell_api == 0 ]; then
+     eval "nodes=($(cli-shell-api listActiveNodes system package repository $r))"
+   else
+     eval "nodes=($(ls $repos_dir/$r/))"
+   fi
+   for n in "${nodes[@]}"; do
+     if [ $cli_shell_api == 0 ]; then
+       val=$(cli-shell-api returnActiveValue system package repository $r $n)
+     else
+       val=`cat $repos_dir/$r/$n/node.val 2>/dev/null`
+     fi
+     if [ -n "$val" ]; then
+         echo -e "\t$n: $val"
+     fi
+   done
+ done
+ if [ ${#repos[@]} == 0 ]; then
+   echo " ***** No repositories configured in CLI *****"
+ fi
+
+ # present repos entered manually outside of CLI
+ num=$(cat /etc/apt/sources.list | grep "^deb " | grep -v "# .* #" | wc -l)
+ if [ $num -gt 0 ]; then
+   echo -e "\nRepositories configured outside of CLI :"
+   cat /etc/apt/sources.list | grep "^deb " | grep -v "# .* #"
+ fi
+ echo
+
+ response=''
+ while [ -z "$response" ]
+  do
+   echo -ne "\nMake sure you have the correct repository configured. Continue? (Y/N) [N]: "
+   response=$(get_response "N" "Y N")
+   if [ "$response" == "n" ]; then
+    exit 1
+   fi
+ done
+
+ num_repos=`cat /etc/apt/sources.list | awk {'print $1'} | grep "^deb$" | wc -l`
+ if [ "$num_repos" -gt "1" ]; then
+   response=''
+   while [ -z "$response" ]
+     do
+      echo -e "\nUnless specified in release notes, multiple repositories during full-upgrade isn't recommended"
+      echo -ne "Would you like to continue anyway? (Y/N) [N]: "
+      response=$(get_response "N" "Y N")
+      if [ "$response" == "n" ]; then
+       exit 1
+      fi
+   done
+ fi
+ set -e
+}
+
+set -e
+
+df=noninteractive
+export DEBIAN_FRONTEND="$df"
+stars="*******************************************************************************"
+
+echo -e "$stars\nVyatta full-upgrade status - Setting pin priority"
+# add pin priority for vyatta
+touch /etc/apt/preferences
+sed -i '/BEGIN VYATTA ENTRY/,/END VYATTA ENTRY/{d}' /etc/apt/preferences
+cat <<EOF >> /etc/apt/preferences
+Explanation: BEGIN VYATTA ENTRY
+Package: *
+Pin: release l=Vyatta
+Pin-Priority: 1000
+Explanation: END VYATTA ENTRY
+EOF
+
+# rectify any entries user might've added with # in front of Explanation
+sed -i 's/^#Explanation:/Explanation:/g' /etc/apt/preferences
+
+# suppress repeated empty output lines
+cat -s /etc/apt/preferences > /etc/apt/preferences-$$-bkup
+mv /etc/apt/preferences-$$-bkup /etc/apt/preferences
+
+# delete leading whitespace from front of each line
+sed -i 's/^[ \t]*//' /etc/apt/preferences
+
+set +e
+
+cd /tmp
+echo -e "$stars\nVyatta full-upgrade status - Fixing any broken package dependencies"
+apt-get -y -f install
+if [ `echo $?` != 0 ]; then 
+ echo -e "\nVyatta full-upgrade error - Unable to fix dependencies"
+ echo -e "Use apt-get and/or dpkg tools to fix dependencies before continuing"
+ echo -e "Exiting full-upgrade process"
+ exit 1
+fi
+
+set -e
+
+# need to do this only one time during full-upgrade
+if [ ! -e /tmp/mem-check-upgrade ]; then
+  touch /tmp/mem-check-upgrade >/dev/null 2>&1
+  mem_check
+fi
+
+# need to do this only one time during full-upgrade
+if [ ! -e /tmp/print-repo-check-upgrade ]; then
+  touch /tmp/print-repo-check-upgrade >/dev/null 2>&1
+  echo -e "$stars"
+  print_repo_info
+fi
+
+checksum()
+{(
+	cd /opt/vyatta/bin
+	md5sum	check-upgrade \
+		download-only \
+		_full-upgrade \
+		full-upgrade \
+		install-only \
+		remove-packages \
+		save-package-report \
+		xes 2>/dev/null || true
+)}
+
+checksum >/tmp/full-upgrade.md5
+echo -e "$stars\nVyatta full-upgrade status - Installing latest Vyatta-base package"
+apt-get -y -f install vyatta-base
+if ! (checksum | cmp - /tmp/full-upgrade.md5 >/dev/null)
+then
+	echo -e "$stars\nThe vyatta-base package was not up to date."
+	echo The latest one has been downloaded and
+	echo -e "full-upgrade is being restarted.\n$stars"
+	rm -f /tmp/full-upgrade.md5
+	exec /opt/vyatta/bin/full-upgrade $*
+fi
+
+rm -f /tmp/full-upgrade.md5

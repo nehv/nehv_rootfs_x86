@@ -1,0 +1,211 @@
+#!/usr/bin/python
+#
+#    openssl-vulnkey: check a database of sha1'd static key hashes for
+#      known vulnerable keys
+#    Copyright (C) 2008-2009 Canonical Ltd.
+#    Author: Jamie Strandboge <jamie@canonical.com>
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 3,
+#    as published by the Free Software Foundation.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+from optparse import OptionParser
+import os
+import re
+import hashlib
+import subprocess
+import sys
+import tempfile
+import shutil
+
+version = "0.5-2"
+db_prefix = "/usr/share/openssl-blacklist/blacklist.RSA-"
+db_lines = []
+
+parser = OptionParser(usage="%prog FILE [FILE]", \
+                      version="%prog: " + version, \
+                      description="This program checks if FILEs are known " + \
+                                  "vulnerable static keys")
+parser.add_option("-q", "--quiet", action="store_true", dest="quiet", \
+                  help="be quiet")
+parser.add_option("-b", "--bits", dest="bits", \
+                  help="number of bits (requires -m)")
+parser.add_option("-m", "--modulus", dest="modulus", \
+                  help="modulus to check (requires -b)")
+(options, args) = parser.parse_args()
+
+if not ((options.modulus and options.bits) or args):
+    parser.print_help()
+    sys.exit(1)
+
+def cmd(command, input = None, stderr = subprocess.PIPE, stdout = subprocess.PIPE, stdin = None):
+    '''Try to execute given command (array) and return its stdout, or return
+    a textual error if it failed.'''
+
+    try:
+       sp = subprocess.Popen(command, stdin=stdin, stdout=stdout, stderr=stderr, close_fds=True)
+    except OSError, e:
+        return [127, str(e)]
+
+    out = sp.communicate(input)[0]
+    return [sp.returncode,out]
+
+def get_contents(file):
+    '''Determine the type of certificate it is. Returns empty string if
+       unsupported.'''
+    args = ['-modulus', '-text', '-in', file]
+
+    rc, report = cmd(['openssl', 'rsa'] + args)
+    if rc == 0:
+        return ("rsa", report)
+
+    rc, report = cmd(['openssl', 'x509'] + args)
+    if rc == 0:
+        return ("x509", report)
+
+    rc, report = cmd(['openssl', 'req'] + args)
+    if rc == 0:
+        return ("req", report)
+
+    return ("", report)
+
+def get_bits(contents, type):
+    '''Find bit length of file. Returns empty string if unsupported.'''
+    for line in contents:
+        leading = "Private-Key: "
+        if type == "x509" or type == "req":
+            leading = "RSA Public Key: "
+
+        # TODO: don't hardcode these
+        if leading + "(512" in contents:
+            return "512"
+        elif leading + "(1024" in contents:
+            return "1024"
+        elif leading + "(2048" in contents:
+            return "2048"
+        elif leading + "(4096" in contents:
+            return "4096"
+        elif leading + "(8192" in contents:
+            return "8192"
+
+    return ""
+
+def get_modulus(contents):
+    '''Find modulus of file'''
+    for line in contents.split('\n'):
+        if re.match(r'^Modulus=', line):
+            return line + '\n'
+
+    return ""
+
+def get_exponent(contents):
+    '''Find exponent of file. Returns empty string if unsupported.'''
+    if "Exponent: 65537 " in contents:
+        return "65537"
+
+    return ""
+
+def check_db(bits, last, modulus, name=""):
+    '''Check modulus against database'''
+    global db_lines
+    if last != bits:
+        db = db_prefix + bits
+        # Read in the database
+        try:
+            fh = open(db, 'r')
+        except:
+            try:
+                print >> sys.stderr, "WARN: could not open database for %s " \
+                                     "bits. Skipped %s" % (bits, name)
+            except IOError:
+                pass
+            return False
+
+        db_lines = fh.read().split('\n')
+        fh.close()
+
+    key = hashlib.sha1(modulus).hexdigest()
+    #print "bits: %s\nmodulus: %s\nkey: %s\nkey80: %s" % (bits, modulus, key, key[20:])
+    if key[20:] in db_lines:
+        if not options.quiet:
+            print "COMPROMISED: %s %s" % (key, name)
+        return True
+    else:
+        if not options.quiet:
+            print "Not blacklisted: %s %s" % (key, name)
+        return False
+
+
+last_bits = ""
+found = False
+error = False
+
+if options.bits and options.modulus:
+    found = check_db(options.bits, last_bits, \
+                     "Modulus=%s\n" % (options.modulus))
+else:
+    # Check each file
+    for f in args:
+        realname = f
+
+        if f == "-":
+            # dump stdin to tmpfile, operate on tmpfile instead
+            temp = tempfile.NamedTemporaryFile()
+            shutil.copyfileobj(sys.stdin,temp)
+            temp.flush()
+            f = temp.name
+
+        try:
+            file(f).read()
+        except IOError, e:
+            if not options.quiet:
+                print >> sys.stderr, "ERROR: %s: %s" % (realname, e.strerror)
+            error = True
+            continue
+
+        (type, contents) = get_contents(f)
+        if type == "":
+            if not options.quiet:
+                print >> sys.stderr, "Skipped: '%s' is unsupported type " + \
+                                     "(not x509, req or rsa)" % (realname)
+            continue
+
+        exp = get_exponent(contents)
+        if exp == "":
+            if not options.quiet:
+                print >> sys.stderr, "Skipped: '%s' has unsupported exponent" % \
+                                      (realname)
+            continue
+
+        bits = get_bits(contents, type)
+        if bits == "":
+            if not options.quiet:
+                print >> sys.stderr, "Skipped: '%s' has unsupported bit size" % \
+                                      (realname)
+            continue
+
+        modulus = get_modulus(contents)
+        if modulus == "":
+            if not options.quiet:
+                print >> sys.stderr, "ERROR: %s: problem finding modulus" % \
+                                      (realname)
+            error = True
+            continue
+
+        if check_db(bits, last_bits, modulus, realname):
+            found = True
+        last_bits = bits
+
+if found:
+    sys.exit(1)
+elif error:
+    sys.exit(2)

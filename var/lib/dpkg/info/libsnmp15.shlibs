@@ -1,0 +1,6 @@
+libnetsnmp 30 libsnmp15
+libnetsnmpmibs 30 libsnmp15
+libnetsnmpagent 30 libsnmp15
+libnetsnmphelpers 30 libsnmp15
+libnetsnmptrapd 30 libsnmp15
+libsnmp 30 libsnmp15

@@ -1,0 +1,6 @@
+
+type: ipv6
+
+help: IPv6 address to forward requests to
+
+

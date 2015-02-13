@@ -1,0 +1,6 @@
+auto
+/sbin/syslogd
+
+/sbin/syslogd.bb
+10
+

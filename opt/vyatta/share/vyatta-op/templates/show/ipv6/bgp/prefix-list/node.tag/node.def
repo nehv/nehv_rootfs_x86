@@ -1,0 +1,2 @@
+help: Show routes matching the IPv6 prefix-list name
+run: vtysh -c "$*"

@@ -1,0 +1,6 @@
+auto
+/sbin/klogd
+
+/sbin/klogd.bb
+10
+

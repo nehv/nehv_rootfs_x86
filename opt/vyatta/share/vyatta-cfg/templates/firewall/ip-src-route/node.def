@@ -1,0 +1,34 @@
+# accept_source_route 
+# default - 0 
+# Accept packets with SRR option. conf/all/accept_source_route and 
+# conf/[interface]/accept_source_route must be set to TRUE 
+# to accept packets with SRR option on the interface 
+
+type: txt
+
+help: Policy for handling IPv4 packets with source route option
+
+val_help: enable; Enable processing of IPv4 packets with source route option
+val_help: disable; Disable processing of IPv4 packets with source route option
+
+default: "disable"
+
+syntax:expression: $VAR(@) in "enable", "disable"; "ip-src-route must be enable or disable"
+
+update:
+	if [ x$VAR(@) == xenable ]; then
+            array=(`ls /proc/sys/net/ipv4/conf/`)
+            array_len=${#array[*]}
+            i=0
+            while [ $i -lt $array_len ]; do
+               sudo sh -c "echo 1 > \
+                 /proc/sys/net/ipv4/conf/${array[$i]%:*}/accept_source_route"
+               let i++
+            done
+        else
+	    sudo sh -c "echo 0 > \
+		/proc/sys/net/ipv4/conf/all/accept_source_route"
+	fi
+
+delete:
+	sudo sh -c "echo 0 > /proc/sys/net/ipv4/conf/all/accept_source_route"

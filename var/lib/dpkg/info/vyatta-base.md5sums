@@ -1,0 +1,14 @@
+5d884c95946c9884e0fd4596c69e164d  opt/vyatta/bin/_full-upgrade
+2bd35b6815bd7fe776edb30deb6e0c2a  opt/vyatta/bin/check-upgrade
+82a36bd4210aef53006c3dbeb00dbaa8  opt/vyatta/bin/download-only
+cafb5ac8162147bdb8fe3f516d7f06f0  opt/vyatta/bin/full-upgrade
+f912250e104ed9d1c544c04025c2e4de  opt/vyatta/bin/install-only
+5e48848b2d0931ceae974c4123ea97aa  opt/vyatta/bin/remove-packages
+699704a15395007ab893f60e5ba253e3  opt/vyatta/bin/save-package-report
+9b67eb397d478b076361f12ed60706aa  opt/vyatta/bin/xes
+5bee1349ca7093c6991dca0783c0bbfe  usr/share/doc/vyatta-base/NEWS.gz
+038f8399172dacba7135fa70beb4f5b6  usr/share/doc/vyatta-base/README
+fc2abd2e0bb973d6043df2b15269cc47  usr/share/doc/vyatta-base/changelog.Debian.gz
+fc2abd2e0bb973d6043df2b15269cc47  usr/share/doc/vyatta-base/changelog.gz
+219c9a113f10ea2de6d32416153c57cb  usr/share/doc/vyatta-base/copyright
+42f10e748bf4264578d81638348df1d3  usr/share/lintian/overrides/vyatta-base

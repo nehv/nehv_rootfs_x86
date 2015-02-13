@@ -1,0 +1,6 @@
+type: txt
+help: Default domain name
+
+syntax:expression: pattern $VAR(@) "^[\.]" ; "Must start append-domain with a '.'."
+
+val_help: <domain>; Domain to use for urls that do not contain a '.'

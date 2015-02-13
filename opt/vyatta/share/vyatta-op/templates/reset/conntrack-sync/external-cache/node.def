@@ -1,0 +1,29 @@
+help: Reset external cache and request resync with other systems
+
+run:
+if /opt/vyatta/bin/sudo-users/vyatta-op-conntrack-sync.pl  --action=is_ctsync_set; then
+  CONNTRACKD_BIN=/usr/sbin/conntrackd
+  CONNTRACKD_CONFIG=/etc/conntrackd/conntrackd.conf
+  FACILITY=daemon
+  LEVEL=notice
+  TAG=conntrack-tools
+  LOGCMD="logger -t $TAG -p $FACILITY.$LEVEL"
+  $LOGCMD "operational mode command 'reset conntrack-sync external-cache' invoked"
+  #
+  # flush the external cache
+  #
+  sudo $CONNTRACKD_BIN -C $CONNTRACKD_CONFIG -f external
+  if [ $? -eq 1 ]
+  then
+    echo "ERROR: failed to clear external cache"
+  fi
+
+  #
+  # request resynchronization with other systems
+  #
+  sudo $CONNTRACKD_BIN -C $CONNTRACKD_CONFIG -n
+  if [ $? -eq 1 ]
+  then
+    echo "ERROR: failed to request resynchronization of external cache"
+  fi
+fi

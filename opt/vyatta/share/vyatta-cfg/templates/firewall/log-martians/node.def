@@ -1,0 +1,35 @@
+# log_martians 
+# default value - 1
+# Log packets with impossible addresses to kernel log. log_martians for the 
+# interface will be enabled if at least one of conf/{all,interface}/log_martians
+# is set to TRUE, it will be disabled otherwise
+
+type: txt
+
+help: Policy for logging IPv4 packets with invalid addresses
+
+val_help: enable; Enable logging of IPv4 packets with invalid addresses
+val_help: disable; Disable logging of Ipv4 packets with invalid addresses
+
+default: "enable"
+
+syntax:expression: $VAR(@) in "enable", "disable"; "log-martians must be enable or disable"
+
+update:
+	if [ x$VAR(@) == xenable ]; then
+	    sudo sh -c "echo 1 > /proc/sys/net/ipv4/conf/all/log_martians"
+        else
+            # log-martians can work when either set for 'all' or 'interface'
+            # thus, unset all log-martians parameters
+            array=(`ls /proc/sys/net/ipv4/conf/`)
+            array_len=${#array[*]}
+            i=0
+            while [ $i -lt $array_len ]; do
+               sudo sh -c "echo 0 > \
+                 /proc/sys/net/ipv4/conf/${array[$i]%:*}/log_martians"
+               let i++
+            done
+	fi
+
+delete:
+	sudo sh -c "echo 1 > /proc/sys/net/ipv4/conf/all/log_martians"

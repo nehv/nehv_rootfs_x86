@@ -1,0 +1,2 @@
+help: Firewall options
+end: ${vyatta_sbindir}/vyatta-firewall-trap.pl --level="interfaces ethernet $VAR(../../@) pppoe $VAR(../@) firewall"

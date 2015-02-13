@@ -1,0 +1,12 @@
+5a33c2c0222e4328c7b9ac83e0ec5fad  usr/sbin/opennhrp
+5529c639018b81a3a4da0a1cbc32f309  usr/sbin/opennhrpctl
+8e663d82f8ee27c62621afca9a6b0fc7  usr/share/doc/opennhrp/README
+35ca5fbf01db33c4b3d56c0aebc1b12c  usr/share/doc/vyos-opennhrp/NEWS.gz
+8e663d82f8ee27c62621afca9a6b0fc7  usr/share/doc/vyos-opennhrp/README
+499dad81a47f4cc6860edac2bd567b82  usr/share/doc/vyos-opennhrp/TODO
+b2f4ecc8ffc41c17eca99e5ac64942e2  usr/share/doc/vyos-opennhrp/changelog.Debian.gz
+1443753fc522993ed59500bab2bba6d4  usr/share/doc/vyos-opennhrp/copyright
+4efdcc7ad380fa276ed0c123dabf9d26  usr/share/man/man5/opennhrp.conf.5.gz
+33e14863b8ebe1f674ac55036c9ec671  usr/share/man/man8/opennhrp-script.8.gz
+8369dcba8e64712bfe66cbb9fb6cc0cd  usr/share/man/man8/opennhrp.8.gz
+9c0cf0afc7e981aea0e0a30e9480cbb1  usr/share/man/man8/opennhrpctl.8.gz

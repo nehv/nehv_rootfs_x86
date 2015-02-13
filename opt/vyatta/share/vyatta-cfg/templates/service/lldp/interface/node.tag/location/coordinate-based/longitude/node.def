@@ -1,0 +1,8 @@
+type: txt
+
+help: Longitude [REQUIRED]
+
+syntax:expression: pattern $VAR(@) "^[-+0-9\.]+[eEwW]$" ; \
+       "Invalid longitude."
+
+val_help: <longitude> ; Longitude (example "122.267255W")

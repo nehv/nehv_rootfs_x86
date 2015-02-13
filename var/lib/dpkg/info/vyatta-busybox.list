@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/vyatta-busybox
+/usr/share/doc/vyatta-busybox/copyright
+/usr/share/doc/vyatta-busybox/changelog.Debian.gz
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/busybox.1.gz
+/bin
+/bin/busybox

@@ -1,0 +1,9 @@
+6813dd8845a708bcdc231cdcf993edfa  usr/lib/perl5/File/Sync.pm
+30aba32f3dfa779daf73194c40f8c382  usr/lib/perl5/auto/File/Sync/Sync.so
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/perl5/auto/File/Sync/Sync.bs
+ac6295f19d970f276f3c60052e71be28  usr/lib/perl5/auto/File/Sync/autosplit.ix
+e04c906896fdd721d064536effcba65a  usr/share/man/man3/File::Sync.3pm.gz
+55a2b575f9e7ca38a190772654e815d5  usr/share/doc/libfile-sync-perl/README
+73ec779d691581e65f584c60f3c77abd  usr/share/doc/libfile-sync-perl/copyright
+8ca71abfb667385bbaefd9ea8147a2a6  usr/share/doc/libfile-sync-perl/changelog.Debian.gz
+0228ba3832bb9ee394a4feac82937215  usr/share/doc/libfile-sync-perl/changelog.gz

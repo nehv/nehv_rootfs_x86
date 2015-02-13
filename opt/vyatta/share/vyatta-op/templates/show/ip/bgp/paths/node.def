@@ -1,0 +1,2 @@
+help: Show BGP path information
+run: ${vyatta_bindir}/vtyshow.pl "$@"

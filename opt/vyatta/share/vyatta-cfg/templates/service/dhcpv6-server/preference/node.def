@@ -1,0 +1,8 @@
+
+help: Preference of this DHCPv6 server compared with others
+
+type: u32
+
+syntax:expression: ($VAR(@) >= 0) && ($VAR(@) <= 255) ; "Preference must be between 0 and 255"
+
+

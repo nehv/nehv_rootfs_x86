@@ -1,0 +1,7 @@
+multi:
+
+type: ipv4net
+
+help: Group to whitelist 
+
+val_help: ipv4net ; IPv4 network 

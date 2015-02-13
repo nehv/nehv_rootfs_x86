@@ -1,0 +1,36 @@
+Format-Specification:
+    http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=196
+Upstream-Maintainer: Ilya Zakharevich <cpan@ilyaz.org>
+Upstream-Source: http://search.cpan.org/dist/Term-ReadLine-Perl/
+Upstream-Name: Term-ReadLine-Perl
+
+Files: *
+Copyright: 1995, Ilya Zakharevich <cpan@ilyaz.org>
+License-Alias: Perl
+License: Artistic | GPL-1+
+
+Files: debian/*
+Copyright: 2009, Jonathan Yu <jawnsy@cpan.org>
+ 2006, Krzysztof Krzyzaniak (eloy) <eloy@debian.org>
+ 2006, Niko Tyni <ntyni@iki.fi>
+ 2005-2006, Gunnar Wolf <gwolf@debian.org>
+ 2002, Joerg Jaspert <joerg@debian.org>
+ 2001, Brendan O'Dea <bod@debian.org>
+ 1999, Darren Stalder <torin@daft.com>
+ 1998, Ben Gertzfield <che@debian.org>
+License: Artistic | GPL-1+
+
+License: Artistic
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the Artistic License, which comes with Perl.
+    On Debian GNU/Linux systems, the complete text of the Artistic License
+    can be found in `/usr/share/common-licenses/Artistic'
+
+License: GPL-1+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 1, or (at your option)
+    any later version.
+    On Debian GNU/Linux systems, the complete text of the GNU General
+    Public License can be found in `/usr/share/common-licenses/GPL'
+

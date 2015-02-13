@@ -1,0 +1,3 @@
+help: Monitor specified bridge interface
+allowed: ${vyatta_sbindir}/vyatta-interfaces.pl --show bridge
+run: bmon -p $4

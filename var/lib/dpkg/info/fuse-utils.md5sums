@@ -1,0 +1,4 @@
+137bd32644d1c239dd85bd27ed3551b6  lib/udev/rules.d/60-fuse-utils.rules
+bca35165c5067b4fe2bd8e391c9a5a10  sbin/mount.fuse
+c94cc76af78dad463438488cac1c546f  usr/bin/fusermount
+d850d0f33b302743fdab870892c46edf  usr/share/man/man1/fusermount.1.gz

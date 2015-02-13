@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+case "$1" in
+  install|upgrade)
+    if dpkg --compare-versions "$2" lt 1.98+20100804-2 && \
+       test -h /etc/kernel/postrm.d/zz-update-grub; then
+      rm -f /etc/kernel/postrm.d/zz-update-grub
+    fi
+
+    # Vyatta generates grub.cfg directly and installing an
+    # upgrade of grub would overwrite that. Make a copy
+    # and restore in postinst
+    if [ -e /boot/grub/grub.cfg ]; then
+	cp -p /boot/grub/grub.cfg /boot/grub/grub-install.orig.cfg
+    fi
+    ;;
+esac
+
+
+
+exit 0

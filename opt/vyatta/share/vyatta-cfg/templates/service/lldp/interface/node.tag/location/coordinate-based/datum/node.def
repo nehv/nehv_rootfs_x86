@@ -1,0 +1,12 @@
+type: txt
+
+help: Coordinate datum type
+
+syntax:expression: $VAR(@) in "WGS84", "NAD83", "MLLW"; \
+       "Must be WGS84, or NAD83, or MLLW."
+
+default: "WGS84"
+
+val_help: WGS84 ; WGS84 (default)
+val_help: NAD83 ; NAD83
+val_help: MLLW  ; NAD83/MLLW

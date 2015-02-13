@@ -1,0 +1,78 @@
+This package was first debianized by Paolo Molaro <lupus@debian.org> on
+Wed, 17 Nov 1999 17:30:23 +0100.
+
+The original sources can be found at:
+	http://linux-ha.org/wiki/Download
+
+Upstream Authors (from AUTHORS) and copyright holders: (c) 1998-2010
+
+	Akamatsu Hiroshi <akamatsu.hiroshi@yes.nttcom.ne.jp>
+	Alan Robertson <alanr@unix.sh>
+	Andrew Beekhof <andrew@beekhof.net>
+	Christian Rishoj <christian@rishoj.net>
+	Daiki Matsuda <d.matuda@gmail.com>
+	David Lee <t.d.lee@durham.ac.uk>
+	Dejan Muhamedagic <dejan@hello-penguin.com>
+	Dominik Klein <dk@in-telegence.net>
+	Florian Haas <florian@linbit.com>
+	Hideo Yamauchi <renayama19661014@ybb.ne.jp>
+	Huang Zhen <zhen.huang@gmail.com>
+	Jean-Francois Larvoire <jf.larvoire@hp.com>
+	Keisuke MORI <kskmori@intellilink.co.jp>
+	Lars Marowsky-Bree <lmb@suse.de>
+	Matthew Soffen
+	Michael Schwartzkopff <misch@multinet.de>
+	Nakahira Kazutomo <nakahira@intellilink.co.jp>
+	Philipp Kolmann <philipp@kolmann.at>
+	Raoul Bhatia <r.bhatia@ipax.at>
+	Ron Terry <rterry@novell.com>
+	Sebastian Reitenbach <itlistuser@rapideye.de>
+	Serge Dubrouski <sergeyfd@gmail.com>
+	Simon Horman <horms@verge.net.au>
+	Stephan Berlet <SBerlet@sysdesign-edv.de>
+	Takenaka Kazuhiro <takenaka.kazuhiro@oss.ntt.co.jp>
+	Xinwei Hu <hxinwei@gmail.com>
+
+Code for the following pieces borrowed from code by:
+	Tom Vogt <tom@lemuria.org>	(udp code)
+	yuri volobuev <volobuev@t1.chem.umn.edu> (send_arp.c)
+	'Network UPS Tools' by Russell Kroll <rkroll@exploits.org>
+ 		homepage: http://www.exploits.org/nut/
+		(Andreas Piesk borrowed code for APCSmart support)
+	David C. Teigland <teigland@sistina.com>
+		wrote original meatware support for GFS stomith
+	salz@pebbles.bbn.com - replacement scandir function
+	Internet Software Consortium (bind) - replacement inet_pton()
+		function
+
+NOTE:	The work of everyone on this project is dearly appreciated. If you
+	are not listed here but should be, please notify us!
+
+--------------------
+
+Following components of this package are licensed under the GNU Lesser General
+Public License (LGPL):
+
+/etc/ha.d/shellfuncs
+/usr/lib/ocf/resource.d/heartbeat/.ocf-shellfuncs
+/usr/lib/ocf/resource.d/heartbeat/.ocf-returncodes
+
+On Debian systems, the complete text of the GNU Lesser General Public License
+can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+--------------------
+
+Following components of this package are licensed under the GNU General Public
+License version 2:
+
+/usr/lib/ocf/resource.d/heartbeat/scsi2reservation
+
+On Debian systems, the complete text of the GNU General Public License
+version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+--------------------
+
+All other components of this are licensed under the GNU General Public License.
+
+On Debian systems, the complete text of the GNU General Public License can be
+found in `/usr/share/common-licenses/GPL'.

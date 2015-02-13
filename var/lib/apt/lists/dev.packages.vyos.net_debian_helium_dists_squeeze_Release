@@ -1,0 +1,55 @@
+Origin: dev.packages.vyos.net
+Label: apt repository
+Codename: squeeze
+Date: Wed, 08 Oct 2014 13:38:12 UTC
+Architectures: i386 amd64 armel
+Components: main
+Description: VyOS
+MD5Sum:
+ 2a8ee546752d8b5efa7ca9558dea53a9 394273 main/binary-i386/Packages
+ a625960b79e459b8d90f16b3db084cfd 130573 main/binary-i386/Packages.gz
+ 57b2997461ebfa792fca188571553743 105 main/binary-i386/Release
+ dcc3f9434d4255cf186a3406a49a5cac 394560 main/binary-amd64/Packages
+ 6f0c1800afe2ae950b7ec7f1a821dd53 130575 main/binary-amd64/Packages.gz
+ 18b7dac4fbb5aa8aba6c766a82e1f92d 106 main/binary-amd64/Release
+ cc14b382b13d376eedacbd387305e378 378238 main/binary-armel/Packages
+ 72e6de0e4343d6bea22dd8179cb98352 124236 main/binary-armel/Packages.gz
+ fa9b1eb9599edb41731a0cdce92b9f3a 106 main/binary-armel/Release
+ 71c6acfea813a001fe169d1ce630d19f 1220775 main/Contents-i386
+ f5c526cda3460de8c5c423dbdfed53fe 124748 main/Contents-i386.gz
+ 32da6dd8ea6701754ef5025a98254db8 1220432 main/Contents-amd64
+ 8a94d96cbd7ba969b3483bd653c52568 124713 main/Contents-amd64.gz
+ af82c4537316883b8de241aab291035f 1102170 main/Contents-armel
+ 8546dc0fe43f1db66658932c101c1121 113481 main/Contents-armel.gz
+SHA1:
+ f5534aa40d2e8afa92da75f61a6d30a17c730808 394273 main/binary-i386/Packages
+ e1ae896b785680c3de1d2f0ffc9fae7e58df2487 130573 main/binary-i386/Packages.gz
+ a5e0974ef1c2c2615717d37b6a8e45b6de53d595 105 main/binary-i386/Release
+ 3d7817f12941fb47ef4b44440f3ebe5531546aa2 394560 main/binary-amd64/Packages
+ 526a8475fd04dd37ffdad50b4991e1a2f17e49b2 130575 main/binary-amd64/Packages.gz
+ 5ae0e19e998dd0ad059488e388763c3cf1ace4b8 106 main/binary-amd64/Release
+ 91d7de564d2a3eaf1edf54e528a123ba7d6897c7 378238 main/binary-armel/Packages
+ 300a725887fcdee17bd46eaf44185f85ee0c842e 124236 main/binary-armel/Packages.gz
+ 5f1e5a2ec1ba44e9688fdb8d802dd2e6bce23f73 106 main/binary-armel/Release
+ 230906ff7618d288cc9813f3714ed7cb11ba9932 1220775 main/Contents-i386
+ c48a374947bde9224c0746b39184ed28eeaab921 124748 main/Contents-i386.gz
+ a0d1d1ef8cc6f738d6154259759aab3813c68669 1220432 main/Contents-amd64
+ ee0e5adf0a56b41412d39f61d6706ee8f3efc790 124713 main/Contents-amd64.gz
+ 5141fbe10f30650bb2fb6bf691d7e59946094467 1102170 main/Contents-armel
+ 2767a2b2bbdc554854dc5a0d310da1c7f60b63ca 113481 main/Contents-armel.gz
+SHA256:
+ 467933b7bed7b5dadc3cc0867617c37463c718c08a7d40d640e67e8f56707803 394273 main/binary-i386/Packages
+ fe2adfb4e1ff83cb4e599d334580b398a6b9e6c9ec068c17524b376c9f48464e 130573 main/binary-i386/Packages.gz
+ 505399bdc758f0c5b3faa024d6a7826dbced87db34d1c61c14213a5e80b102e0 105 main/binary-i386/Release
+ e731fb9b64cb1456a2b4ec65d2a02c09eb32678d9032be9815c739e9ad66d383 394560 main/binary-amd64/Packages
+ cb69907582f16c180a19001c0184c992349734d83de093ef51e6a114ab39e38b 130575 main/binary-amd64/Packages.gz
+ faecd5743228a8628155e1ac962bbacf42ad9d006e13ec140bfff48224cf5791 106 main/binary-amd64/Release
+ 262b73f50b2ed3f479f3353c2ca94983827f662058b1e9089a4744de54ffe812 378238 main/binary-armel/Packages
+ cdf2a5ea9130d7c44be2f8bc50e731d0437a5d69db9c99c03bff80fc48b95669 124236 main/binary-armel/Packages.gz
+ 1e4e7729a6e59cebce0bc4a93f7b634222277e4031ccaeeb778640e3e2539b53 106 main/binary-armel/Release
+ 918a798815dc199def40583284893d6a3b37d514aa6f2e54b904a8639c80ab08 1220775 main/Contents-i386
+ 07205490689e6ed2ca0b8c8771f1461516ad22b4db25122e66a682a281662e92 124748 main/Contents-i386.gz
+ 1423140cd591a8b725de4c14df9a142ad97e31d4ee0a2fb4f018ea3667a5da66 1220432 main/Contents-amd64
+ 2b97acc1c876ef35625284582b9fd4d3d1e0f6c2226b692e339243d026a74114 124713 main/Contents-amd64.gz
+ dfda8c9b5bcd144c79c0082d2ef5bf7fe6a923d0c5d04244aa1dd36d2f7e4665 1102170 main/Contents-armel
+ acbfbb7142a61eb01b3b30c61a4dda1ccc2230e2b4c61267cefa426a8a88f6af 113481 main/Contents-armel.gz

@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/sbin
+/usr/sbin/iftop
+/usr/share
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/iftop.8.gz
+/usr/share/doc
+/usr/share/doc/iftop
+/usr/share/doc/iftop/TODO
+/usr/share/doc/iftop/copyright
+/usr/share/doc/iftop/changelog.gz
+/usr/share/doc/iftop/changelog.Debian.gz

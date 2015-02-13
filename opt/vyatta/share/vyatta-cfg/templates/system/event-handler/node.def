@@ -1,0 +1,92 @@
+help: Event-handler configuration
+end:
+	configfile=/tmp/eventwatchd.conf
+	API="cli-shell-api"
+
+	if [ "$COMMIT_ACTION" = "DELETE" ]; then
+           sudo /etc/init.d/eventwatchd stop
+	   exit 0
+	fi
+
+	echo "<?xml version=\"1.0\"?>" > $configfile
+	echo "<event-handler>" >> $configfile
+	pol_list=$($API listNodes system event-handler policy)
+	eval "POLICIES=($pol_list)"
+
+	if [ "$POLICIES" != "" ]; then
+	   echo "  <policies>" >> $configfile
+	   for p in "${POLICIES[@]}";
+	   do
+	      echo "    <policy name=\"$p\">" >> $configfile
+	      event_list=$($API listNodes system event-handler policy $p event)
+              eval "EVENT=($event_list)"
+	      for e in "${EVENT[@]}";
+	      do
+	         echo "      <event name=\"$e\">" >> $configfile
+		 pattern_list=$($API returnValues system event-handler policy $p event $e pattern)
+        	 eval "PATTERN=($pattern_list)"
+		 for pa in "${PATTERN[@]}";
+		 do
+		    echo "        <pattern>$pa</pattern>" >> $configfile
+		 done
+		 run=$($API returnValue system event-handler policy $p event $e run)
+		 echo "        <run>$run</run>" >> $configfile
+		 echo "      </event>" >> $configfile
+	      done
+	      echo "    </policy>" >> $configfile
+	   done
+	   echo "  </policies>" >> $configfile
+	fi
+
+	feed_list=$($API listNodes system event-handler feed)
+        eval "FEEDS=($feed_list)"
+	if [ "$FEEDS" != "" ]; then
+	   echo "  <feeds>" >> $configfile
+	   for f in "${FEEDS[@]}";
+	   do
+	      preset=$($API returnValue system event-handler feed $f source preset)
+	      feedtype=$($API listNodes system event-handler feed $f source custom)
+	      eval "FEEDTYPE=($feedtype)"
+
+	      if [ ${FEEDTYPE[*]} ] && [ $preset ]; then
+	      	 echo "Cannot define both preset and custom sources"
+		 exit 1
+	      fi
+	      if [ $preset ]; then
+	         case $preset in
+	      	   syslog)
+			source="/var/log/syslog.pipe"
+			type="fifo"
+			;;
+		   *)
+			echo "Error, Unknown preset source defined"
+			exit 1;;
+	         esac
+	      fi
+	      if [ ${FEEDTYPE[*]} ]; then
+	         case ${FEEDTYPE[*]} in
+	      	   command)
+			source=$($API returnValue system event-handler feed $f source custom command)
+			type="command";;
+		   named-pipe)
+			source=$($API returnValue system event-handler feed $f source custom named-pipe)
+			type="fifo";;
+		   *)
+			echo "Error, command & named-pipe are both configured"
+			exit 1;;
+	         esac
+	      fi
+	      policy=$($API returnValue system event-handler feed $f policy)
+	      echo "    <feed name=\"$f\" type=\"$type\" source=\"$source\" policy=\"$policy\" />" >> $configfile
+	   done
+	   echo "  </feeds>" >> $configfile
+	fi
+
+	echo "</event-handler>" >> $configfile
+
+	sudo mv $configfile /etc/eventwatchd/eventwatchd.conf
+        sudo /etc/init.d/eventwatchd restart
+        if [ $? != 0 ]; then
+            echo "Could not start eventwatchd"
+            exit 1
+        fi

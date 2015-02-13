@@ -1,0 +1,8 @@
+17f1fc3ef92fea3ff79c4881d991ff66  usr/include/libnetfilter_cttimeout/libnetfilter_cttimeout.h
+fc35c199ef9e3630d91787bd86144dc8  usr/lib/libnetfilter_cttimeout.la
+e6fdef5f9984958d882c4061f3383fa6  usr/lib/libnetfilter_cttimeout.so.1.0.0
+c66ed523653ee6c88ddbfabf85ca9090  usr/lib/pkgconfig/libnetfilter_cttimeout.pc
+4ecfdbbb60c2f11c09280945901de830  usr/share/doc/libnetfilter-cttimeout/README
+e1f60989bb94a2a5764a786784bbd1cd  usr/share/doc/libnetfilter-cttimeout/changelog.Debian.gz
+e1f60989bb94a2a5764a786784bbd1cd  usr/share/doc/libnetfilter-cttimeout/changelog.gz
+eb52cb541a9e5bfce927ffd47865220b  usr/share/doc/libnetfilter-cttimeout/copyright

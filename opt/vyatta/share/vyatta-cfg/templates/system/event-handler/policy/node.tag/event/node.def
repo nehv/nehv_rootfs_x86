@@ -1,0 +1,8 @@
+tag:
+type: txt
+help: Event id 
+
+commit:expression: $VAR(./pattern/) != "" ;                    \
+                   "Must configure at least one pattern for event $VAR(@)"
+commit:expression: $VAR(./run/@) != "" ;                   \
+                   "Must configure the run variable for event $VAR(@)"

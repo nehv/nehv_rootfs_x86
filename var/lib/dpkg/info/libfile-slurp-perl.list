@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/share
+/usr/share/perl5
+/usr/share/perl5/File
+/usr/share/perl5/File/Slurp.pm
+/usr/share/doc
+/usr/share/doc/libfile-slurp-perl
+/usr/share/doc/libfile-slurp-perl/README.source
+/usr/share/doc/libfile-slurp-perl/README
+/usr/share/doc/libfile-slurp-perl/copyright
+/usr/share/doc/libfile-slurp-perl/changelog.Debian.gz
+/usr/share/man
+/usr/share/man/man3
+/usr/share/man/man3/File::Slurp.3pm.gz

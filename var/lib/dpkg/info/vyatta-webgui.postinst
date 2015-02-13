@@ -1,0 +1,76 @@
+#!/bin/bash
+
+prefix=/opt/vyatta
+
+# enable CGI for lighttpd
+ln -sf /etc/lighttpd/conf-available/10-cgi.conf /etc/lighttpd/conf-enabled/
+
+#vtysh access
+rm -f /usr/lib/cgi-bin/vtysh
+
+# enable https
+ln -sf /etc/lighttpd/conf-available/10-ssl.conf /etc/lighttpd/conf-enabled/
+
+# fix debian cgi config file
+sed -i '/^\$HTTP.*127\.0\.0\.1/,/^}$/{s/^\(.*\)$/# \1/}' \
+  /etc/lighttpd/conf-enabled/10-cgi.conf
+if ! grep -q '^alias.url' /etc/lighttpd/conf-enabled/10-cgi.conf; then 
+  echo 'alias.url += ( "/cgi-bin/" => "/usr/lib/cgi-bin/" )' \
+    >>/etc/lighttpd/conf-enabled/10-cgi.conf
+fi
+
+# enable mod_redirect
+if grep -q '^#.*mod_redirect' /etc/lighttpd/lighttpd.conf; then
+  sed -i 's/^#\(.*mod_redirect.*\)$/ \1/' /etc/lighttpd/lighttpd.conf
+fi
+
+
+# enable syslog for lighttpd
+if ! grep -q '^server.errorlog-use-syslog' /etc/lighttpd/lighttpd.conf; then
+  echo '#/usr/pkg/etc/lighttpd/lighttpd.conf' >> /etc/lighttpd/lighttpd.conf
+  echo 'server.errorlog-use-syslog      = "enable"' >> /etc/lighttpd/lighttpd.conf
+  echo 'accesslog.use-syslog = "enable"'  >> /etc/lighttpd/lighttpd.conf
+fi
+
+# enable syslog for lighttpd
+if ! grep -q '^server.event-handler =' /etc/lighttpd/lighttpd.conf; then
+  echo 'server.event-handler = "linux-sysepoll"' >> /etc/lighttpd/lighttpd.conf
+fi
+
+#remove tilde access-deny
+if grep -q '^url.access-deny' /etc/lighttpd/lighttpd.conf; then
+  sed -i 's/^\(.*url.access-deny.*\)/# \1/' /etc/lighttpd/lighttpd.conf
+fi
+
+#remove ipv6 support by default
+if grep -q 'use-ipv6.pl' /etc/lighttpd/lighttpd.conf; then
+  sed -i 's/^\(.*use-ipv6.pl.*\)/# \1/' /etc/lighttpd/lighttpd.conf
+fi
+
+# redirect http to https
+if ! grep -q '^# redirect all http to https$' /etc/lighttpd/lighttpd.conf; then
+  cat <<'EOF' >>/etc/lighttpd/lighttpd.conf
+
+# redirect all http to https
+$HTTP["scheme"] == "http" {
+  $HTTP["host"] =~ "^(.*)$" {
+    url.redirect = (
+      "^(/Vyatta/.*)$" => "https://%1$1",
+      "^(/ext-2.2/.*)$" => "https://%1$1"
+    )
+  }
+}
+EOF
+fi
+
+# XXX webgui needs suid for now
+chmod u+s /usr/lib/cgi-bin/webgui
+
+# XXX www-data user needs to be in these groups for now
+usermod -a -G "adm,sudo,users,quaggavty,vyattacfg" www-data
+
+# remove init links
+update-rc.d -f lighttpd remove
+
+exit 0
+

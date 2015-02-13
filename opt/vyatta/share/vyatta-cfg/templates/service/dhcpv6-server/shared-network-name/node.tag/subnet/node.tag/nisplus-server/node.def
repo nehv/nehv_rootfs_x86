@@ -1,0 +1,8 @@
+
+multi:
+
+type: ipv6
+
+help: IPv6 address of a NIS Plus server
+
+

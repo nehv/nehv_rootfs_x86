@@ -1,0 +1,210 @@
+#!/bin/sh -e
+
+# Author: Rick Balocca
+# Date: 2007
+# Description:
+
+stars="*******************************************************************************"
+pkgs_removed="no"
+
+nothing_installed()
+{
+	PATTERN='\<0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.'
+	grep "$PATTERN" /tmp/install$$ && grep "$PATTERN" /tmp/upgrade$$
+}
+
+nothing_upgraded()
+{
+	PATTERN='\<0 upgraded, 0 newly installed'
+	grep "$PATTERN" /tmp/install$$ && grep "$PATTERN" /tmp/upgrade$$
+}
+
+# this removes vyatta-built pkgs that have a lower version in new release
+remove_2Bdowngraded_pkgs() {
+
+ echo -e "$stars\nVyatta full-upgrade status - Checking Vyatta packages that need to be downgraded"
+ vyatta_pkgs_list=/tmp/$$latest-vyatta-packages.txt
+
+ # get list of all vyatta-built packages i.e. packages with
+ # vyatta in either name or version of package
+ cat /opt/vyatta/etc/deb-versions.txt | grep vyatta > $vyatta_pkgs_list
+
+ package_names=(`cat $vyatta_pkgs_list | awk {'print $1'}`)
+ package_versions=(`cat $vyatta_pkgs_list | awk {'print $2'}`)
+
+ num_package_names=${#package_names[*]}
+ num_package_versions=${#package_versions[*]}
+
+ if [ "$num_package_names" != "$num_package_versions" ]; then
+  echo number of names not equal to number of versions in temp file
+  exit 1
+ fi
+
+ rm_pkgs_list=""
+ i=0
+ # unset 'exit on non-true value' mode as comparing versions below
+ set +e
+ while [ $i -lt $num_package_names ]; do
+  # get current version for package
+  current_pkg_ver=`dpkg-query --showformat='${Version}' --show ${package_names[$i]}`
+
+  # check if version in new release is less then current version
+  new_package_version=`apt-cache showpkg ${package_names[$i]} | grep 'packages\.vyatta\.com' | grep -v '^ ' | awk {'print $1'}`
+  dpkg --compare-versions $new_package_version lt \
+                        $current_pkg_ver >/dev/null 2>&1
+  if [ `echo $?` == 0 ]; then
+   echo package ${package_names[$i]} needs to be removed for downgrade
+   rm_pkgs_list=$rm_pkgs_list" "${package_names[$i]}
+  fi
+  let i++
+ done
+ # reset to global 'exit on non-true value' mode
+ set -e
+ 
+ # remove packages
+ if [ "$rm_pkgs_list" != "" ]; then
+  dpkg --force-depends --remove $rm_pkgs_list
+  pkgs_removed="yes"
+ else
+  echo Vyatta full-upgrade status - No packages to be downgraded
+ fi
+ rm -f $vyatta_pkgs_list
+
+}
+
+download_virt_pkgs() {
+  # unset 'exit on non-true value' mode as comparing versions below
+  set +e
+  virt_packages=""
+  # if running kernel is a virt kernel; download virt packages
+  # explicitly since they aren't listed in deb-versions.txt
+  uname -r | grep -q virt
+  is_virt_kern=`echo $?`
+  if [ "$is_virt_kern" = "0" ]; then
+    virt_suffix='virt'
+
+    virt_kern=`grep linux-image /opt/vyatta/etc/deb-versions.txt \
+| awk '{print $1}'`
+
+    ovm_mod=`grep linux-image /opt/vyatta/etc/deb-versions.txt \
+| sed 's/linux\-image/open\-vm\-modules/' | awk '{print $1}'`
+
+    virt_kern="$virt_kern-$virt_suffix"
+    ovm_mod="$ovm_mod-$virt_suffix"
+    virt_packages=$virt_kern" "$ovm_mod" "open-vm-tools
+  fi
+  echo "$virt_packages"
+  # reset to global 'exit on non-true value' mode
+  set -e
+}
+
+df=noninteractive
+export DEBIAN_FRONTEND="$df"
+
+old_version=`dpkg-query --showformat='${Version}' --show vyatta-version`
+new_version=`apt-cache showpkg vyatta-version | grep 'packages\.vyatta\.com' | grep -v '^ ' | awk {'print $1'}`
+
+case "$old_version" in 
+[0-3]* | VSE* ) # SE versions were numeric before kenwood release
+	case "$new_version" in
+	VC* )
+		echo ERROR: attempting to upgrade from supported to community release
+		exit 1
+		;;
+	esac
+	;;
+esac
+
+# allow upgrade to development release for testing purpose
+case "$old_version" in
+VSE* | VC* )
+	case "$new_version" in
+	999* )
+		echo WARNING: Upgrading to unstable release
+		# need to remove existing version package to
+		# install a lower versioned dev package later
+		apt-get -y remove vyatta-version
+		;;
+	esac
+	;;
+esac
+
+# now you should be able to install the new vyatta-version in any case
+new_version=`apt-get --dry-run install vyatta-version|grep '^Inst'|sed -e 's/.*(//' -e 's/ .*//'`
+# if new_version is empty now then don't proceed
+if [ -z "$new_version" ]; then
+ already_new_version=`apt-get --dry-run install vyatta-version | \
+		grep 'vyatta-version is already the newest version'`
+ if [ -z "$already_new_version" ]; then
+  echo ERROR: Unable to retrieve latest vyatta-version package
+  exit 1
+ fi
+fi
+
+# Find all vyatta packages to remove
+echo -e "$stars\nVyatta full-upgrade status - Removing no longer needed dependencies"
+apt-get -y -f autoremove
+echo -e "$stars\nVyatta full-upgrade status - Fixing any broken dependencies"
+apt-get -y -f install
+echo -e "$stars\nVyatta full-upgrade status - Cleaning local repository of retrieved package files"
+apt-get clean
+
+# 400M disk space is required for full-upgrade on disk install
+required=400
+set +e
+/opt/vyatta/bin/vyatta-show-version | grep 'Boot via' | grep -q image
+image_install=`echo $?`
+if [ $image_install == 0 ]; then
+  # 800M disk space is required for full-upgrade on image based install
+  required=800
+fi
+set -e
+
+free=`df /var/cache/apt/archives|tail -1|awk '{print $4}'`
+free=`expr "$free" / 1000`
+if [ "$free" -a "$free" -lt $required ]
+then
+	echo "$required Megabytes required for full upgrade, but only $free available."
+	echo "Please free up more disk space and try again."
+	exit 2
+fi
+
+echo -e "$stars\nVyatta full-upgrade status - Installing vyatta-version package"
+apt-get install vyatta-version
+
+install_list=`awk '{print $1}' /opt/vyatta/etc/deb-versions.txt|tr '\n' ' '`
+
+if [ ! "$install_list" ]
+then
+	echo "Version package not installed correctly.  Exiting."
+	exit 1
+fi
+
+remove_2Bdowngraded_pkgs
+# if anything was removed for downgrade, you need to fix dependencies
+# do it in a non-interactive way as we caused broken dependencies
+if [ "$pkgs_removed" != "no" ]; then
+ echo -e "$stars\nVyatta full-upgrade status - Fixing any broken dependencies"
+ /opt/vyatta/bin/xes "fix"
+fi
+
+virt_pkgs=$(download_virt_pkgs)
+install_list=$install_list" "$virt_pkgs
+echo -e "$stars\nVyatta full-upgrade status - Downloading updates..."
+apt-get -y -f -d install $install_list | tee /tmp/install$$
+echo -e "$stars\nVyatta full-upgrade status - Downloading any dependencies..."
+apt-get -y -f -d dist-upgrade | tee /tmp/upgrade$$
+
+if nothing_installed
+then
+	echo -e "\n$stars\nVyatta full-upgrade status - All packages are from latest version of Vyatta"
+	echo "Vyatta full-upgrade status - Nothing to upgrade"
+	rm /tmp/install$$ /tmp/upgrade$$
+	echo "Vyatta full-upgrade status - Cleaning local repository of retrieved package files"
+	apt-get clean	# clean up the downloads in case we are close to full on root
+	echo "Exiting full-upgrade process"
+	exit 1
+fi
+
+rm /tmp/install$$ /tmp/upgrade$$
+echo -e "Vyatta full-upgrade status - Download complete\n$stars"

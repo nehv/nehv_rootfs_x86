@@ -1,0 +1,8 @@
+
+type: u32
+
+syntax:expression: ($VAR(@) >= 1) && ($VAR(@) <= 65535) ; "Must be between 1 and 65535"
+
+help: UDP port to listen for requests on
+
+

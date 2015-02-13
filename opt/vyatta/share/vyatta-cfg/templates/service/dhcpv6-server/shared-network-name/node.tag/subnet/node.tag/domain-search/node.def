@@ -1,0 +1,10 @@
+
+multi:
+
+type: txt
+
+help: Domain name for client to search
+
+syntax:expression: pattern $VAR(@) "^[-_a-zA-Z0-9.]+$" ; "invalid domain name syntax \"$VAR(@)\""
+
+

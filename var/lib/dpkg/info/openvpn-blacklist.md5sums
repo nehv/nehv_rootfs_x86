@@ -1,0 +1,9 @@
+7b60ca6152e40fa198242dfdaf88b4b6  usr/sbin/openvpn-vulnkey
+92da9d11804f69d8be04152f2acdb39e  usr/share/openvpn-blacklist/blacklist.RSA-2048
+899d7cdd3abe2ab134bbf67908c0137b  usr/share/doc/openvpn-blacklist/changelog.gz
+e8eedf607c7263444394b8812959b547  usr/share/doc/openvpn-blacklist/copyright
+79bc4a7e2f1805a91b0d486f0e60fad7  usr/share/doc/openvpn-blacklist/examples/gen_openvpn_shared_keys.sh
+28d29ae40084fe53c9e439c2ffe44b04  usr/share/doc/openvpn-blacklist/examples/bad.key
+43cc7c0d36a1f2edfd4511d3662b4fee  usr/share/doc/openvpn-blacklist/examples/getpid.c
+f87bdb4fa8f617b73f756a3c12196ae3  usr/share/doc/openvpn-blacklist/README.Debian
+a846f396df011f7295dbaaa9fdb6dd65  usr/share/man/man1/openvpn-vulnkey.1.gz

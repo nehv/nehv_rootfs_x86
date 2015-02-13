@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+#       Support:      linux-ha-dev@lists.tummy.com
+#       License:      GNU General Public License (GPL)
+#
+#
+#       This script contains some variables for linux-ha which
+#       are set at configure time.
+#
+#       Created to alow this information to be passed to
+#       debian postinst scripts. Might be useful for other
+#       stuff too.
+#
+
+# /var/lib directory
+HA_VARLIBDIR="/var/lib" 
+
+# directory to drop core files into
+HA_COREDIR="/var/lib/heartbeat/cores" 
+
+# Group to own API fifos
+HA_APIGROUP="haclient" 
+
+# GID to own API fifos
+HA_APIGID="65" 
+
+# User to own CCM fifos
+HA_CCMUSER="hacluster" 
+
+# UID to own CCM fifos
+HA_CCMUID="17" 
+
+# Init start priority
+HB_INITSTARTPRI="75" 
+
+# Init stop priority
+HB_INITSTOPPRI="05" 
+
+# Init start priority
+LOGD_INITSTARTPRI="@LOGD_INITSTARTPRI@" 
+
+# Init stop priority
+LOGD_INITSTOPPRI="75" 
+
+# heartbeat rc script directory
+# HB_RC_DIR is the old name
+HB_RC_DIR="/etc/ha.d/rc.d" 
+HA_RC_DIR="/etc/ha.d/rc.d" 
+
+# Version number of package
+VERSION="3.0.2"
+

@@ -1,0 +1,13 @@
+libnl2 for Debian
+-----------------
+
+This is a snapshot release of libnl. The last official release was 1.1
+on 2008-01-14. Since then a lot of changes happened upstream.
+
+As of 2010-02-15 no actual plan to release a stable libnl2 is known.
+It may be possible that the upstream developer introduces additional
+changes before releasing an official libnl2 which may be indicative of
+stability issues in the current release and/or have adverse effects on
+the build status of packages depending on this release.
+
+ -- Heiko Stuebner <heiko@sntech.de>, Mon, 15 Feb 2010 21:38:05 +0100
